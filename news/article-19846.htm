@@ -88,7 +88,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                                      				  				  				<div id="content_views" class="htmledit_views"> <pre><code class="language-javascript">&lt;script lang="ts" setup&gt; import { ref, onMounted } from "vue";  import * as echarts from "echarts"; const main = ref(); // 使用ref创建虚拟DOM引用，使用时用main.value onMounted(() =&gt; {   init(); }); function init() {   // 基于准备好的dom，初始化echarts实例   const myChart = echarts.init(main.value);   const schoolData = [     {       name:'张三',       value:4253     },     {       name:'李四',       value:5691     },     {       name:'王五',       value:4536     },     {       name:'赵六',       value:4369     },     {       name:'周七',       value:5124     }]   // 指定图表的配置项和数据   const option = {     title: {       text: '个人存款',       left: 'center'     },     tooltip: {       trigger: 'item',       formatter: '&lt;br/&gt;{b} : {c} ({d}%)'     },     legend: {       orient: 'vertical',       left: 'left',       data: []     },     series: [       {         type: 'pie',         radius: '55%',         center: ['50%', '60%'],         data: [{ value: 335, name: '' }]       }     ]   }; // 赋值   option.series = [   {     type: 'pie',     radius: '55%',     center: ['50%', '60%'],     // data: res.data.map((v) =&gt; {     //   return { name: v.name, value: v.value }     // })     data: schoolData,   } ] // 赋值 // option.legend = [ //   { //    data: schoolData.map((a) =&gt; a.name) //   } // ] // 赋值 option.legend.data = schoolData.map((a) =&gt; a.name)    // 使用刚指定的配置项和数据显示图表。   myChart.setOption(option); } &lt;/script&gt;  &lt;template&gt;   &lt;div ref="main" style="width: 100%; height: 400px"&gt;&lt;/div&gt; &lt;/template&gt; </code></pre> </p></div> 			                <div class="clearfix"></div>
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <pre><code class="language-javascript">&lt;script lang="ts" setup&gt; import { ref, onMounted } from "vue";  import * as echarts from "echarts"; const main = ref(); // 使用ref创建虚拟DOM引用，使用时用main.value onMounted(() =&gt; {   init(); }); function init() {   // 基于准备好的dom，初始化echarts实例   const myChart = echarts.init(main.value);   const schoolData = [     {       name:'张三',       value:4253     },     {       name:'李四',       value:5691     },     {       name:'王五',       value:4536     },     {       name:'赵六',       value:4369     },     {       name:'周七',       value:5124     }]   // 指定图表的配置项和数据   const option = {     title: {       text: '个人存款',       left: 'center'     },     tooltip: {       trigger: 'item',       formatter: '&lt;br/&gt;{b} : {c} ({d}%)'     },     legend: {       orient: 'vertical',       left: 'left',       data: []     },     series: [       {         type: 'pie',         radius: '55%',         center: ['50%', '60%'],         data: [{ value: 335, name: '' }]       }     ]   }; // 赋值   option.series = [   {     type: 'pie',     radius: '55%',     center: ['50%', '60%'],     // data: res.data.map((v) =&gt; {     //   return { name: v.name, value: v.value }     // })     data: schoolData,   } ] // 赋值 // option.legend = [ //   { //    data: schoolData.map((a) =&gt; a.name) //   } // ] // 赋值 option.legend.data = schoolData.map((a) =&gt; a.name)    // 使用刚指定的配置项和数据显示图表。   myChart.setOption(option); } &lt;/script&gt;  &lt;template&gt;   &lt;div ref="main" style="width: 100%; height: 400px"&gt;&lt;/div&gt; &lt;/template&gt; </code></pre> </p></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-19395.htm">动物注射方式不包括（动物注射法）</a></p>
                                         <p>下一个：<a href="/news/article-19847.htm">动物疫苗的种类和制备原理是什么 动物疫苗的种类和制备原理是什么意思</a></p>
@@ -101,16 +102,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-8-7-free-ssr-subscribe.htm" title="「8月7日」最高速度19.6M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「8月7日」最高速度19.6M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-23-shadowrocket-node.htm" title="「10月23日」最高速度18.7M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接">「10月23日」最高速度18.7M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-4-free-clash.htm" title="「8月4日」最高速度22.3M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「8月4日」最高速度22.3M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-9-clash-v2ray-ss-ssr.htm" title="「8月9日」最高速度20.8M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「8月9日」最高速度20.8M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-31-free-ssr-subscribe.htm" title="「10月31日」最高速度19M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「10月31日」最高速度19M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-10-free-ssr-subscribe.htm" title="「11月10日」最高速度18M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接">「11月10日」最高速度18M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-20-node-share.htm" title="「10月20日」最高速度20.1M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「10月20日」最高速度20.1M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-18716.htm" title="哪种HTML5标签更适合表示金额">哪种HTML5标签更适合表示金额</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-3-free-subscribe-node.htm" title="「9月3日」最高速度21.2M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接">「9月3日」最高速度21.2M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-12-free-subscribe-node.htm" title="「10月12日」最高速度18.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「10月12日」最高速度18.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-8-clash-v2ray-ss-ssr.htm" title="「12月8日」最高速度19M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接">「12月8日」最高速度19M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-24-free-shadowrocket-node.htm" title="「10月24日」最高速度18.1M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接">「10月24日」最高速度18.1M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-21-free-ssr-node.htm" title="「10月21日」最高速度21.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「10月21日」最高速度21.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-12-node-share-links.htm" title="「9月12日」最高速度22.9M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「9月12日」最高速度22.9M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-16-free-ssr-node.htm" title="「10月16日」最高速度21.2M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「10月16日」最高速度21.2M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-20-free-high-speed-nodes.htm" title="「8月20日」最高速度20.8M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接">「8月20日」最高速度20.8M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-23972.htm" title="宠物店利润和成本分析（开宠物店的利润和风险）">宠物店利润和成本分析（开宠物店的利润和风险）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-15-node-share-links.htm" title="「8月15日」最高速度19.4M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接">「8月15日」最高速度19.4M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-6-27-free-shadowrocket-node.htm" title="「6月27日」最高速度20.2M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「6月27日」最高速度20.2M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-10-free-ssr-subscribe.htm" title="「7月10日」最高速度18.1M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「7月10日」最高速度18.1M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -122,7 +123,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -156,6 +157,15 @@
         <div class="container">
             <div class="row">
                 <p class="p-small">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
                     <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
                 </p>
             </div> <!-- enf of row -->
