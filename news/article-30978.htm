@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-30978.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>python 线性规划_线性规划-pulp-复杂矩阵</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="线性规划-pulp-复杂矩阵 1. 简介-线性规划 在数学中，线性规划（Linear Programming，简称LP）特指目标函数和约束条件皆为线性的最优化问题。线性规划是最优化问题中的一个重要领域" />
+    
+    <!-- Favicon -->
+    <link href="__ADDON__/img/shadowrocketnode/favicon.ico" rel="icon">
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+                        <a class="navbar-brand logo-image" href="/">
+                Shadowrocket Node
+            </a>            
+                        <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">链接</a>
+                    </li>
+                </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>python 线性规划_线性规划-pulp-复杂矩阵</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div> <div style="text-align:center;">   <img decoding="async" src="http://img.555519.xyz/uploads/20230207/8d4e1bd520f73b955e1c4134f3de44db.jpg" alt="python 线性规划_线性规划-pulp-复杂矩阵"> </div> <h2><b>线性规划-pulp-复杂矩阵</b></h2> <h3><b>1. 简介-线性规划</b></h3> <p>在数学中，线性规划（Linear Programming，简称LP）特指<b>目标函数和约束条件</b>皆为<b>线性</b>的最优化问题。线性规划是最优化问题中的一个重要领域。在作业研究中所面临的许多实际问题都可以用线性规划来处理，特别是某些特殊情况。最简单情况就，解线性方程组。</p> <blockquote><p>   举个最简单的例子:<br />   <br />工厂生产A和B两种物品，需要原料配比分别是1：2：1和2：1：3.<br />   <br />现有原料是100，40，8。A和B的价格分别是5和10。<br />   <br />请问如何分配原材料才能获益最大？<br />   <br />求解一个线性方程组即可  </p></blockquote> <h3><b>2. pulp 包</b></h3> <ul> <li>Python中有很多的工具可以解决线性规划问题。由于pulp因其常用和方便性，故这里介绍pulp包的使用。pulp能够解决大部分的线性规划问题，如""整数规划（Integer Program）、01规划（Binary Program）还是混合整数线性规划（MILP），都能很好的解决。</li> <li>pulp的github网址和官方文档，说实话官方文档做的并不好，但是里面介绍的例子还是很好的，如果只做最简单的线性规划可以看看学习一下。</li> <li>安装：按照一般套路<code>pip install pulp</code> 即可。</li> </ul> <h3><b>3. pulp使用流程</b></h3> <ul> <li>获得问题的描述：求解最大值还是最小值，这个要明确了。输入是的数据是什么。</li> <li>确定需要的决策变量：需要求解的变量，定义好，大小，数据类型。</li> <li>制定约束条件：决策变量和输入数据之间存在什么样的约束条件。</li> <li>输入数据，求解得到结果。</li> </ul> <p>那个实际例子来说明：</p> <ol> <li>获得问题的描述：我们有矩阵X和矩阵Y，大小是1008*6。如图最上面的例子：是1008个产品，在6+6个指标上的需求。拆分成6+6两部分可以说明更加复杂的关系，以便更具有扩展性。<br />目标，我们要求最大值： </li> </ol> <div style="text-align:center;">   <img decoding="async" src="http://img.555519.xyz/uploads/20230207/8e09ee5eef42c6cc3efd17611db465be.jpg" alt="python 线性规划_线性规划-pulp-复杂矩阵"> </div> <ol> <li>制定约束条件如下：</li> </ol> <div style="text-align:center;">   <img decoding="async" src="http://img.555519.xyz/uploads/20230207/9a5b9f750a6a0cedd345c332fed5730b.jpg" alt="python 线性规划_线性规划-pulp-复杂矩阵"> </div> <ol> <li>输入数据矩阵X和Y进行求解，即可。</li> </ol> <h3><b>4. 转换为代码求解</b></h3> <p>废话不多说，直接上代码。</p> <div class="has"> <pre class="has"><code> # -*- coding: UTF-8 -*- import pulp import numpy as np  def assignment_problem(matrix_x,matrix_y):     row_matrix_x = len(matrix_x)      col_matrix_x = len(matrix_x[0])       row_matrix_y = len(matrix_x)     col_matrix_y = len(matrix_x[0])          #这里是将变量拉成一条直线，方便求解     flatten = lambda x: [y for l in x for y in flatten(l)] if type(x) is list else [x]           #这是说明了是求最大值：LpMaximize，如果需要求最小值：LpMinimize。     m = pulp.LpProblem('task_name', sense=pulp.LpMaximize)          #这里是mu和v2个决策变量的定义，是个矩阵形式，所以需要使用的dict这个函数，lowBound说明了下界大于等于0，和约束条件6对应     #这里的数据类型默认是浮点型，也可以换成Ingredients，cat=’Ingredients‘就是整数， cat=pulp.LpBinary这是离散型数据就是整数了。     var_mu = pulp.LpVariable.dicts("mu", (range(row_matrix_x), range(col_matrix_x)), lowBound = 0)      var_vi = pulp.LpVariable.dicts("vi", (range(row_matrix_x), range(col_matrix_x)), lowBound = 0)         #这里是6个变量，由于约束条件5中说明了上下届     rho1 = pulp.LpVariable('rho1', lowBound = 0.15, upBound = 0.18)      rho2 = pulp.LpVariable('rho2', lowBound = 0.02, upBound = 0.17)      rho3 = pulp.LpVariable('rho3', lowBound = 0.15, upBound = 0.33)      rho4 = pulp.LpVariable('rho4', lowBound = 0.25, upBound = 0.33)      rho5 = pulp.LpVariable('rho5', lowBound = 0.08, upBound = 0.17)      rho6 = pulp.LpVariable('rho6', lowBound = 0.01, upBound = 0.18)             #对应这求解最大值，即目标。pulp.lpDot相乘操作     m += pulp.lpDot(matrix_y.flatten(), flatten(var_mu))          #对应这约束条件1，pulp.lpSum当成求和用即可。     for j in range(row_matrix_x):         m +=(pulp.lpSum(var_vi[j][i]*matrix_x[j][i] for i in range(col_matrix_x))==1)            #对应这约束条件2，看起来有点长。     for j in range(row_matrix_x):         for k in range(row_matrix_x):              m+=(pulp.lpSum(var_mu[j][i]*matrix_y[k][i] for i in range(col_matrix_x))-pulp.lpSum(var_vi[j][i]*matrix_x[k][i] for i in  range(col_matrix_x))&lt;=0.0)          #对应这约束条件3和4，为了方便就展开来写了。也可以改成上述的for循环。     m += (pulp.lpSum(var_mu[j][0] for j in range(row_matrix_x))==rho1*row_matrix_x)      m += (pulp.lpSum(var_mu[j][1] for j in range(row_matrix_x))==rho2*row_matrix_x)      m += (pulp.lpSum(var_mu[j][2] for j in range(row_matrix_x))==rho3*row_matrix_x)      m += (pulp.lpSum(var_mu[j][3] for j in range(row_matrix_x))==rho4*row_matrix_x)      m += (pulp.lpSum(var_mu[j][4] for j in range(row_matrix_x))==rho5*row_matrix_x)      m += (pulp.lpSum(var_mu[j][5] for j in range(row_matrix_x))==rho6*row_matrix_x)        m += (pulp.lpSum(var_vi[j][0] for j in range(row_matrix_x))==row_matrix_x*rho1*5)     m += (pulp.lpSum(var_vi[j][1] for j in range(row_matrix_x))==row_matrix_x*rho2*5)     m += (pulp.lpSum(var_vi[j][2] for j in range(row_matrix_x))==row_matrix_x*rho3*5)     m += (pulp.lpSum(var_vi[j][3] for j in range(row_matrix_x))==row_matrix_x*rho4*5)     m += (pulp.lpSum(var_vi[j][4] for j in range(row_matrix_x))==row_matrix_x*rho5*5)     m += (pulp.lpSum(var_vi[j][5] for j in range(row_matrix_x))==row_matrix_x*rho6*5)            #求解目标，就这么简单。不用怀疑     m.solve()     #可以打印出来各个约束条件，拆分开的很多，可以注释掉。     print(m)          #把求解的值，取出来的操作。      result_mu=[[pulp.value(var_mu[i][j]) for j in range(col_matrix_x)] for i in range(row_matrix_x)]     result_vi=[[pulp.value(var_vi[i][j]) for j in range(col_matrix_x)] for i in range(row_matrix_x)]     result_rho1=pulp.value(rho1)     result_rho2=pulp.value(rho2)     result_rho3=pulp.value(rho3)     result_rho4=pulp.value(rho4)     result_rho5=pulp.value(rho5)     result_rho6=pulp.value(rho6)       return {<!-- -->'objective':pulp.value(m.objective), 'result_mu':result_mu,'result_vi':result_vi}   #构造数据，我们这里为了方便直接写0，自己进行替换即可。 matrix_x=np.zeros((1008,6)) matrix_y=np.zeros((1008,6)) #输入数据求解，打印结果.   res = assignment_problem(matrix_x,matrix_y)  print('{res["objective"]}') print(res['result_mu'])</code></pre> </p></div> <h3><b>5. 思考</b></h3> <ul> <li>在代码中我们在m上加上不同的约束添加，看起来不可思议。pulp为了能够这么方便的使用，使用了操作符重载的操作。感谢大佬，让线性求解如此简单。</li> <li>pulp是做线性规划的，所以不支持2个决策变量相乘。例如：是不支持。查阅了很多发现真的不支持，这样好像就是非线性规划了，所以做不了。</li> <li>关系式中&gt;=，&lt;=。但是不支持&gt;和&lt;，请注意。</li> <li>一些参考链接，感谢下列的博客。<br />例子很多，适合小白开始，这里举了常见的三个例子，如果不需要我上面这么复杂可以先看这个链接，当然其中代码存在一点问题，就是定义决策变量如果是个矩阵会出错，可能博客中是以前的版本吧。如果需要定义决策变量请参考我的代码，所有的都可以。<br />官网数独求解这个例子很有意思。</li> </ul> </div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-30511.htm">动物疫苗对人体有害吗知乎 动物疫苗对人体有害吗知乎</a></p>
+                                        <p>下一个：<a href="/news/article-30979.htm">MySQL主从复制和读写分离</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-free-ssr-subscribe.htm" title="「11月10日」最高速度18M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接">「11月10日」最高速度18M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-12-node-share-links.htm" title="「9月12日」最高速度22.9M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「9月12日」最高速度22.9M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-12-free-subscribe-node.htm" title="「10月12日」最高速度18.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「10月12日」最高速度18.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-4-free-clash.htm" title="「8月4日」最高速度22.3M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「8月4日」最高速度22.3M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-10-free-node-subscribe.htm" title="「10月10日」最高速度22.2M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接">「10月10日」最高速度22.2M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-25846.htm" title="动物医院资质级别有哪些类型的 动物医院资质级别有哪些类型的">动物医院资质级别有哪些类型的 动物医院资质级别有哪些类型的</a></li>
+                        <li class="py-2"><a href="/news/article-30511.htm" title="动物疫苗对人体有害吗知乎 动物疫苗对人体有害吗知乎">动物疫苗对人体有害吗知乎 动物疫苗对人体有害吗知乎</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-free-node-subscribe-links.htm" title="「11月14日」最高速度21M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「11月14日」最高速度21M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-5-free-high-speed-nodes.htm" title="「9月5日」最高速度23M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接">「9月5日」最高速度23M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-free-ssr-subscribe.htm" title="「12月25日」最高速度19.9M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「12月25日」最高速度19.9M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img href="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
