@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-32407.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>浏览器禁用Cookie,基于Cookie的会话跟踪机制失效的解决的方法</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="当浏览器禁用Cookies时。基于Cookie的会话跟踪机制就会失效。解决的方法是利用URL重写机制跟踪用户会话。   在使用URL重写机制的时候须要注意。为了保证会话跟踪的正确性，全部的链接和重定向" />
+    
+    <!-- Favicon -->
+    <link href="__ADDON__/img/shadowrocketnode/favicon.ico" rel="icon">
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+                        <a class="navbar-brand logo-image" href="/">
+                Shadowrocket Node
+            </a>            
+                        <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">链接</a>
+                    </li>
+                </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>浏览器禁用Cookie,基于Cookie的会话跟踪机制失效的解决的方法</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div id="cnblogs_post_body" class="blogpost-body"> <div id="article_content" class="article_content"> <p>当浏览器禁用Cookies时。基于Cookie的会话跟踪机制就会失效。解决的方法是利用URL重写机制跟踪用户会话。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/6e1cb338db447ff169a57be9f9f5c49b.jpg" alt="浏览器禁用Cookie,基于Cookie的会话跟踪机制失效的解决的方法"></p> <p></p> <p>在使用URL重写机制的时候须要注意。为了保证会话跟踪的正确性，全部的<span style="color:#ff0000;">链接</span>和<span style="color:#ff0000;">重定向</span>语句中的URL都须要调用<span style="color:#ff0000;">encodeURL()</span>或<span style="color:#ff0000;">encodeRedirectURL()</span>方法进行编码。另外，因为附加在URL中的SessionID是动态产生的，对于每个用户都是不同的。所欲对于静态页面的相互跳转，URL重写机制就无能为力了。可是，我们也能够通过将静态页面转换为动态页面来解决问题。</p> <p>在web开发程序的时候，怎样去推断client是否禁用了Cookie，从而决定是否採用URL重写的机制去跟踪用户的会话。实际上，client时候禁用了Cookie，不须要我们去推断的，Servlet容器会帮我们做这件事情。</p> <p>我们在开发Web应用程序的时候，仅仅须要对全部的链接和重定向语句中的URL都调用encodeURL()和encodeRedirectURL()方法进行编码就能够了。</p> <pre><code class="language-java">        out.println("&lt;form method=post action=loginchk&gt;");</code></pre> <pre><code class="language-java">//&lt;span style="white-space:pre"&gt;	&lt;/span&gt;  这里是链接。所以调用encodeURL()方法 //        out.println("&lt;form method=post action=" + res.encodeURL("loginchk") + "&gt;");</code></pre> <p></p> <pre><code class="language-java">&lt;span style="white-space:pre"&gt;	&lt;/span&gt;res.sendRedirect("s_login");</code></pre> <pre><code class="language-java">//&lt;span style="white-space:pre"&gt;	&lt;/span&gt;  这里是重定向语句。所以调用encodeRedirectURL()方法 //        res.sendRedirect(res.encodeRedirectURL("s_login"));</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/bd8ad7f3d5b0772540462ac333980cd8.jpg" alt="浏览器禁用Cookie,基于Cookie的会话跟踪机制失效的解决的方法"></p> <p></p> <p>假设浏览器禁用了Cookie，无论验证是否正确都不会跳转，仍停留在当前登录界面。</p> </p></div> </div></div> <p>当浏览器禁用Cookies时。基于Cookie的会话跟踪机制就会失效。解决的方法是利用URL重写机制跟踪用户会话。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/6e1cb338db447ff169a57be9f9f5c49b.jpg" alt="浏览器禁用Cookie,基于Cookie的会话跟踪机制失效的解决的方法"></p> <p></p> <p>在使用URL重写机制的时候须要注意。为了保证会话跟踪的正确性，全部的<span style="color:#ff0000;">链接</span>和<span style="color:#ff0000;">重定向</span>语句中的URL都须要调用<span style="color:#ff0000;">encodeURL()</span>或<span style="color:#ff0000;">encodeRedirectURL()</span>方法进行编码。另外，因为附加在URL中的SessionID是动态产生的，对于每个用户都是不同的。所欲对于静态页面的相互跳转，URL重写机制就无能为力了。可是，我们也能够通过将静态页面转换为动态页面来解决问题。</p> <p>在web开发程序的时候，怎样去推断client是否禁用了Cookie，从而决定是否採用URL重写的机制去跟踪用户的会话。实际上，client时候禁用了Cookie，不须要我们去推断的，Servlet容器会帮我们做这件事情。</p> <p>我们在开发Web应用程序的时候，仅仅须要对全部的链接和重定向语句中的URL都调用encodeURL()和encodeRedirectURL()方法进行编码就能够了。</p> <pre><code class="language-java">        out.println("&lt;form method=post action=loginchk&gt;");</code></pre> <pre><code class="language-java">//&lt;span style="white-space:pre"&gt;	&lt;/span&gt;  这里是链接。所以调用encodeURL()方法 //        out.println("&lt;form method=post action=" + res.encodeURL("loginchk") + "&gt;");</code></pre> <p></p> <pre><code class="language-java">&lt;span style="white-space:pre"&gt;	&lt;/span&gt;res.sendRedirect("s_login");</code></pre> <pre><code class="language-java">//&lt;span style="white-space:pre"&gt;	&lt;/span&gt;  这里是重定向语句。所以调用encodeRedirectURL()方法 //        res.sendRedirect(res.encodeRedirectURL("s_login"));</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/bd8ad7f3d5b0772540462ac333980cd8.jpg" alt="浏览器禁用Cookie,基于Cookie的会话跟踪机制失效的解决的方法"></p> <p></p> <p>假设浏览器禁用了Cookie，无论验证是否正确都不会跳转，仍停留在当前登录界面。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-31929.htm">1970年农历4月27日出生的人命好吗（1970年阴历4月17日是什么命）</a></p>
+                                        <p>下一个：<a href="/news/article-32408.htm">宠物粮食加工厂设备哪的好点呢知乎（宠物粮加工机器）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-7-12-clash-windows.htm" title="「7月12日」最高速度18.8M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接">「7月12日」最高速度18.8M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-30-free-clash.htm" title="「7月30日」最高速度22.6M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接">「7月30日」最高速度22.6M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-2-free-node-subscribe.htm" title="「11月2日」最高速度22.1M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「11月2日」最高速度22.1M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-25-free-clash.htm" title="「8月25日」最高速度22.3M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「8月25日」最高速度22.3M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-node-share.htm" title="「11月29日」最高速度21.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「11月29日」最高速度21.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-18717.htm" title="动物疫苗APP（动物疫苗生产厂家）">动物疫苗APP（动物疫苗生产厂家）</a></li>
+                        <li class="py-2"><a href="/news/article-25845.htm" title="IDEA SpringBoot-Mybatis-plus 实现增删改查(CRUD)">IDEA SpringBoot-Mybatis-plus 实现增删改查(CRUD)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-13-free-high-speed-nodes.htm" title="「12月13日」最高速度22.4M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「12月13日」最高速度22.4M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-20-node-share.htm" title="「10月20日」最高速度20.1M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「10月20日」最高速度20.1M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26307.htm" title="动物疫苗接种间隔多长时间打一次好（动物疫苗注射后多久产生抗体）">动物疫苗接种间隔多长时间打一次好（动物疫苗注射后多久产生抗体）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img href="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
