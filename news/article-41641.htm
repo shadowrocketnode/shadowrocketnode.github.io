@@ -2,13 +2,13 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-40659.htm" />
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-41641.htm" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
-    <title>Java学习笔记32. 数组的填充 Arrays.fill( ) 方法</title>
+    <title>Java中的守护程序线程和用户线程之间的区别</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta name="description" content="对于一个给定的数组，可以使用系统提供的Arrays.fill( ) 方法快速地填充数据。这种方法填充的数据都是一致的。 如下例子： import java.util.*; public class a" />
+        <meta name="description" content="众所周知，Java是一种支持多线程的语言，基于自然界，Java中的线程分为两种类型：守护程序线程和用户线程。 以下是守护程序线程和用户线程之间的重要区别。    序号 键 守护进程线程 用户线程   " />
     
     <!-- Favicon -->
     <link href="__ADDON__/img/shadowrocketnode/favicon.ico" rel="icon">
@@ -74,7 +74,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-10 offset-xl-1">
-                    <h1>Java学习笔记32. 数组的填充 Arrays.fill( ) 方法</h1>
+                    <h1>Java中的守护程序线程和用户线程之间的区别</h1>
                     <p>
                         <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
                     </p>
@@ -89,10 +89,10 @@
             <div class="row">
                 <div class="col-md-9">
                                     <input type="hidden" id="share-website-info" data-name="" data-url="">
-                  				  				  				<div id="content_views" class="htmledit_views"> <p>对于一个给定的数组，可以使用系统提供的Arrays.fill( ) 方法快速地填充数据。这种方法填充的数据都是一致的。</p> <p>如下例子：</p> <pre><code class="language-java">import java.util.*; public class arraysFill{ 	public  static void main(String[] args){ 		int a[] = new int[5]; 		Arrays.fill(a,7);&nbsp;&nbsp;&nbsp; //fill方法的第1种用法：全部填充 		for(int i:a) 	  		System.out.print(i); 		Arrays.fill(a,2,4,5);  //fill方法的第二种用法，从数组的第2个元素到第4个元素进行部分填充 		System.out.println(); 		for(int i:a) 	  		System.out.print(i); 		System.out.println(); 	} }</code></pre> <p></p> <p></p> <p></p> </div> 			                <div class="clearfix"></div>
+                  				  				  				<p>众所周知，Java是一种支持多线程的语言，基于自然界，Java中的线程分为两种类型：守护程序线程和用户线程。</p> <p>以下是守护程序线程和用户线程之间的重要区别。</p> <table class="table table-bordered table-striped"> <thead> <tr class="firstRow"> <th>序号</th> <th>键</th> <th>守护进程线程</th> <th>用户线程</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>性质</td> <td>守护程序线程的优先级较低，即JVM不太关心这些类型的线程。</td> <td>用户线程被识别为高优先级线程，即JVM将等待任何活动的用户线程完成。</td> </tr> <tr> <td>2</td> <td>CPU可用性</td> <td>由于优先级低，无法保证Daemon线程总是在需要时获得CPU使用率。</td> <td>用户线程总是优先获得CPU使用率，因为它具有更高的优先级。</td> </tr> <tr> <td>3</td> <td>创建</td> <td>守护程序线程在后台状态下执行，因此通常称为后台线程。</td> <td>用户线程通常是由应用程序创建的，用于并发执行某些任务。</td> </tr> <tr> <td>4</td> <td>刑场</td> <td>守护程序线程在后台状态下执行，因此通常称为后台线程。</td> <td>用户线程在另一方面被称为前台线程。</td> </tr> <tr> <td>5</td> <td>生命周期</td> <td>守护程序线程没有设置生命周期，但是它们完全取决于用户线程。</td> <td>用户线程具有与其他任何普通线程一样的特定生命周期，并且其寿命独立于任何其他线程。</td> </tr> </tbody> </table> <h2>守护程序线程与用户线程的示例</h2> <p><strong>JavaTester.java</strong></p> <pre>class&nbsp;JavaTester&nbsp;extends&nbsp;Thread&nbsp;{ &nbsp;&nbsp;&nbsp;@Override &nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;run(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("User&nbsp;Thread&nbsp;or&nbsp;Non-Daemon&nbsp;Thread"); &nbsp;&nbsp;&nbsp;} } public&nbsp;class&nbsp;MainThread&nbsp;{ &nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;void&nbsp;main(String[]&nbsp;args){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JavaTester&nbsp;mt&nbsp;=&nbsp;new&nbsp;JavaTester(); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mt.start(); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Main&nbsp;Thread"); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Is&nbsp;"&nbsp;+&nbsp;mt.getName()&nbsp;+&nbsp;"&nbsp;a&nbsp;Daemon&nbsp;Thread:&nbsp;"+&nbsp;mt.isDaemon()); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Is&nbsp;"&nbsp;+&nbsp;Thread.currentThread().getName()&nbsp;+&nbsp;"&nbsp;a&nbsp;Daemon&nbsp;Thread:&nbsp;"&nbsp;+&nbsp;&nbsp;Thread.currentThread().isDaemon()); &nbsp;&nbsp;&nbsp;} }</pre> <p>输出结果</p> <pre>Main&nbsp;Thread Is&nbsp;Thread-0&nbsp;a&nbsp;Daemon&nbsp;Thread:&nbsp;false Is&nbsp;main&nbsp;a&nbsp;Daemon&nbsp;Thread:&nbsp;false User&nbsp;Thread&nbsp;or&nbsp;Non-Daemon&nbsp;Thread</pre> <div></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-40157.htm">动物医院属于什么行业类别的企业（动物医院属于什么行业类别的企业有哪些）</a></p>
-                                        <p>下一个：<a href="/news/article-40660.htm">动物医院申请条件有哪些要求和条件呢图片（动物医院诊疗范围）</a></p>
+                                        <p>上一个：<a href="/news/article-41146.htm">动物疫苗的作用有哪些呢英语（动物疫苗有没有毒）</a></p>
+                                        <p>下一个：<a href="/news/article-41642.htm">动物打预防针去哪里打疫苗呢（动物打疫苗在哪里打）</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -102,16 +102,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-1-16-node-share.htm" title="「1月16日」最高速度22.6M/S，2025年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接">「1月16日」最高速度22.6M/S，2025年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-40156.htm" title="上海流浪宠物领养网站（上海流浪宠物救助中心）">上海流浪宠物领养网站（上海流浪宠物救助中心）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-1-node-share-links.htm" title="「11月1日」最高速度20.4M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接">「11月1日」最高速度20.4M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-14-free-node-subscribe-links.htm" title="「11月14日」最高速度21M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「11月14日」最高速度21M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-16-free-ssr-subscribe.htm" title="「11月16日」最高速度19.2M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「11月16日」最高速度19.2M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-5-free-node-subscribe-links.htm" title="「1月5日」最高速度18.2M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「1月5日」最高速度18.2M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-19-free-clash.htm" title="「11月19日」最高速度19.9M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「11月19日」最高速度19.9M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-37210.htm" title="dell识别不了固态硬盘（dell识别不到固态硬盘）">dell识别不了固态硬盘（dell识别不到固态硬盘）</a></li>
-                        <li class="py-2"><a href="/news/article-41146.htm" title="动物疫苗的作用有哪些呢英语（动物疫苗有没有毒）">动物疫苗的作用有哪些呢英语（动物疫苗有没有毒）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-23-free-high-speed-nodes.htm" title="「12月23日」最高速度23M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接">「12月23日」最高速度23M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-32886.htm" title="治疗仓鼠宠物医院在线咨询（治仓鼠的宠物医院）">治疗仓鼠宠物医院在线咨询（治仓鼠的宠物医院）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-21-free-ssr-node.htm" title="「10月21日」最高速度21.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「10月21日」最高速度21.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-25845.htm" title="IDEA SpringBoot-Mybatis-plus 实现增删改查(CRUD)">IDEA SpringBoot-Mybatis-plus 实现增删改查(CRUD)</a></li>
+                        <li class="py-2"><a href="/news/article-33425.htm" title="云南农大动物医院怎么样收费（云南农业大学动物医院红河总院）">云南农大动物医院怎么样收费（云南农业大学动物医院红河总院）</a></li>
+                        <li class="py-2"><a href="/news/article-19393.htm" title="我们城市有个动物园英语怎么说（我们城市里有一个宠物医院翻译）">我们城市有个动物园英语怎么说（我们城市里有一个宠物医院翻译）</a></li>
+                        <li class="py-2"><a href="/news/article-35979.htm" title="宠物粮食生产厂家（国内宠物粮食十大厂家）">宠物粮食生产厂家（国内宠物粮食十大厂家）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-9-free-high-speed-nodes.htm" title="「12月9日」最高速度21.7M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接">「12月9日」最高速度21.7M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-32407.htm" title="浏览器禁用Cookie,基于Cookie的会话跟踪机制失效的解决的方法">浏览器禁用Cookie,基于Cookie的会话跟踪机制失效的解决的方法</a></li>
+                        <li class="py-2"><a href="/news/article-24197.htm" title="动物医院有急诊吗多少钱（动物医院诊疗范围）">动物医院有急诊吗多少钱（动物医院诊疗范围）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-24-clash-v2ray-ss-ssr.htm" title="「12月24日」最高速度19.6M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「12月24日」最高速度19.6M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
