@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-46619.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>springboot的poi导入和导出</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="1.pom.xml &lt;!--poi.start --&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;org.apache.poi&lt;/groupId&" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-46619.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="springboot的poi导入和导出" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/5e9936984ca664421225d1f27a1bfa6e.webp" />
+        <meta property="og:release_date" content="2025-01-26T09:59:58" />
+    <meta property="og:updated_time" content="2025-01-26T09:59:58" />
+        <meta property="og:description" content="1.pom.xml &lt;!--poi.start --&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;org.apache.poi&lt;/groupId&" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="springboot的poi导入和导出">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+                        <a class="navbar-brand logo-image" href="/">
+                Shadowrocket Node
+            </a>            
+                        <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">链接</a>
+                    </li>
+                </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>springboot的poi导入和导出</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>1.pom.xml</p> <pre><code class="language-XML">&lt;!--poi.start --&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;org.apache.poi&lt;/groupId&gt; 			&lt;artifactId&gt;poi&lt;/artifactId&gt; 			&lt;version&gt;${org-apache-poi.version}&lt;/version&gt; 		&lt;/dependency&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;org.apache.poi&lt;/groupId&gt; 			&lt;artifactId&gt;poi-excelant&lt;/artifactId&gt; 			&lt;version&gt;${org-apache-poi.version}&lt;/version&gt; 		&lt;/dependency&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;org.apache.poi&lt;/groupId&gt; 			&lt;artifactId&gt;poi-ooxml&lt;/artifactId&gt; 			&lt;version&gt;3.15&lt;/version&gt; 		&lt;/dependency&gt; 	&lt;!--poi.end --&gt;</code></pre> <p>2.读取工具类</p> <pre><code class="language-java">package com.common.utils;  import lombok.Data; import org.apache.poi.ss.usermodel.Cell; import org.apache.poi.ss.usermodel.CellType; import org.apache.poi.xssf.usermodel.XSSFCell; import org.apache.poi.xssf.usermodel.XSSFRow; import org.apache.poi.xssf.usermodel.XSSFSheet; import org.apache.poi.xssf.usermodel.XSSFWorkbook;  import java.io.File; import java.io.FileInputStream; import java.io.IOException; import java.text.DecimalFormat; import java.util.ArrayList; import java.util.HashMap; import java.util.List; import java.util.Map;  /**  * 读取excel工具类  */ public class ExcelReadUtils {      private XSSFWorkbook workbook;     private XSSFSheet sheet;      /**      * 工作表下标      */     private int sheetIndex = 0;      public ExcelReadUtils(){}     public ExcelReadUtils(File file) throws IOException {         FileInputStream inputStream = new FileInputStream(file);         this.workbook = new XSSFWorkbook(inputStream);         inputStream.close();          this.changeSheet();     }     public ExcelReadUtils(File file, int sheetIndex) throws IOException {         FileInputStream inputStream = new FileInputStream(file);         this.workbook = new XSSFWorkbook(inputStream);         inputStream.close();          this.sheetIndex = sheetIndex;         this.changeSheet();     }      /**      * 获取某行的单元格的值-字符串数组      * @param rowIndex      * @return      */     public List&lt;String&gt; getRowStrArr(int rowIndex){         List&lt;String&gt; res = new ArrayList&lt;&gt;();         XSSFRow row = this.sheet.getRow(rowIndex);         for (int j = 0; j &lt; row.getLastCellNum(); j++) {             XSSFCell dataCell = row.getCell(j);             String cellValue = this.convertCellValueToString(dataCell);             res.add(cellValue);         }         return res;     }      /**      * 获取某行的单元格的值-根据keyArr列顺序拼接成map      * @param rowIndex      * @param keyArr      * @return      */     public Map&lt;String, String&gt; getRowStrMap(int rowIndex, List&lt;String&gt; keyArr){         List&lt;String&gt; list = this.getRowStrArr(rowIndex);          Map&lt;String, String&gt; res = new HashMap&lt;&gt;();         if( CollectionUtils.isNotEmpty(list) ){             for(int i=0; i&lt;list.size(); i++){                 String key = "column_"+i;                 if(CollectionUtils.isNotEmpty(keyArr) &amp;&amp; i&lt;keyArr.size()) {                     key = keyArr.get(i);                 }                 res.put(key, list.get(i));             }         }         return res;     }      /**      * 获取所有行的数据-根据keyArr列顺序拼接成map      * @param keyArr      * @return      */     public List&lt;Map&lt;String, String&gt;&gt; getAllDataMap(List&lt;String&gt; keyArr){         List&lt;Map&lt;String, String&gt;&gt; res = new ArrayList&lt;&gt;();         for (int i = 0; i &lt;= this.sheet.getLastRowNum(); i++) {             Map&lt;String, String&gt; item = this.getRowStrMap(i, keyArr);             res.add(item);         }         return res;     }      /**      * 更换工作表      * @return      */     private void changeSheet(){         this.sheet = this.workbook.getSheetAt(this.sheetIndex);     }      /**      * 将单元格内容转化为字符串      */     private String convertCellValueToString(Cell cell) {         if (null == cell) {             return null;         }         String returnValue = null;         switch (cell.getCellTypeEnum()) {             //字符串             case STRING:                 returnValue = cell.getStringCellValue();                 break;             //数字             case NUMERIC:                 double numericCellValue = cell.getNumericCellValue();                 boolean isInteger = isIntegerForDouble(numericCellValue);                 if (isInteger) {                     DecimalFormat df = new DecimalFormat("0");                     returnValue = df.format(numericCellValue);                 } else {                     returnValue = Double.toString(numericCellValue);                 }                 break;             //布尔             case BOOLEAN:                 boolean booleanCellValue = cell.getBooleanCellValue();                 returnValue = Boolean.toString(booleanCellValue);                 break;             //空值             case BLANK:                 break;             //公式             case FORMULA:                 cell.getCellFormula();                 break;             //故障             case ERROR:                 break;             default:                 break;         }         return returnValue;     }     /**      * 判断是否为整数，是返回true，否则返回false.      */     public static boolean isIntegerForDouble(Double num) {         double eqs = 1e-10; //精度范围         return num - Math.floor(num) &lt; eqs;     }      /**      * 使用完要关闭流      */     public void close() throws IOException {         this.workbook.close();     }      public int getSheetIndex() {         return sheetIndex;     }      public ExcelReadUtils setSheetIndex(int sheetIndex) {         this.sheetIndex = sheetIndex;         this.changeSheet();         return this;     } } </code></pre> <p>3.写入工具类</p> <pre><code class="language-java">package com.common.utils;  import com.common.exceptions.BaseException; import org.apache.poi.ss.usermodel.Row; import org.apache.poi.ss.usermodel.Sheet; import org.apache.poi.xssf.usermodel.XSSFCell; import org.apache.poi.xssf.usermodel.XSSFRow; import org.apache.poi.xssf.usermodel.XSSFSheet; import org.apache.poi.xssf.usermodel.XSSFWorkbook;  import java.io.File; import java.io.FileInputStream; import java.io.IOException; import java.util.*;  /**  * 写excel工具类  */ public class ExcelWriteUtils {      private XSSFWorkbook workbook;      private List&lt;XSSFSheet&gt; sheetArr;     private List&lt;String&gt; sheetNameArr;      private int currSheetIndex = 0;     private int currRowIndex = 0;      public ExcelWriteUtils(){         this.sheetNameArr = Arrays.asList("sheet1");         this.initSheetArr();     }     public ExcelWriteUtils(String sheetName) {         this.sheetNameArr = Arrays.asList(sheetName);         this.initSheetArr();     }     public ExcelWriteUtils(List&lt;String&gt; sheetNameArr) {         this.sheetNameArr = sheetNameArr;         this.initSheetArr();     }      /**      * 初始化sheet      * @throws Exception      */     private void initSheetArr() {         if( CollectionUtils.isEmpty(this.sheetNameArr) ){             throw BaseException.logicException("sheet没有设置名称");         }         //XSSFWorkbook:07版本的xlsx         this.workbook = new XSSFWorkbook();         //构造sheet         this.sheetArr = new ArrayList&lt;&gt;();         this.sheetNameArr.forEach(sheetName-&gt;{             XSSFSheet sheet = this.workbook.createSheet(sheetName);             this.sheetArr.add(sheet);         });     }      /**      * 获取当前sheet      * @return      */     private XSSFSheet getCurrSheet(){         return this.sheetArr.get(this.currSheetIndex);     }      /**      * 写入数据到某行      * @param valueArr      */     public void writeRow(int rowIndex, List&lt;String&gt; valueArr){         XSSFRow row = this.getCurrSheet().getRow(rowIndex);         if( row==null ){             row = this.getCurrSheet().createRow(rowIndex);         }         if( CollectionUtils.isNotEmpty(valueArr) ){             for(int i=0; i&lt;valueArr.size(); i++){                 XSSFCell cell = row.createCell(i);                 cell.setCellValue(valueArr.get(i));             }         }     }      /**      * 写入数据到当前行      * @param valueArr      */     public void writeCurrRow(List&lt;String&gt; valueArr){         this.writeRow(this.currRowIndex, valueArr);     }      /**      * 批量写入数据到多行      * @param valueArrArr      */     public void writeBatchRow(List&lt;List&lt;String&gt;&gt; valueArrArr){         if( CollectionUtils.isNotEmpty(valueArrArr) ){             valueArrArr.forEach(valueArr-&gt;{                 if( CollectionUtils.isNotEmpty(valueArr) ){                     this.writeCurrRow(valueArr);                 }                 this.currRowIndex++;             });         }     }      public int getCurrSheetIndex() {         return currSheetIndex;     }      public void setCurrSheetIndex(int currSheetIndex) {         this.currSheetIndex = currSheetIndex;     }      public int getCurrRowIndex() {         return currRowIndex;     }      public void setCurrRowIndex(int currRowIndex) {         this.currRowIndex = currRowIndex;     }      public XSSFWorkbook getWorkbook() {         return workbook;     } } </code></pre> <p>4.测试</p> <p>上传文件，读取excel内容，log打印，然后生成新的excel，最后下载这个excel文件</p> <p>4.1 控制器</p> <pre><code class="language-java">package com.demo.mydemo.controller;   import com.common.utils.AjaxResult; import com.common.utils.StringUtils; import com.demo.mydemo.entity.dto.ExcelParamDTO; import com.demo.mydemo.service.IExcelService; import io.swagger.annotations.ApiOperation; import io.swagger.annotations.ApiParam; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.stereotype.Controller; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestMethod; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.ResponseBody;  import javax.servlet.ServletOutputStream; import javax.servlet.http.HttpServletResponse; import java.io.File; import java.io.FileInputStream; import java.io.IOException; import java.io.InputStream; import java.net.URL; import java.net.URLConnection; import java.net.URLEncoder;  /**  * &lt;p&gt;  *  excel  * &lt;/p&gt;  *  * @author szy  * @since 2022-05-06  */ @Controller @RequestMapping("/excel") public class ExcelController {      @Autowired     private IExcelService excelService;      /**      *  http://localhost:20001/szy-tools/excel/index      * @return      */     @RequestMapping("/index")     public String index() {         return "excel_index";     }      /**      * http://localhost:20001/szy-tools/excel/upload      */     //限制只能post访问     @RequestMapping(value="/upload", method= RequestMethod.POST)     @ResponseBody     public AjaxResult uploadData(             @ApiParam(value = "参数") ExcelParamDTO param) {         String filePath = excelService.upload(param);         return AjaxResult.success("成功", filePath);     }      @RequestMapping("/download")     @ApiOperation(value = "下载文件")     public void download(             HttpServletResponse response,             @ApiParam(value = "文件路径") @RequestParam(value="filePath", required = true) String filePath     ) throws IOException {         File fileUpload = new File(filePath);         String fileName = fileUpload.getName();         //encode后替换  解决空格问题         fileName = URLEncoder.encode(fileName, "UTF-8");         fileName = fileName.replace("+", "%20");         // 读到流中 //        URL url = new URL(fileUpload.getFileUrl()); //        URLConnection conn = url.openConnection(); //        InputStream inputStream = conn.getInputStream();         InputStream inputStream = new FileInputStream(fileUpload);         response.reset();         response.setContentType("application/octet-stream");         response.addHeader("Content-Disposition", "attachment; filename=" + fileName);         ServletOutputStream outputStream = response.getOutputStream();         byte[] b = new byte[1024];         int len;         //从输入流中读取一定数量的字节，并将其存储在缓冲区字节数组中，读到末尾返回-1         while ((len = inputStream.read(b)) &gt; 0) {             outputStream.write(b, 0, len);         }         inputStream.close();     }  }  </code></pre> <p>4.2 服务类/业务类</p> <p>接口类</p> <pre><code class="language-java">package com.demo.mydemo.service;   import com.demo.mydemo.entity.dto.ExcelParamDTO; import com.demo.mydemo.entity.dto.SmbParamDTO;  import java.io.File;  public interface IExcelService {      String upload(ExcelParamDTO param); } </code></pre> <p>实现类</p> <pre><code class="language-java">package com.demo.mydemo.service.impl;  import com.common.exceptions.BaseException; import com.common.utils.*; import com.demo.mydemo.entity.dto.*; import com.demo.mydemo.service.IExcelService; import lombok.extern.slf4j.Slf4j; import org.apache.poi.xssf.usermodel.XSSFWorkbook; import org.springframework.stereotype.Service; import org.springframework.util.ResourceUtils; import org.springframework.web.multipart.MultipartFile;  import java.io.*; import java.util.*;  import static java.util.regex.Pattern.compile;  @Service @Slf4j public class ExcelServiceImpl implements IExcelService {     @Override     public String upload(ExcelParamDTO param){         File uploadFile = null;         try {             //上传文件             uploadFile = this._uploadFile(param.getFiles(), "");             //读取excel             ExcelReadUtils readUtils = new ExcelReadUtils(uploadFile);             List&lt;String&gt; keyArr = Arrays.asList("10-19", "20-29", "30-39", "40-49", "50-59", "60-69");             List&lt;Map&lt;String, String&gt;&gt; data = readUtils.getAllDataMap(keyArr);             if( CollectionUtils.isNotEmpty(data) ){                 final int[] i = {1};                 data.forEach(item-&gt;{                     log.info("第"+ i[0] +"行：{}", JSONUtils.toJsonString(item));                     i[0]++;                 });             }             readUtils.close();             //写入excel             ExcelWriteUtils writeUtils = new ExcelWriteUtils("测试1");             if( CollectionUtils.isNotEmpty(data) ){                 final int[] rowIndex = {0};                 data.forEach(item-&gt;{                     List&lt;String&gt; valueArr = new ArrayList&lt;&gt;();                     keyArr.forEach(key-&gt;{                         valueArr.add( item.get(key) );                     });                     writeUtils.writeRow(rowIndex[0], valueArr);                     rowIndex[0]++;                 });             }             File targetFile = this._buildExcelFile(writeUtils.getWorkbook(), "");             return targetFile.getAbsolutePath();         } catch (Exception e) {             e.printStackTrace();             throw BaseException.logicException(e.getMessage());         } finally {             //删除上传的文件             if( uploadFile!=null &amp;&amp; uploadFile.exists() ){ //                uploadFile.delete();             }         }     }     private File _uploadFile(MultipartFile srcFile, String dir) throws Exception{         // 根路径，在 resources/static/upload         String folderPath = ResourceUtils.getURL("classpath:").getPath() + "upload/" + (StringUtils.isNotBlank(dir) ? (dir + "/") : "");         File folder = new File(folderPath);         if( !folder.exists() ){             folder.mkdirs();         }         UUID uuid = UUID.randomUUID();         File targetFile = new File(folder.getAbsolutePath(), uuid+"_"+srcFile.getOriginalFilename());         srcFile.transferTo(targetFile);         return targetFile;     }      private File _buildExcelFile(XSSFWorkbook workbook, String dir) throws IOException {         // 根路径，在 resources/static/upload         String folderPath = ResourceUtils.getURL("classpath:").getPath() + "upload/" + (StringUtils.isNotBlank(dir) ? (dir + "/") : "");         File folder = new File(folderPath);         if( !folder.exists() ){             folder.mkdirs();         }         UUID uuid = UUID.randomUUID();         File targetFile = new File(folder.getAbsolutePath(), uuid+"_build_.xlsx");         OutputStream out = new FileOutputStream(targetFile);         workbook.write(out);         workbook.close();         out.close();         return targetFile;     } } </code></pre> <p>4.3 页面</p> <pre><code class="language-html">&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt;     &lt;meta charset="UTF-8" /&gt;     &lt;title&gt;excel测试&lt;/title&gt;     &lt;script src="./../scripts/jquery-3.3.1.min.js"&gt;&lt;/script&gt;     &lt;script src="./../scripts/jquery.form.js"&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;form id="form" method="post" enctype="multipart/form-data"&gt;     &lt;table&gt;         &lt;tr&gt;             &lt;td&gt;文件&lt;/td&gt;             &lt;td&gt;                 &lt;input type="file" name="files"/&gt;             &lt;/td&gt;         &lt;/tr&gt;     &lt;/table&gt;     &lt;input type="submit" value="上传" id="btnUpload"/&gt; &lt;/form&gt; &lt;div id="result"&gt;&lt;/div&gt; &lt;script&gt; $(function(){     var url = window.location.origin+"/szy-tools/excel/upload";     var download_url = window.location.origin+"/szy-tools/excel/download";     $("#form").ajaxForm({         url			: 	url,         type		: 	"POST",         dataType	: 	"json",         beforeSubmit: 	function(){             return true;         },         success: function(res){             if( res.state=="success" ){                 $("#result").text("成功："+res.data);                 var t_url = download_url+"?filePath="+urlencode(res.data);                 window.open(t_url);             }else{                 $("#result").text("失败："+res.message);             }         },         fail: function(res){             $("#result").text("失败："+res);         }     }); }); function urlencode (str) {     str = (str + '').toString();      return encodeURIComponent(str).replace(/!/g, '%21').replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29').replace(/\*/g, '%2A').replace(/%20/g, '+'); } &lt;/script&gt; &lt;/body&gt; &lt;/html&gt;</code></pre> <p>5.补充所有pom.xml</p> <pre><code class="language-XML">&lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt; 	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; 	&lt;parent&gt; 		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; 		&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt; 		&lt;version&gt;2.6.7&lt;/version&gt; 		&lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt; 	&lt;/parent&gt; 	&lt;groupId&gt;com.example&lt;/groupId&gt; 	&lt;artifactId&gt;demo&lt;/artifactId&gt; 	&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt; 	&lt;name&gt;szy-tools&lt;/name&gt; 	&lt;description&gt;My tools project for Spring Boot&lt;/description&gt; 	&lt;!-- 打包配置 --&gt; 	&lt;packaging&gt;jar&lt;/packaging&gt;  	&lt;properties&gt; 		&lt;java.version&gt;1.8&lt;/java.version&gt; 		&lt;!-- 分布式RPC框架Motan--&gt; 		&lt;motan.version&gt;1.1.6&lt;/motan.version&gt; 		&lt;org-apache-poi.version&gt;3.17&lt;/org-apache-poi.version&gt; 	&lt;/properties&gt; 	&lt;dependencies&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; 			&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; 		&lt;/dependency&gt;  		&lt;!-- 热部署 --&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; 			&lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt; 			&lt;optional&gt;true&lt;/optional&gt; 		&lt;/dependency&gt;  		&lt;dependency&gt; 			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; 			&lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt; 			&lt;scope&gt;test&lt;/scope&gt; 		&lt;/dependency&gt;  		&lt;!-- thymeleaf,for html,jsp... --&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; 			&lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt; 		&lt;/dependency&gt;  		&lt;!-- json.start --&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;org.codehaus.jackson&lt;/groupId&gt; 			&lt;artifactId&gt;jackson-mapper-asl&lt;/artifactId&gt; 			&lt;version&gt;1.9.13&lt;/version&gt; 		&lt;/dependency&gt; 		&lt;!-- jackson默认不支持java8的时间类型，需要添加一个时间模块 --&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;com.fasterxml.jackson.datatype&lt;/groupId&gt; 			&lt;artifactId&gt;jackson-datatype-jsr310&lt;/artifactId&gt; 		&lt;/dependency&gt; 		&lt;!-- json.end --&gt;  		&lt;!--lombok用来简化实体类--&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;org.projectlombok&lt;/groupId&gt; 			&lt;artifactId&gt;lombok&lt;/artifactId&gt; 			&lt;optional&gt;true&lt;/optional&gt; 		&lt;/dependency&gt;  		&lt;dependency&gt; 			&lt;groupId&gt;org.apache.commons&lt;/groupId&gt; 			&lt;artifactId&gt;commons-lang3&lt;/artifactId&gt; 			&lt;version&gt;3.8.1&lt;/version&gt; 		&lt;/dependency&gt;  		&lt;!-- Knife4j在线API文档的依赖 --&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;com.github.xiaoymin&lt;/groupId&gt; 			&lt;artifactId&gt;knife4j-spring-boot-starter&lt;/artifactId&gt; 			&lt;version&gt;3.0.3&lt;/version&gt; 		&lt;/dependency&gt;  	&lt;!-- httpclient.start --&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;org.apache.httpcomponents&lt;/groupId&gt; 			&lt;artifactId&gt;httpclient&lt;/artifactId&gt; 		&lt;/dependency&gt; 	&lt;!-- httpclient.end --&gt;  	&lt;!-- smb.start --&gt; 		&lt;!--支持文件共享SMB1协议--&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;org.samba.jcifs&lt;/groupId&gt; 			&lt;artifactId&gt;jcifs&lt;/artifactId&gt; 			&lt;version&gt;1.3.3&lt;/version&gt; 		&lt;/dependency&gt; 		&lt;!--支持文件共享SMB2/3协议--&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;com.hierynomus&lt;/groupId&gt; 			&lt;artifactId&gt;smbj&lt;/artifactId&gt; 			&lt;version&gt;0.10.0&lt;/version&gt; 		&lt;/dependency&gt; 	&lt;!-- smb.end --&gt;  	&lt;!-- user-agent工具类.start --&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;eu.bitwalker&lt;/groupId&gt; 			&lt;artifactId&gt;UserAgentUtils&lt;/artifactId&gt; 			&lt;version&gt;1.21&lt;/version&gt; 		&lt;/dependency&gt; 	&lt;!-- user-agent工具类.end --&gt;  	&lt;!--poi.start --&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;org.apache.poi&lt;/groupId&gt; 			&lt;artifactId&gt;poi&lt;/artifactId&gt; 			&lt;version&gt;${org-apache-poi.version}&lt;/version&gt; 		&lt;/dependency&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;org.apache.poi&lt;/groupId&gt; 			&lt;artifactId&gt;poi-excelant&lt;/artifactId&gt; 			&lt;version&gt;${org-apache-poi.version}&lt;/version&gt; 		&lt;/dependency&gt; 		&lt;dependency&gt; 			&lt;groupId&gt;org.apache.poi&lt;/groupId&gt; 			&lt;artifactId&gt;poi-ooxml&lt;/artifactId&gt; 			&lt;version&gt;3.15&lt;/version&gt; 		&lt;/dependency&gt; 	&lt;!--poi.end --&gt;  	&lt;/dependencies&gt;  	&lt;build&gt; 		&lt;!-- 指定生成的jar包名称 --&gt; 		&lt;finalName&gt;szy-tools&lt;/finalName&gt; 		&lt;plugins&gt; 			&lt;plugin&gt; 				&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; 				&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt; 			&lt;/plugin&gt; 		&lt;/plugins&gt; 	&lt;/build&gt;  &lt;/project&gt; </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-46122.htm">2021国考公务员考试报名时间（2021国考公务员考试报名时间是多少）</a></p>
+                                        <p>下一个：<a href="/news/article-46620.htm">如何在 Java 中实现无向环和有向环的检测</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-21-free-ssr-node.htm" title="「12月21日」最高速度19.7M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「12月21日」最高速度19.7M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-20-node-share.htm" title="「10月20日」最高速度20.1M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「10月20日」最高速度20.1M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-12-free-clash.htm" title="「1月12日」最高速度21.5M/S，2025年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接">「1月12日」最高速度21.5M/S，2025年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-free-ssr-subscribe.htm" title="「12月25日」最高速度19.9M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「12月25日」最高速度19.9M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-18-clash-v2ray-ss-ssr.htm" title="「11月18日」最高速度21.4M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「11月18日」最高速度21.4M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-21224.htm" title="Python 图_系列之纵横对比  Bellman-Ford 和  Dijkstra 最短路径算法">Python 图_系列之纵横对比  Bellman-Ford 和  Dijkstra 最短路径算法</a></li>
+                        <li class="py-2"><a href="/news/article-29833.htm" title="动物医院许可证办理流程图（动物医院诊疗许可证办理）">动物医院许可证办理流程图（动物医院诊疗许可证办理）</a></li>
+                        <li class="py-2"><a href="/news/article-24199.htm" title="哪些牌子的狗粮是毒狗粮（市面上的毒狗粮）">哪些牌子的狗粮是毒狗粮（市面上的毒狗粮）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-28-free-high-speed-nodes.htm" title="「11月28日」最高速度19.4M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「11月28日」最高速度19.4M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-21663.htm" title="真正的宠物狗免费领养网站是哪个（正规免费领养宠物狗）">真正的宠物狗免费领养网站是哪个（正规免费领养宠物狗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">77</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img href="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

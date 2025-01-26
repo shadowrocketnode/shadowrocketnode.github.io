@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-46121.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>netty系列之:netty中的核心编码器bytes数组</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="目录  简介 byte是什么 netty中的byte数组的工具类 netty中byte的编码器 总结    我们知道netty中数据传输的核心是ByteBuf,ByteBuf提供了多种数据读写的方法，" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-46121.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="netty系列之:netty中的核心编码器bytes数组" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/ed3181c9a7b91394a29c4b323e7a560b.webp" />
+        <meta property="og:release_date" content="2025-01-25T09:53:43" />
+    <meta property="og:updated_time" content="2025-01-25T09:53:43" />
+        <meta property="og:description" content="目录  简介 byte是什么 netty中的byte数组的工具类 netty中byte的编码器 总结    我们知道netty中数据传输的核心是ByteBuf,ByteBuf提供了多种数据读写的方法，" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="netty系列之:netty中的核心编码器bytes数组">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+                        <a class="navbar-brand logo-image" href="/">
+                Shadowrocket Node
+            </a>            
+                        <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">链接</a>
+                    </li>
+                </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>netty系列之:netty中的核心编码器bytes数组</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div class="toc"> <div class="toc-container-header">目录</div> <ul> <li><a href="#%E7%AE%80%E4%BB%8B" rel="nofollow">简介</a></li> <li><a href="#byte%E6%98%AF%E4%BB%80%E4%B9%88" rel="nofollow">byte是什么</a></li> <li><a href="#netty%E4%B8%AD%E7%9A%84byte%E6%95%B0%E7%BB%84%E7%9A%84%E5%B7%A5%E5%85%B7%E7%B1%BB" rel="nofollow">netty中的byte数组的工具类</a></li> <li><a href="#netty%E4%B8%ADbyte%E7%9A%84%E7%BC%96%E7%A0%81%E5%99%A8" rel="nofollow">netty中byte的编码器</a></li> <li><a href="#%E6%80%BB%E7%BB%93" rel="nofollow">总结</a></li> </ul> </div> </h1> <p>我们知道netty中数据传输的核心是ByteBuf,ByteBuf提供了多种数据读写的方法，包括基本类型和byte数组的读写方法。如果要在netty中传输这些数据，那么需要构建ByteBuf，然后调用ByteBuf中对应的方法写入对应的数据，接着套用netty中标准的模板即可使用。</p> <p>对于byte数组来说，如果每次都将其封装进ByteBuf中，再进行传输显得有些麻烦。于是netty提供了一个基于bytes的核心编码解码器。</p> </h1> <p>那么byte是什么呢? byte表示的是一个字节，也就是8bits。用二进制表示就是-128-127的范围。byte是JAVA中的基础类型。</p> <p>同时它还有一个wrap类型叫做Byte。</p> <p>先看下Byte的定义：</p> <pre><code>public final class Byte extends Number implements Comparable&lt;Byte&gt;</code></pre> <p>Byte中定义了byte的取值访问：</p> <pre><code>    public static final byte   MIN_VALUE = -128;      public static final byte   MAX_VALUE = 127;</code></pre> <p>并且还提供了一些基本的工具方法。</p> <p>因为byte表示的是一个8bits的二进制，如果不算位运算的话，byte基本上是JAVA中最小的数据存储单位了。所以JAVA中所有的对象都可以转换成为byte。</p> <p>基础类型的转换这里就不多讲了。这里主要看一下字符串String和对象Object和byte数组之间的转换。</p> <p>先来看下字符串String和byte数组之间的转换，也就是String和二进制之间的转换。</p> <p>基本的转换思路就是将String中的字符进行编码，然后将编码过后的字符进行存储即可。</p> <p>String类本身提供了一个getBytes方法，可以接受编码类型，以UTF-8来说，我们来看下转换方法的调用：</p> <pre><code>    public static byte[] stringToBytes(String str) throws UnsupportedEncodingException {        return str.getBytes("utf-8");     }      public static String bytesToString(byte[] bs) throws UnsupportedEncodingException {        return new String(bs, "utf-8");     }</code></pre> <p>直接调用String中的方法即可。</p> <p>如果是Object对象的话，因为Object本身并没有提供转换的方法，所以我们需要借助于ByteArrayOutputStream的toByteArray方法和ByteArrayInputStream的readObject方法来实现byte数组和Object之间的转换，如下所示：</p> <pre><code>    //对象转数组     public byte[] toByteArray (Object obj) throws IOException {         try(ByteArrayOutputStream bos = new ByteArrayOutputStream();             ObjectOutputStream oos = new ObjectOutputStream(bos)) {             oos.writeObject(obj);             oos.flush();             return  bos.toByteArray();         }     }      //数组转对象     public Object toObject (byte[] bytes) throws IOException, ClassNotFoundException {         try (             ByteArrayInputStream bis = new ByteArrayInputStream (bytes);             ObjectInputStream ois = new ObjectInputStream (bis)) {             return ois.readObject();         }     }</code></pre> </h1> <p>netty中的核心是ByteBuf，ByteBuf提供了大部分基础数据类型的read和write方法。当然如果要读取对象，那么还是需要将对象转换成为byte然后再写入或者从ByteBuf中读出。</p> <p>当然，netty中不需要这么复杂，netty提供了一个Unpooled的工具类用来方便的将byte数组和ByteBuf进行转换。</p> <p>先看下Unpooled方法提供的ByteBuff构建方法：</p> <pre><code>   ByteBuf heapBuffer    = buffer(128);    ByteBuf directBuffer  = directBuffer(256);    ByteBuf wrappedBuffer = wrappedBuffer(new byte[128], new byte[256]);    ByteBuf copiedBuffer  = copiedBuffer(ByteBuffer.allocate(128));</code></pre> <p>这是Unpooled提供的几种ByteBuf的构建方式，其中heapBuffer表示的是在用户空间构建的buff，directBuffer表示的是直接在系统空间构建的buff。wrappedBuffer是对现有的byte数组和ByteBuf之上构建的视图，而copiedBuffer是对byte数组,byteBuf和字符串的拷贝。</p> <p>这里我们需要用到wrappedBuffer方法，将byte数组封装到ByteBuf中：</p> <pre><code>    public static ByteBuf wrappedBuffer(byte[] array) {         if (array.length == 0) {             return EMPTY_BUFFER;         }         return new UnpooledHeapByteBuf(ALLOC, array, array.length);     }</code></pre> <p>wrappedBuffer返回了一个UnpooledHeapByteBuf对象，这个对象本身就是一个ByteBuf。这里将byte数组作为构造函数传入UnpooledHeapByteBuf中。</p> <p>这里的array是UnpooledHeapByteBuf中的私有变量：</p> <pre><code>byte[] array;</code></pre> <p>除了构造函数，UnpooledHeapByteBuf还提供了一个setArray的方法用来设置byte数组：</p> <pre><code>    private void setArray(byte[] initialArray) {         array = initialArray;         tmpNioBuf = null;     }</code></pre> <p>下面是如何从array中构建ByteBuf：</p> <pre><code>    public ByteBuf setBytes(int index, ByteBuffer src) {         ensureAccessible();         src.get(array, index, src.remaining());         return this;     }</code></pre> <p>从ByteBuf中读取byte数组,可以调用ByteBufUtil的getBytes方法：</p> <pre><code>    public static byte[] getBytes(ByteBuf buf) {         return getBytes(buf,  buf.readerIndex(), buf.readableBytes());     }</code></pre> </h1> <p>万事俱备只欠东风，有了上面netty提供的工具类，我们就可以使用这些工具类构建基于byte的编码器了。</p> <p>netty中基于byte的编码解码器分别叫做ByteArrayEncoder和ByteArrayDecoder。</p> <p>先来看下这两个类是如何使用的,这里以一个典型的TCP/IP应用为例：</p> <pre><code>   ChannelPipeline pipeline = ...;       // Decoders    pipeline.addLast("frameDecoder",                     new LengthFieldBasedFrameDecoder(1048576, 0, 4, 0, 4));    pipeline.addLast("bytesDecoder",                     new ByteArrayDecoder());       // Encoder    pipeline.addLast("frameEncoder", new LengthFieldPrepender(4));    pipeline.addLast("bytesEncoder", new ByteArrayEncoder());</code></pre> <p>这里的LengthFieldBasedFrameDecoder和LengthFieldPrepender是以消息长度为分割标准的frame分割器。这里我们主要关注ChannelPipeline中添加的ByteArrayDecoder和ByteArrayEncoder。</p> <p>添加了byte的编码和解码器之后，就可以直接在handler中直接使用byte数组，如下所示：</p> <pre><code>   void channelRead(ChannelHandlerContext ctx, byte[] bytes) {        ...    }</code></pre> <p>先来看下ByteArrayEncoder，这是一个编码器,它的实现很简单：</p> <pre><code>public class ByteArrayEncoder extends MessageToMessageEncoder&lt;byte[]&gt; {     @Override     protected void encode(ChannelHandlerContext ctx, byte[] msg, List&lt;Object&gt; out) throws Exception {         out.add(Unpooled.wrappedBuffer(msg));     } }</code></pre> <p>具体就是使用Unpooled.wrappedBuffer方法byte数组封装成为ByteBuf，然后将其添加到out list中。</p> <p>同样的，我们观察一下ByteArrayDecoder,这是一个解码器，实现也比较简单：</p> <pre><code>public class ByteArrayDecoder extends MessageToMessageDecoder&lt;ByteBuf&gt; {     @Override     protected void decode(ChannelHandlerContext ctx, ByteBuf msg, List&lt;Object&gt; out) throws Exception {          // copy the ByteBuf content to a byte array         out.add(ByteBufUtil.getBytes(msg));     } }</code></pre> <p>具体的实现就是调用ByteBufUtil.getBytes方法，将ByteBuf转换成为byte数组，然后添加到list对象中。</p> </h1> <p>如果要在netty中传输二进制数据，netty提供的byte编码和解码器已经封装了繁琐的细节，大家可以放心使用。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-45618.htm">纹绣美甲美睫培训学校哪家好（领绣集团纹绣培训学院）</a></p>
+                                        <p>下一个：<a href="/news/article-46122.htm">2021国考公务员考试报名时间（2021国考公务员考试报名时间是多少）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-32408.htm" title="宠物粮食加工厂设备哪的好点呢知乎（宠物粮加工机器）">宠物粮食加工厂设备哪的好点呢知乎（宠物粮加工机器）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-3-clash-v2ray-ss-ssr.htm" title="「12月3日」最高速度20.4M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接">「12月3日」最高速度20.4M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-29090.htm" title="宠物上门回收狗狗（宠物上门回收狗狗多少钱）">宠物上门回收狗狗（宠物上门回收狗狗多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-4-free-shadowrocket-node.htm" title="「1月4日」最高速度18M/S，2025年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「1月4日」最高速度18M/S，2025年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-18716.htm" title="哪种HTML5标签更适合表示金额">哪种HTML5标签更适合表示金额</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-26-shadowrocket-node.htm" title="「10月26日」最高速度20.2M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接">「10月26日」最高速度20.2M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-31927.htm" title="广州哪里有批发衣服（广州哪里有批发衣服的地方）">广州哪里有批发衣服（广州哪里有批发衣服的地方）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-8-free-clash.htm" title="「10月8日」最高速度21.7M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「10月8日」最高速度21.7M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-9-free-ssr-subscribe.htm" title="「10月9日」最高速度20.6M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接">「10月9日」最高速度20.6M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-26-free-subscribe-node.htm" title="「11月26日」最高速度20.8M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「11月26日」最高速度20.8M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">77</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img href="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
