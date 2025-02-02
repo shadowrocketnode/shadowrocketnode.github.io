@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-49071.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>Zookeeper采用Java客户端API</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="文章目录  创建会话 创建节点 删除节点 获取子节点列表 获取数据 更新数据 获取数据 权限控制 开源框架     Zookeeper(String connectString,int session" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-49071.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="Zookeeper采用Java客户端API" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/d0bb6e71892a3fa6be1f022d4455dd24.webp" />
+        <meta property="og:release_date" content="2025-01-31T07:19:39" />
+    <meta property="og:updated_time" content="2025-01-31T07:19:39" />
+        <meta property="og:description" content="文章目录  创建会话 创建节点 删除节点 获取子节点列表 获取数据 更新数据 获取数据 权限控制 开源框架     Zookeeper(String connectString,int session" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Zookeeper采用Java客户端API">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+                        <a class="navbar-brand logo-image" href="/">
+                Shadowrocket Node
+            </a>            
+                        <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="#">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">链接</a>
+                    </li>
+                </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>Zookeeper采用Java客户端API</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>文章目录</h3> <ul> <li><a href="#_5" rel="nofollow">创建会话</a></li> <li><a href="#_25" rel="nofollow">创建节点</a></li> <li><a href="#_39" rel="nofollow">删除节点</a></li> <li><a href="#_53" rel="nofollow">获取子节点列表</a></li> <li><a href="#_82" rel="nofollow">获取数据</a></li> <li><a href="#_101" rel="nofollow">更新数据</a></li> <li><a href="#_115" rel="nofollow">获取数据</a></li> <li><a href="#_133" rel="nofollow">权限控制</a></li> <li><a href="#_143" rel="nofollow">开源框架</a></li> </ul> </div> <hr/> </h1> <pre><code class="prism language-java"><span class="token class-name">Zookeeper</span><span class="token punctuation">(</span><span class="token class-name">String</span> connectString<span class="token punctuation">,</span><span class="token keyword">int</span> sessionTimeout<span class="token punctuation">,</span><span class="token class-name">Watcher</span> watcher<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">Zookeeper</span><span class="token punctuation">(</span><span class="token class-name">String</span> connectString<span class="token punctuation">,</span><span class="token keyword">int</span> sessionTimeout<span class="token punctuation">,</span><span class="token class-name">Watcher</span> watcher<span class="token punctuation">,</span><span class="token keyword">boolean</span> canBeReadOnly<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">Zookeeper</span><span class="token punctuation">(</span><span class="token class-name">String</span> connectString<span class="token punctuation">,</span><span class="token keyword">int</span> sessionTimeout<span class="token punctuation">,</span><span class="token class-name">Watcher</span> watcher<span class="token punctuation">,</span><span class="token keyword">long</span> sessionId<span class="token punctuation">,</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> sessionPassword<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">Zookeeper</span><span class="token punctuation">(</span><span class="token class-name">String</span> connectString<span class="token punctuation">,</span><span class="token keyword">int</span> sessionTimeout<span class="token punctuation">,</span><span class="token class-name">Watcher</span> watcher<span class="token punctuation">,</span><span class="token keyword">long</span> sessionId<span class="token punctuation">,</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> sessionPassword<span class="token punctuation">,</span><span class="token keyword">boolean</span> canBeReadOnly<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <table> <thead> <tr> <th>参数名称</th> <th>说明</th> </tr> </thead> <tbody> <tr> <td>connectString</td> <td>Zookeeper服务器列表，由host:port字符串组成。如：192.168.1.2:2181,192.168.1.3:2181。也可以指定到具体目录，如：192.168.1.2 :2181/book</td> </tr> <tr> <td>sessionTimeout</td> <td>会话超时时间（毫秒）</td> </tr> <tr> <td>watcher</td> <td>Watcher事件通知处理，可以设置为null，表示不设置watcher事件</td> </tr> <tr> <td>canBeReadOnly</td> <td>标识当前会话是否支持”read-only“(只读模式)，为服务失去过半服务器链接还能够提供只读服务</td> </tr> <tr> <td>sessionId</td> <td>会话ID，通过 getSessionId()接口获取，实现会话复用和恢复</td> </tr> <tr> <td>sessionPassword</td> <td>会话秘钥，通过getSessionPasswd()接口获取，和sessionId配合使用。</td> </tr> </tbody> </table> </h1> <pre><code class="prism language-java"><span class="token class-name">String</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token keyword">byte</span> data<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span>ACL<span class="token punctuation">&gt;</span></span> acl<span class="token punctuation">,</span><span class="token class-name">CreateMode</span> createMode<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">String</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token keyword">byte</span> data<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span>ACL<span class="token punctuation">&gt;</span></span> acl<span class="token punctuation">,</span><span class="token class-name">CreateMode</span> createMode<span class="token punctuation">,</span><span class="token class-name">StringCallback</span> cb<span class="token punctuation">,</span><span class="token class-name">Object</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <table> <thead> <tr> <th>参数名称</th> <th>说明</th> </tr> </thead> <tbody> <tr> <td>path</td> <td>创建数据节点的节点路径，如：/book/zookeeper</td> </tr> <tr> <td>data[]</td> <td>创建节点的内容</td> </tr> <tr> <td>createMode</td> <td>节点类型：持久（PERSISTENT），持久顺序（PERSISTENT_SEQUENTIAL），临时（EPHEMERAL），临时顺序（EPHEMERAL_SEQUENTIAL）</td> </tr> <tr> <td>cb</td> <td>注册异步回调函数，需要实现StringCallback接口</td> </tr> <tr> <td>ctx</td> <td>上下文信息</td> </tr> </tbody> </table> </h1> <p>删除时候，只能删除叶子节点。如果删除节点存在至少一个子节点，那么该节点无法被直接删除，必须先删除掉其所有的子节点。</p> <pre><code class="prism language-java"><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token keyword">int</span> version<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token keyword">int</span> version<span class="token punctuation">,</span><span class="token class-name">VoidCallback</span> cb<span class="token punctuation">,</span><span class="token class-name">Object</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <table> <thead> <tr> <th>参数名称</th> <th>说明</th> </tr> </thead> <tbody> <tr> <td>path</td> <td>需要删除的数据节点路径</td> </tr> <tr> <td>version</td> <td>指定节点的数据版本</td> </tr> <tr> <td>cb</td> <td>注册的异步回调函数</td> </tr> <tr> <td>ctx</td> <td>上下文信息</td> </tr> </tbody> </table> </h1> <pre><code class="prism language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span><span class="token function">getChildren</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token class-name">Watcher</span> watcher<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span><span class="token function">getChildren</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token keyword">boolean</span> watch<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span><span class="token function">getChildren</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token class-name">Watcher</span> watcher<span class="token punctuation">,</span><span class="token class-name">Stat</span> stat<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span><span class="token function">getChildren</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token keyword">boolean</span> watch<span class="token punctuation">,</span><span class="token class-name">Stat</span> stat<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">void</span><span class="token function">getChildren</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token class-name">Watcher</span> watcher<span class="token punctuation">,</span><span class="token class-name">ChildrenCallback</span> cb<span class="token punctuation">,</span><span class="token class-name">Object</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">void</span><span class="token function">getChildren</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token keyword">boolean</span> watch<span class="token punctuation">,</span><span class="token class-name">ChildrenCallback</span> cb<span class="token punctuation">,</span><span class="token class-name">Object</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">void</span><span class="token function">getChildren</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token class-name">Watcher</span> watcher<span class="token punctuation">,</span><span class="token class-name">Children2Callback</span> cb<span class="token punctuation">,</span><span class="token class-name">Object</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">void</span><span class="token function">getChildren</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token keyword">boolean</span> watch<span class="token punctuation">,</span><span class="token class-name">Children2Callback</span> cb<span class="token punctuation">,</span><span class="token class-name">Object</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <table> <thead> <tr> <th>参数名称</th> <th>说明</th> </tr> </thead> <tbody> <tr> <td>path</td> <td>指定数据节点的节点路径</td> </tr> <tr> <td>watcher</td> <td>注册Watcher，一旦本次子节点获取之后，子节点列表发生变更的话，那么就会向客户端发送通知，可以传入null</td> </tr> <tr> <td>watch</td> <td>是否注册默认的Watcher事件</td> </tr> <tr> <td>cb</td> <td>异步回调函数</td> </tr> <tr> <td>ctx</td> <td>上下文信息</td> </tr> <tr> <td>stat</td> <td>指定数据节点的节点状态信息，场景是传入旧的stat，服务器会返回最新的stat信息</td> </tr> </tbody> </table> </h1> <pre><code class="prism language-java"><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token class-name">Watcher</span> watcher<span class="token punctuation">,</span><span class="token class-name">Stat</span> stat<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token keyword">boolean</span> watch<span class="token punctuation">,</span><span class="token class-name">Stat</span> stat<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">void</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token class-name">Watcher</span> watcher<span class="token punctuation">,</span><span class="token class-name">DataCallback</span> cb<span class="token punctuation">,</span><span class="token class-name">Stat</span> stat<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">void</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token keyword">boolean</span> watch<span class="token punctuation">,</span><span class="token class-name">DataCallback</span> cb<span class="token punctuation">,</span><span class="token class-name">Stat</span> stat<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <table> <thead> <tr> <th>参数名称</th> <th>说明</th> </tr> </thead> <tbody> <tr> <td>path</td> <td>指定数据节点的节点路径</td> </tr> <tr> <td>watcher</td> <td>注册Watcher，一旦之后节点内容变更，那么就会向客户端发送通知，可以传入null</td> </tr> <tr> <td>watch</td> <td>是否注册默认的Watcher事件</td> </tr> <tr> <td>cb</td> <td>异步回调函数</td> </tr> <tr> <td>ctx</td> <td>上下文信息</td> </tr> <tr> <td>stat</td> <td>指定数据节点的节点状态信息，场景是传入旧的stat，服务器会返回最新的stat信息</td> </tr> </tbody> </table> </h1> <pre><code class="prism language-java"><span class="token class-name">Stat</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token keyword">byte</span> data<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> version<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">void</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token keyword">byte</span> data<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> version<span class="token punctuation">,</span><span class="token class-name">StatCallback</span> cb<span class="token punctuation">,</span><span class="token class-name">Object</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <table> <thead> <tr> <th>参数名称</th> <th>说明</th> </tr> </thead> <tbody> <tr> <td>path</td> <td>指定数据节点的节点路径</td> </tr> <tr> <td>data[]</td> <td>更新内容，字节数组</td> </tr> <tr> <td>version</td> <td>指定节点中数据版本</td> </tr> <tr> <td>cb</td> <td>异步回调函数</td> </tr> <tr> <td>ctx</td> <td>上下文信息</td> </tr> </tbody> </table> </h1> <pre><code class="prism language-java"><span class="token class-name">Stat</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token class-name">Watcher</span> watcher<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">Stat</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token keyword">boolean</span> watch<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">void</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token keyword">final</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token class-name">Watcher</span> watcher<span class="token punctuation">,</span><span class="token class-name">StatCallback</span> cb<span class="token punctuation">,</span><span class="token class-name">Object</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">void</span><span class="token function">getData</span><span class="token punctuation">(</span><span class="token class-name">String</span> path<span class="token punctuation">,</span><span class="token keyword">boolean</span> watch<span class="token punctuation">,</span><span class="token class-name">StatCallback</span> cb<span class="token punctuation">,</span><span class="token class-name">Object</span> ctx<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <table> <thead> <tr> <th>参数名称</th> <th>说明</th> </tr> </thead> <tbody> <tr> <td>path</td> <td>指定数据节点的节点路径</td> </tr> <tr> <td>watcher</td> <td>注册Watcher，监听：节点创建、删除、更新，可以传入null</td> </tr> <tr> <td>watch</td> <td>是否注册默认的Watcher事件</td> </tr> <tr> <td>cb</td> <td>异步回调函数</td> </tr> <tr> <td>ctx</td> <td>上下文信息</td> </tr> </tbody> </table> </h1> <p>通过接口 addAuthInfo(String scheme, byte[] auth),实现权限控制。</p> <table> <thead> <tr> <th>参数名称</th> <th>说明</th> </tr> </thead> <tbody> <tr> <td>scheme</td> <td>权限控制模式：world, auth, digest, ip, super</td> </tr> <tr> <td>auth</td> <td>具体的权限信息</td> </tr> </tbody> </table> <pre><code class="prism language-java">zookeeper<span class="token punctuation">.</span><span class="token function">addAuthInfo</span><span class="token punctuation">(</span><span class="token string">"digest"</span><span class="token punctuation">,</span><span class="token string">"username:passowrd"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> zookeeper<span class="token punctuation">.</span><span class="token function">crate</span><span class="token punctuation">(</span><span class="token string">"/book/zookeeper"</span><span class="token punctuation">,</span><span class="token string">"学习"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token class-name">Ids</span><span class="token punctuation">.</span>CREATOR_ALL_ACL<span class="token punctuation">,</span><span class="token class-name">CreateMode</span><span class="token punctuation">.</span>EPHEMERAL<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> </h1> <ol> <li>ZkClient<br /> 框架依赖</li> </ol> <pre><code class="prism language-java"><span class="token generics"><span class="token punctuation">&lt;</span>dependencies<span class="token punctuation">&gt;</span></span><span class="token generics"><span class="token punctuation">&lt;</span>dependency<span class="token punctuation">&gt;</span></span><span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">&gt;</span></span>org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>zookeeper<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">&gt;</span><span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">&gt;</span></span>zookeeper<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">&gt;</span><span class="token generics"><span class="token punctuation">&lt;</span>version<span class="token punctuation">&gt;</span></span>$<span class="token punctuation">{<!-- --></span>zookeeper<span class="token punctuation">.</span>version<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">&gt;</span><span class="token generics"><span class="token punctuation">&lt;</span>dependency<span class="token punctuation">&gt;</span></span><span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">&gt;</span></span>com<span class="token punctuation">.</span>github<span class="token punctuation">.</span>sgroschupf<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">&gt;</span><span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">&gt;</span></span>zkclient<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">&gt;</span><span class="token generics"><span class="token punctuation">&lt;</span>version<span class="token punctuation">&gt;</span></span>$<span class="token punctuation">{<!-- --></span>zkclient<span class="token punctuation">.</span>version<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>dependencies<span class="token operator">&gt;</span></code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-48440.htm">为什么我建议需要定期重建数据量大但是性能关键的表_在线工具</a></p>
+                                        <p>下一个：<a href="/news/article-49072.htm">动物防疫站给猫打疫苗流程（动物防疫站给猫***免费吗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-29834.htm" title="动物医院资质级别有哪些标准呢 动物医院资质级别有哪些标准呢图片">动物医院资质级别有哪些标准呢 动物医院资质级别有哪些标准呢图片</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-free-node-subscribe.htm" title="「11月12日」最高速度21.8M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「11月12日」最高速度21.8M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-clash-v2ray-ss-ssr.htm" title="「12月28日」最高速度20.9M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「12月28日」最高速度20.9M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-19-free-ssr-node.htm" title="「12月19日」最高速度22.6M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接">「12月19日」最高速度22.6M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-1-node-share-links.htm" title="「11月1日」最高速度20.4M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接">「11月1日」最高速度20.4M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-50107.htm" title="深度学习Pytorch——神经网络">深度学习Pytorch——神经网络</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-18-shadowrocket-node.htm" title="「12月18日」最高速度22.2M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「12月18日」最高速度22.2M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-25-free-ssr-node.htm" title="「1月25日」最高速度18.8M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「1月25日」最高速度18.8M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-12-free-subscribe-node.htm" title="「10月12日」最高速度18.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「10月12日」最高速度18.5M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-15-free-subscribe-node.htm" title="「10月15日」最高速度21.6M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接">「10月15日」最高速度21.6M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
