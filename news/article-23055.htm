@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-23055.htm" />
@@ -11,7 +11,35 @@
         <meta name="description" content="这篇文章，主要介绍SpringMVC框架中接收请求参数的几种方式。  目录 一、SpringMVC接收请求参数 1.1、通过方法参数接收 1.2、通过HttpServletRequest接收参数 1." />
     
     <!-- Favicon -->
-    <link href="__ADDON__/img/shadowrocketnode/favicon.ico" rel="icon">
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-23055.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="【SpringMVC笔记02】SpringMVC接收请求参数的几种方式" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/121ab84baed6c99673d6ecf4f053c5f9.webp" />
+        <meta property="og:release_date" content="2024-12-08T07:15:14" />
+    <meta property="og:updated_time" content="2024-12-08T07:15:14" />
+        <meta property="og:description" content="这篇文章，主要介绍SpringMVC框架中接收请求参数的几种方式。  目录 一、SpringMVC接收请求参数 1.1、通过方法参数接收 1.2、通过HttpServletRequest接收参数 1." />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="【SpringMVC笔记02】SpringMVC接收请求参数的几种方式">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
@@ -102,16 +130,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-9-25-free-node-subscribe-links.htm" title="「9月25日」最高速度22M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「9月25日」最高速度22M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-13-free-clash-subscribe.htm" title="「7月13日」最高速度19.6M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接">「7月13日」最高速度19.6M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-1-free-shadowrocket-node.htm" title="「10月1日」最高速度20.3M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「10月1日」最高速度20.3M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-8-free-node-subscribe-links.htm" title="「11月8日」最高速度21.6M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「11月8日」最高速度21.6M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-14-free-node-subscribe-links.htm" title="「11月14日」最高速度21M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「11月14日」最高速度21M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-27-clash-v2ray-ss-ssr.htm" title="「10月27日」最高速度20.2M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接">「10月27日」最高速度20.2M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-6-node-share-links.htm" title="「12月6日」最高速度22.8M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接">「12月6日」最高速度22.8M/S，2024年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-26307.htm" title="动物疫苗接种间隔多长时间打一次好（动物疫苗注射后多久产生抗体）">动物疫苗接种间隔多长时间打一次好（动物疫苗注射后多久产生抗体）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-10-free-shadowrocket-node.htm" title="「9月10日」最高速度22.2M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接">「9月10日」最高速度22.2M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-26-free-node-subscribe-links.htm" title="「12月26日」最高速度18.4M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接">「12月26日」最高速度18.4M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-free-node-subscribe-links.htm" title="「12月4日」最高速度19.2M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「12月4日」最高速度19.2M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-25845.htm" title="IDEA SpringBoot-Mybatis-plus 实现增删改查(CRUD)">IDEA SpringBoot-Mybatis-plus 实现增删改查(CRUD)</a></li>
+                        <li class="py-2"><a href="/news/article-23055.htm" title="【SpringMVC笔记02】SpringMVC接收请求参数的几种方式">【SpringMVC笔记02】SpringMVC接收请求参数的几种方式</a></li>
+                        <li class="py-2"><a href="/news/article-25373.htm" title="兽医防疫简报内容（兽医防疫工作）">兽医防疫简报内容（兽医防疫工作）</a></li>
+                        <li class="py-2"><a href="/news/article-27237.htm" title="宠物零食加工流程 宠物零食加工流程图">宠物零食加工流程 宠物零食加工流程图</a></li>
+                        <li class="py-2"><a href="/news/article-28633.htm" title="猫咪领养协议违反后果严重吗（猫猫领养协议）">猫咪领养协议违反后果严重吗（猫猫领养协议）</a></li>
+                        <li class="py-2"><a href="/news/article-24905.htm" title="宠物狗打疫苗可以自己打吗（狗打疫苗能自己打吗）">宠物狗打疫苗可以自己打吗（狗打疫苗能自己打吗）</a></li>
+                        <li class="py-2"><a href="/news/article-47099.htm" title="动物疫苗打一次管多长时间有效（动物疫苗注射后多久产生抗体）">动物疫苗打一次管多长时间有效（动物疫苗注射后多久产生抗体）</a></li>
+                        <li class="py-2"><a href="/news/article-40157.htm" title="动物医院属于什么行业类别的企业（动物医院属于什么行业类别的企业有哪些）">动物医院属于什么行业类别的企业（动物医院属于什么行业类别的企业有哪些）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-6-free-ssr-subscribe.htm" title="「11月6日」最高速度21.1M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「11月6日」最高速度21.1M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -123,28 +151,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
@@ -177,7 +193,7 @@
     <!-- end of copyright -->
     <!-- Back To Top Button -->
     <button onclick="topFunction()" id="myBtn">
-        <img href="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
     </button>
     <!-- end of back to top button -->
     <!-- Scripts -->
