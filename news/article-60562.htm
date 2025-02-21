@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-60562.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>VUE跨组件数据传递方法详解</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Q：需求是这样的： 兄弟组件或者子组件执行了某个操作之后，需要在另外一个A组件中执行刷新操作（某个方法）  解决思路： 1.如果是父子组件，可以用事件来处理，on，emit 2.我这个更普遍一点，不一" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-60562.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="VUE跨组件数据传递方法详解" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/2f70509a2ef5985540980501a5e48521.webp" />
+        <meta property="og:release_date" content="2025-02-21T09:21:35" />
+    <meta property="og:updated_time" content="2025-02-21T09:21:35" />
+        <meta property="og:description" content="Q：需求是这样的： 兄弟组件或者子组件执行了某个操作之后，需要在另外一个A组件中执行刷新操作（某个方法）  解决思路： 1.如果是父子组件，可以用事件来处理，on，emit 2.我这个更普遍一点，不一" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="VUE跨组件数据传递方法详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/">
+                        <span>Shadowrocket Node</span>
+                        </a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>VUE跨组件数据传递方法详解</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p style="margin-left:0pt;">Q：需求是这样的：</p> <p style="margin-left:0pt;">兄弟组件或者子组件执行了某个操作之后，需要在另外一个A组件中执行刷新操作（某个方法）</p> <p style="margin-left:0pt;"> <p style="margin-left:0pt;">解决思路：</p> <p style="margin-left:0pt;">1.如果是父子组件，可以用事件来处理，on，emit</p> <p style="margin-left:0pt;">2.我这个更普遍一点，不一定是父子组件的关系，这里有一个比较一般的解决方法</p> <p style="margin-left:0pt;">&nbsp;&nbsp;解决流程如下</p> <p style="margin-left:0pt;">首先，在vuex中定义一个变量</p> <p style="margin-left:0pt;"><img decoding="async" alt="" class="has" src="http://img.555519.xyz/uploads3/20220601/40a90067a97a206ee4c5d20d598d53bb.jpg"></p> <p style="margin-left:0pt;">然后，在需要刷新的A组件中，获取对应的bool值，监听变量变化，并触发方法</p> <p style="margin-left:0pt;"><img decoding="async" alt="" class="has" src="http://img.555519.xyz/uploads3/20220601/a5fbf9135bfbc17797da53b39c1dab24.jpg"></p> <p style="margin-left:0pt;">最后，当我们在某个组件中需要触发A组件的刷新方法时</p> <p style="margin-left:0pt;"><img decoding="async" alt="" class="has" src="http://img.555519.xyz/uploads3/20220601/136f671b83d7bc560925c0e0eeff6c87.jpg"></p> <p style="margin-left:0pt;">A组件中会自动触发相关方法</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-60561.htm">vue项目打包后文件过大怎么办，如何优化加载速度</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-47587.htm" title="MySQL数据库生成某一年的日历存储过程_在线工具">MySQL数据库生成某一年的日历存储过程_在线工具</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-24-free-node-subscribe-links.htm" title="「1月24日」最高速度19M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「1月24日」最高速度19M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-10-free-shadowrocket-node.htm" title="「12月10日」最高速度19.5M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「12月10日」最高速度19.5M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-58505.htm" title="动物疫苗批发需要冷库吗（动物疫苗销售需要什么手续）">动物疫苗批发需要冷库吗（动物疫苗销售需要什么手续）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-1-free-shadowrocket-node.htm" title="「1月1日」最高速度20.6M/S，2025年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「1月1日」最高速度20.6M/S，2025年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-18-node-share-links.htm" title="「1月18日」最高速度18M/S，2025年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「1月18日」最高速度18M/S，2025年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-free-node-subscribe.htm" title="「11月12日」最高速度21.8M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「11月12日」最高速度21.8M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-57144.htm" title="动物医院名字有哪些（动物医院的标志是什么）">动物医院名字有哪些（动物医院的标志是什么）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-30-free-ssr-node.htm" title="「12月30日」最高速度18.2M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「12月30日」最高速度18.2M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-42142.htm" title="动物疫苗经营范围有哪些要求（动物疫苗经营许可）">动物疫苗经营范围有哪些要求（动物疫苗经营许可）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

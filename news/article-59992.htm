@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-59992.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>java-websocket断线重连</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="最近项目需要使用到websocket，考虑到连接的稳定性，所以加上了重连; Java-WebSocket在1.3.8版本及之后加上了重连，故本次使用的是其自带的api; 依赖版本为 &lt;!--  " />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-59992.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="java-websocket断线重连" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/e12882659cf6a707ffb6e692c9a1d317.webp" />
+        <meta property="og:release_date" content="2025-02-20T09:57:46" />
+    <meta property="og:updated_time" content="2025-02-20T09:57:46" />
+        <meta property="og:description" content="最近项目需要使用到websocket，考虑到连接的稳定性，所以加上了重连; Java-WebSocket在1.3.8版本及之后加上了重连，故本次使用的是其自带的api; 依赖版本为 &lt;!--  " />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="java-websocket断线重连">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/">
+                        <span>Shadowrocket Node</span>
+                        </a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>java-websocket断线重连</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>最近项目需要使用到websocket，考虑到连接的稳定性，所以加上了重连;<br /> Java-WebSocket在1.3.8版本及之后加上了重连，故本次使用的是其自带的api;<br /> 依赖版本为</p> <pre><code class="prism language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>  websocket作为客户端<span class="token operator">--</span><span class="token operator">&gt;</span>         <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>org<span class="token punctuation">.</span>java<span class="token operator">-</span>websocket<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>Java<span class="token operator">-</span>WebSocket<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">1.5</span><span class="token number">.1</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">&gt;</span>         <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">&gt;</span> </code></pre> <p>下面为代码展示 :</p> <p><strong>websocketClient客户端代码:</strong></p> <pre><code class="prism language-javascript"> <span class="token keyword">import</span> com<span class="token punctuation">.</span>demo<span class="token punctuation">.</span>common<span class="token punctuation">.</span>enums<span class="token punctuation">.</span>DemoReconnectThreadEnum<span class="token punctuation">;</span> <span class="token keyword">import</span> com<span class="token punctuation">.</span>demo<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>DateUtils<span class="token punctuation">;</span> <span class="token keyword">import</span> lombok<span class="token punctuation">.</span>extern<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span>Slf4j<span class="token punctuation">;</span> <span class="token keyword">import</span> org<span class="token punctuation">.</span>java_websocket<span class="token punctuation">.</span>client<span class="token punctuation">.</span>WebSocketClient<span class="token punctuation">;</span> <span class="token keyword">import</span> org<span class="token punctuation">.</span>java_websocket<span class="token punctuation">.</span>drafts<span class="token punctuation">.</span>Draft_6455<span class="token punctuation">;</span> <span class="token keyword">import</span> org<span class="token punctuation">.</span>java_websocket<span class="token punctuation">.</span>handshake<span class="token punctuation">.</span>ServerHandshake<span class="token punctuation">;</span>  <span class="token keyword">import</span> java<span class="token punctuation">.</span>net<span class="token punctuation">.</span><span class="token constant">URI</span><span class="token punctuation">;</span> <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span>Executors<span class="token punctuation">;</span> <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span>ScheduledExecutorService<span class="token punctuation">;</span> <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span>TimeUnit<span class="token punctuation">;</span> <span class="token comment">/**  * websocket的客户端  *  */</span>  @Slf4j <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DemoWebSocketClient</span> <span class="token keyword">extends</span> <span class="token class-name">WebSocketClient</span> <span class="token punctuation">{<!-- --></span>      <span class="token keyword">public</span> <span class="token keyword">static</span> final String <span class="token constant">HEARTBEAT_CMD</span> <span class="token operator">=</span> <span class="token string">"此处为商定的保活命令"</span><span class="token punctuation">;</span>      <span class="token keyword">public</span> <span class="token function">DemoWebSocketClient</span><span class="token punctuation">(</span><span class="token parameter"><span class="token constant">URI</span> serverUri</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token keyword">super</span><span class="token punctuation">(</span>serverUri<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Draft_6455</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>      @Override     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onOpen</span><span class="token punctuation">(</span><span class="token parameter">ServerHandshake serverHandshake</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token comment">//开启心跳保活</span>         <span class="token function">heartbeat</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"===建立连接,心跳保活开启==="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>      @Override     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onMessage</span><span class="token punctuation">(</span><span class="token parameter">String s</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>          log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"{}时来自服务端的消息：{}"</span><span class="token punctuation">,</span> DateUtils<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token punctuation">}</span>      @Override     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onClose</span><span class="token punctuation">(</span><span class="token parameter">int a<span class="token punctuation">,</span> String s<span class="token punctuation">,</span> boolean b</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token comment">//重连</span>         log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"由于:{},连接被关闭,开始尝试重新连接"</span><span class="token punctuation">,</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>         DemoReconnectThreadEnum<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reconnectWs</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>      @Override     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onError</span><span class="token punctuation">(</span><span class="token parameter">Exception e</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"====websocket出现错误===="</span> <span class="token operator">+</span> e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>       <span class="token comment">/**      * 心跳保活      * @param var1      */</span>     <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">heartbeat</span><span class="token punctuation">(</span><span class="token parameter">DemoWebSocketClient var1</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         ScheduledExecutorService service <span class="token operator">=</span> Executors<span class="token punctuation">.</span><span class="token function">newScheduledThreadPool</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         Runnable runnable <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">{<!-- --></span>             <span class="token keyword">if</span><span class="token punctuation">(</span>var1 <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>                 var1<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token constant">HEARTBEAT_CMD</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token punctuation">}</span>         <span class="token punctuation">}</span><span class="token punctuation">;</span>         service<span class="token punctuation">.</span><span class="token function">scheduleAtFixedRate</span><span class="token punctuation">(</span>runnable<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> TimeUnit<span class="token punctuation">.</span><span class="token constant">SECONDS</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>   <span class="token punctuation">}</span> </code></pre> <p><strong>执行重连代码:</strong></p> <pre><code class="prism language-javascript"> <span class="token keyword">import</span> com<span class="token punctuation">.</span>demo<span class="token punctuation">.</span>pojo<span class="token punctuation">.</span>DemoWebSocketClient<span class="token punctuation">;</span> <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span>ExecutorService<span class="token punctuation">;</span> <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span>Executors<span class="token punctuation">;</span>  <span class="token comment">/**  * 执行重连  */</span> <span class="token keyword">public</span> <span class="token keyword">enum</span> DemoReconnectThreadEnum <span class="token punctuation">{<!-- --></span>      <span class="token function">WebSocketInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>          @Override         <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">reconnectWs</span><span class="token punctuation">(</span><span class="token parameter">DemoWebSocketClient demoWebSocketClient</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>             cachedThreadPool<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>                 @Override                 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>                     <span class="token keyword">try</span> <span class="token punctuation">{<!-- --></span>                         <span class="token comment">//重连间隔一秒</span>                         Thread<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                     <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>InterruptedException e<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>                         e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                     <span class="token punctuation">}</span>                     demoWebSocketClient<span class="token punctuation">.</span><span class="token function">reconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                 <span class="token punctuation">}</span>              <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>      <span class="token punctuation">}</span><span class="token punctuation">;</span>      <span class="token keyword">private</span> <span class="token keyword">static</span> final ExecutorService cachedThreadPool <span class="token operator">=</span> Executors<span class="token punctuation">.</span><span class="token function">newCachedThreadPool</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token keyword">public</span> abstract <span class="token keyword">void</span> <span class="token function">reconnectWs</span><span class="token punctuation">(</span>DemoWebSocketClient demoWebSocketClient<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token keyword">public</span> <span class="token keyword">static</span> DemoReconnectThreadEnum <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         <span class="token keyword">return</span> WebSocketInstance<span class="token punctuation">;</span>     <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <p>至此，完毕！</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-59401.htm">甘蓝菜的做法（甘蓝菜的做法大全家常）</a></p>
+                                        <p>下一个：<a href="/news/article-59993.htm">spring security 基本介绍</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-51671.htm" title="被猫抓伤怎么确定有没有狂犬病（被猫抓了怎么才能知道有没有被感染）">被猫抓伤怎么确定有没有狂犬病（被猫抓了怎么才能知道有没有被感染）</a></li>
+                        <li class="py-2"><a href="/news/article-56021.htm" title="适合初学者的C语言数据类型的讲解_C 语言">适合初学者的C语言数据类型的讲解_C 语言</a></li>
+                        <li class="py-2"><a href="/news/article-22600.htm" title="网购安装接&#21333;&#24179;台哪个好（网购安装接&#21333;&#24179;台哪个好一点）">网购安装接&#21333;&#24179;台哪个好（网购安装接&#21333;&#24179;台哪个好一点）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-13-free-high-speed-nodes.htm" title="「12月13日」最高速度22.4M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「12月13日」最高速度22.4M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-23057.htm" title="Python轻松入门-13 函数返回值">Python轻松入门-13 函数返回值</a></li>
+                        <li class="py-2"><a href="/news/article-47099.htm" title="动物疫苗打一次管多长时间有效（动物疫苗注射后多久产生抗体）">动物疫苗打一次管多长时间有效（动物疫苗注射后多久产生抗体）</a></li>
+                        <li class="py-2"><a href="/news/article-31927.htm" title="广州哪里有批发衣服（广州哪里有批发衣服的地方）">广州哪里有批发衣服（广州哪里有批发衣服的地方）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-2-free-shadowrocket-node.htm" title="「2月2日」最高速度18.5M/S，2025年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接">「2月2日」最高速度18.5M/S，2025年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-53819.htm" title="动物疫苗生产厂家排名前十名有哪些呢视频（动物疫苗生产厂家排名前十名有哪些呢视频讲解）">动物疫苗生产厂家排名前十名有哪些呢视频（动物疫苗生产厂家排名前十名有哪些呢视频讲解）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-free-high-speed-nodes.htm" title="「1月7日」最高速度19.8M/S，2025年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「1月7日」最高速度19.8M/S，2025年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
