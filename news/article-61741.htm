@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-61741.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>weak_ptr介绍</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="本文转载于http://c.biancheng.net/view/7918.html   在C++98/03的基础上，C++11新标准引入了shared_ptr、unique_ptr以及weak_pt" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-61741.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="weak_ptr介绍" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/ed3181c9a7b91394a29c4b323e7a560b.webp" />
+        <meta property="og:release_date" content="2025-02-23T09:47:49" />
+    <meta property="og:updated_time" content="2025-02-23T09:47:49" />
+        <meta property="og:description" content="本文转载于http://c.biancheng.net/view/7918.html   在C++98/03的基础上，C++11新标准引入了shared_ptr、unique_ptr以及weak_pt" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="weak_ptr介绍">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/">
+                        <span>Shadowrocket Node</span>
+                        </a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>weak_ptr介绍</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p>本文转载于http://c.biancheng.net/view/7918.html<br />   在C++98/03的基础上，C++11新标准引入了<code>shared_ptr</code>、<code>unique_ptr</code>以及<code>weak_ptr</code>这3个智能指针。本文介绍<code>weak_ptr</code>智能指针的特性和用法。<br />   和<code>shared_ptr</code>以及<code>unique_ptr</code>类型指针一样，<code>weak_ptr</code>智能指针也是以模板类的方式实现的。<code>weak_ptr&lt;T&gt;</code>（T为指针所指数据的类型）定义在<code>&lt;memory&gt;</code>头文件，并位于<code>std</code>命名空间中。因此，要想使用<code>weak_ptr</code>类型指针，程序中应首先包含以下2条语句：</p> <pre><code class="prism language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span> <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span> </code></pre> <p>第2句不是必须的，可以不添加，则后续在使用<code>unique_ptr</code>指针时，必须标注<code>std::</code>。<br />   需要注意的是，C++11标准虽然将<code>weak_ptr</code>定位为智能指针的一种，但该类型指针通常不单独使用（实际没有用处），只能和<code>shared_ptr</code>类型指针搭配使用。甚至于，我们可以将<code>weak_ptr</code>类型指针视为<code>shared_ptr</code>指针的一种辅助工具，借助<code>weak_ptr</code>类型指针，我们可以获取<code>shared_ptr</code>指针的一些状态信息，比如有多少指向相同的<code>shared_ptr</code>指针，<code>shared_ptr</code>指针指向的堆内存是否已经被释放等等。<br />   需要注意的是，当<code>weak_ptr</code>类型指针的指向和某一<code>shared_ptr</code>指针相同时，<code>weak_ptr</code>指针并不会使所指堆内存的引用计数加1；同样，当<code>weak_ptr</code>指针被释放时，之前所指堆内存的引用计数也不会因此而减1。也就是说，<code>weak_ptr</code>类型指针并不会影响所指堆内存空间的引用计数。<br />   除此之外，<code>weak_ptr&lt;T&gt;</code>模板类中没有重载<code>*</code>和<code>-&gt;</code>运算符，这也就意味着，<code>weak_ptr</code>类型指针只能访问所指的堆内存，而无法修改它。</p> <h2> <a id="1_weak_ptr_12" rel="nofollow"></a>1 <code>weak_ptr</code>指针的创建</h2> <p>  创建一个<code>weak_ptr</code>指针，有以下3种方式：<br /> （1）可以创建一个空的<code>weak_ptr</code>指针，例如：</p> <pre><code class="prism language-cpp">std<span class="token operator">::</span>weak_ptr<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> wp1<span class="token punctuation">;</span> </code></pre> <p>（2）凭借已有的<code>weak_ptr</code>指针，可以创建一个新的<code>weak_ptr</code>指针，例如：</p> <pre><code class="prism language-cpp">std<span class="token operator">::</span>weak_ptr<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> <span class="token function">wp2</span><span class="token punctuation">(</span>wp1<span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre> <p>若<code>wp1</code>为空指针，则<code>wp2</code>也为空指针；反之，如果<code>wp1</code>指向某一<code>shared_ptr</code>指针拥有的堆内存，则<code>wp2</code>也指向该块存储空间（可以访问，但无所有权）。<br /> （3）<code>weak_ptr</code>指针更常用于指向某一<code>shared_ptr</code>指针拥有的堆内存，因为在构建<code>weak_ptr</code>指针对象时，可以利用已有的<code>shared_ptr</code>指针为其初始化。例如：</p> <pre><code class="prism language-cpp">std<span class="token operator">::</span>shared_ptr<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> <span class="token function">sp</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span> std<span class="token operator">::</span>weak_ptr<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> <span class="token function">wp3</span><span class="token punctuation">(</span>sp<span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre> <p>由此，<code>wp3</code>指针和<code>sp</code>指针有相同的指针。再次强调，<code>weak_ptr</code>类型指针不会导致堆内存空间的引用计数增加或减少。</p> <h2> <a id="2_weak_ptr_30" rel="nofollow"></a>2 <code>weak_ptr</code>模板类提供的成员方法</h2> <p>  和<code>shared_ptr&lt;T&gt;</code>以及<code>unique_ptr&lt;T&gt;</code>相比，<code>weak_ptr&lt;T&gt;</code>模板类提供的成员方法不多，下表罗列了常用的成员方法及各自的功能。</p> <table> <thead> <tr> <th>成员方法</th> <th>功能</th> </tr> </thead> <tbody> <tr> <td><code>operator=()</code></td> <td>重载<code>=</code>赋值运算符，<code>weak_ptr</code>指针可以直接被<code>weak_ptr</code>或者<code>shared_ptr</code>类型指针赋值。</td> </tr> <tr> <td><code>swap(x)</code></td> <td>其中<code>x</code>表示一个同类型的<code>weak_ptr</code>类型指针，该函数可以互换2个共同类型<code>weak_ptr</code>指针的内容。</td> </tr> <tr> <td><code>reset()</code></td> <td>将当前<code>weak_ptr</code>指针置为空指针。</td> </tr> <tr> <td><code>use_count()</code></td> <td>查看指向和当前<code>weak_ptr</code>指针相同的<code>shared_ptr</code>指针的数量。</td> </tr> <tr> <td><code>expired()</code></td> <td>判断当前<code>weak_ptr</code>指针是否过期（指针为空，或者指向的堆内存已经被释放）。</td> </tr> <tr> <td><code>lock()</code></td> <td>如果当前<code>weak_ptr</code>已经过期，则该函数会返回一个空的<code>shared_ptr</code>指针；反之，该函数返回一个和当前<code>weak_ptr</code>指针指向相同的<code>shared_ptr</code>指针。</td> </tr> </tbody> </table> <p>再次强调，<code>weak_ptr&lt;T&gt;</code>模板类没有重载<code>*</code>和<code>-&gt;</code>运算符，因此<code>weak_ptr</code>类型指针只能访问某一<code>shared_ptr</code>指针指向的堆内存空间，无法对其进行修改。<br />   下面的样例演示了<code>weak_ptr</code>指针以及上表中部分成员方法的基本用法：</p> <pre><code class="prism language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span> <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;memory&gt;</span></span>  <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>  <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	shared_ptr<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> <span class="token function">sp1</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 	shared_ptr<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> <span class="token function">sp2</span><span class="token punctuation">(</span>sp1<span class="token punctuation">)</span><span class="token punctuation">;</span> 	weak_ptr<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> <span class="token function">wp</span><span class="token punctuation">(</span>sp2<span class="token punctuation">)</span><span class="token punctuation">;</span> 	cout <span class="token operator">&lt;&lt;</span> wp<span class="token punctuation">.</span><span class="token function">use_count</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>   <span class="token comment">//输出和wp同指向的shared_ptr类型指针的数量</span> 	sp2<span class="token punctuation">.</span><span class="token function">reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                      <span class="token comment">//释放sp2</span> 	cout <span class="token operator">&lt;&lt;</span> wp<span class="token punctuation">.</span><span class="token function">use_count</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    	cout <span class="token operator">&lt;&lt;</span> <span class="token operator">*</span><span class="token punctuation">(</span>wp<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>     <span class="token comment">//借助lock()函数，返回一个和wp同指向的shared_ptr类型指针，获取其存储的数据</span> 	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> <p>程序执行结果为：</p> <pre><code class="prism language-cpp"><span class="token number">2</span> <span class="token number">1</span> <span class="token number">10</span> </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-61162.htm">被猫咬了一个小红点没有出血（被猫咬了一个小红点没有出血有没有事）</a></p>
+                                        <p>下一个：<a href="/news/article-61742.htm">宠物打完疫苗多久测抗体最准确（宠物打疫苗几天后可以洗澡）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-15-free-node-subscribe-links.htm" title="「1月15日」最高速度19.5M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接">「1月15日」最高速度19.5M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-20-clash-v2ray-ss-ssr.htm" title="「2月20日」最高速度20.4M/S，2025年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接">「2月20日」最高速度20.4M/S，2025年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-58278.htm" title="动物医学实训总结 动物医学实训总结万能版">动物医学实训总结 动物医学实训总结万能版</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-19-node-share-links.htm" title="「2月19日」最高速度22.8M/S，2025年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接">「2月19日」最高速度22.8M/S，2025年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-18716.htm" title="哪种HTML5标签更适合表示金额">哪种HTML5标签更适合表示金额</a></li>
+                        <li class="py-2"><a href="/news/article-52204.htm" title="python安装卸载及查看python版本/第三方包版本">python安装卸载及查看python版本/第三方包版本</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-18-node-share-links.htm" title="「1月18日」最高速度18M/S，2025年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「1月18日」最高速度18M/S，2025年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-33844.htm" title="狗粮制作工厂加盟 狗粮制作工厂加盟费多少">狗粮制作工厂加盟 狗粮制作工厂加盟费多少</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-18-node-share-links.htm" title="「2月18日」最高速度20.8M/S，2025年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「2月18日」最高速度20.8M/S，2025年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-6-free-ssr-subscribe.htm" title="「11月6日」最高速度21.1M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「11月6日」最高速度21.1M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
