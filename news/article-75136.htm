@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-75136.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>Ribbon、Hystrix超时问题</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="ribbon:http:client:enabled:trueOkToRetryOnAllOperations:true#对所有操作请求都进行重试，默认falseReadTimeout:2000#负载" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-75136.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="Ribbon、Hystrix超时问题" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/c94425b5db9aabafa67d5f8c13e464d6.webp" />
+        <meta property="og:release_date" content="2025-03-16T10:30:11" />
+    <meta property="og:updated_time" content="2025-03-16T10:30:11" />
+        <meta property="og:description" content="ribbon:http:client:enabled:trueOkToRetryOnAllOperations:true#对所有操作请求都进行重试，默认falseReadTimeout:2000#负载" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Ribbon、Hystrix超时问题">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/">
+                        <span>Shadowrocket Node</span>
+                        </a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>Ribbon、Hystrix超时问题</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <pre><code class="prism language-yaml"><span class="token key atrule">ribbon</span><span class="token punctuation">:</span><span class="token key atrule">http</span><span class="token punctuation">:</span><span class="token key atrule">client</span><span class="token punctuation">:</span><span class="token key atrule">enabled</span><span class="token punctuation">:</span><span class="token boolean important">true</span><span class="token key atrule">OkToRetryOnAllOperations</span><span class="token punctuation">:</span><span class="token boolean important">true</span><span class="token comment">#对所有操作请求都进行重试，默认false</span><span class="token key atrule">ReadTimeout</span><span class="token punctuation">:</span><span class="token number">2000</span><span class="token comment">#负载均衡超时时间，默认值 1000(ms)</span><span class="token key atrule">ConnectTimeout</span><span class="token punctuation">:</span><span class="token number">3000</span><span class="token comment">#请求连接的超时时间，默认值 1000</span><span class="token key atrule">MaxAutoRetries</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token comment"># 对当前实例的重试次数</span><span class="token key atrule">MaxAutoRetriesNextServer</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token comment"># 重试切换实例的次数，默认1</span></code></pre> <p><strong>服务请求时间：</strong></p> <blockquote> <p>一般情况下，连接时间很短可以忽略不记<br /> 请求时间 = (MaxAutoRetries + 1) * (MaxAutoRetriesNextServer + 1) * ReadTimeout<br /> 但是如果想要拉满请求时间，连接时间拉满的话：则要加上连接时间。</p> </blockquote> <pre><code class="prism language-yaml"><span class="token key atrule">hystrix</span><span class="token punctuation">:</span><span class="token key atrule">command</span><span class="token punctuation">:</span><span class="token key atrule">default</span><span class="token punctuation">:</span><span class="token comment">#default全局有效，service id指定应用有效</span><span class="token key atrule">execution</span><span class="token punctuation">:</span><span class="token key atrule">timeout</span><span class="token punctuation">:</span><span class="token comment">#如果enabled设置为false，则请求超时交给ribbon控制,为true,则超时作为熔断根据</span><span class="token key atrule">enabled</span><span class="token punctuation">:</span><span class="token boolean important">true</span><span class="token key atrule">isolation</span><span class="token punctuation">:</span><span class="token key atrule">thread</span><span class="token punctuation">:</span><span class="token key atrule">timeoutInMilliseconds</span><span class="token punctuation">:</span><span class="token number">10000</span><span class="token comment">#断路器超时时间，默认1000ms</span></code></pre> <p>一般设置 Hystrix 熔断时间大于Ribbon请求时间（包括重试），这样的话，只有当不再重试请求的时候才会进行熔断操作。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-74485.htm">人用针剂跟畜用针剂一样吗（人用针剂跟畜用针剂一样吗有毒吗）</a></p>
+                                        <p>下一个：<a href="/news/article-75137.htm">郑州动物疫苗批发地址（郑州动物疫苗批发地址电话）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-45128.htm" title="兰州宠物用品批发进货渠道在哪（兰州宠物用品批发市场在哪里）">兰州宠物用品批发进货渠道在哪（兰州宠物用品批发市场在哪里）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-19-node-share-links.htm" title="「2月19日」最高速度22.8M/S，2025年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接">「2月19日」最高速度22.8M/S，2025年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-43629.htm" title="动物打疫苗的作用是什么（动物注射疫苗）">动物打疫苗的作用是什么（动物注射疫苗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-25-free-ssr-node.htm" title="「1月25日」最高速度18.8M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「1月25日」最高速度18.8M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-39185.htm" title="吉娃娃能卖多少钱（吉娃娃市场价多少）">吉娃娃能卖多少钱（吉娃娃市场价多少）</a></li>
+                        <li class="py-2"><a href="/news/article-50619.htm" title="动物疫苗去哪里打 动物疫苗去哪里打便宜">动物疫苗去哪里打 动物疫苗去哪里打便宜</a></li>
+                        <li class="py-2"><a href="/news/article-69830.htm" title="猫咪疫苗三针间隔时间多久打（猫咪三针疫苗间隔必须按规定时间吗）">猫咪疫苗三针间隔时间多久打（猫咪三针疫苗间隔必须按规定时间吗）</a></li>
+                        <li class="py-2"><a href="/news/article-67266.htm" title="动物疫苗的使用方法及注意事项视频教程大全（动物疫苗知识）">动物疫苗的使用方法及注意事项视频教程大全（动物疫苗知识）</a></li>
+                        <li class="py-2"><a href="/news/article-46122.htm" title="2021国考公务员考试报名时间（2021国考公务员考试报名时间是多少）">2021国考公务员考试报名时间（2021国考公务员考试报名时间是多少）</a></li>
+                        <li class="py-2"><a href="/news/article-51672.htm" title="中国宠物粮食之乡（中国最大的宠物粮食企业）">中国宠物粮食之乡（中国最大的宠物粮食企业）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">48</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
