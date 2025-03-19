@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-77184.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>在vue中手写一个文字的轮播功能</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="&nbsp; &nbsp; 最近在中控项目中遇到一个问题，就是需要轮播显示数据，网上给的教程都是定高的，所以就自己写了一个，效果如下：  对于这种轮播的功能，其实应该根据是否定高去分为两种情况用不同的" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-77184.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="在vue中手写一个文字的轮播功能" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/d0bb6e71892a3fa6be1f022d4455dd24.webp" />
+        <meta property="og:release_date" content="2025-03-19T09:11:18" />
+    <meta property="og:updated_time" content="2025-03-19T09:11:18" />
+        <meta property="og:description" content="&nbsp; &nbsp; 最近在中控项目中遇到一个问题，就是需要轮播显示数据，网上给的教程都是定高的，所以就自己写了一个，效果如下：  对于这种轮播的功能，其实应该根据是否定高去分为两种情况用不同的" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="在vue中手写一个文字的轮播功能">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/">
+                        <span>Shadowrocket Node</span>
+                        </a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>在vue中手写一个文字的轮播功能</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>&nbsp; &nbsp; 最近在中控项目中遇到一个问题，就是需要轮播显示数据，网上给的教程都是定高的，所以就自己写了一个，效果如下：</p> <p><img fetchpriority="high" decoding="async" alt="" class="has" height="331" src="http://img.555519.xyz/uploads/20230113/13fa9dade8c07ebeab9a2a9abd93fbcc.jpg"></p> <p>对于这种轮播的功能，其实应该根据是否定高去分为两种情况用不同的方案去处理。</p> <p>一、&nbsp;不定高轮播</p> <p>&nbsp; &nbsp; &nbsp; 我在看了很多博客之后发现他们给的方案都是定高的，这种你可能一搜一大把，我就只分享别人没有说过或者不容易找到的情况吧。我暂且将轮播的部分称为轮播区域，将轮播区域之外的地方成为外部吧。</p> <p>定高的情况下我选择的是使用vue中的:style动态改变轮播区域的transform属性，如果你需要上下滚动就调整translateY，如果需要左右滚动就调整translateX属性，然后在你从后台拉取数据之后设置一个定时器，每隔多久去改变多少的translateY(或translateX)的值,这一部分可以控制滚动的速度。代码如下：</p> <pre class="has"><code>&lt;div ref="scroll" :style="pos"&gt;     &lt;ul&gt;         &lt;li class="fcd7e" v-for="item in list" :key="item.index"&gt;             {<!-- -->{item}}         &lt;/li&gt;     &lt;/ul&gt; &lt;/div&gt;  // js部分 export default {     data() {         return: {             list: ['周杰伦','蔡徐坤','李现','马蓉','马云','马化腾'],             height: 0, // 轮播区域的高度             yPos: 0,  // 轮播到了多少距离         }     },     computed: {         pos() {           return { transform: `translateY(${this.yPos}px` }; // 计算属性改变style         }     }，     mounted() {         this.initScroll()  // 通常不是在mounted中调用initScroll()这个方法，而是获取list后     },     methods: {         initScroll() {            this.$nextTick(() =&gt; {                 this.height = this.$refs.scroll.offsetHeight;                 setInterval(() =&gt; {                     if (this.yPos &gt; -this.height / 2) {                         this.yPos = this.yPos - 1;                     } else {                     this.yPos = 0;                     }                 }, 50);            });         }     } }</code></pre> <p>&nbsp; &nbsp; &nbsp; 然后你需要调整一下外部样式，给其一个宽高，overflow设为hidden; 当然你可以将上面的代码微调一下，让其变成左右滑动，还可以改变速度，也可以添加鼠标移动到轮播上面时停止定时器，然后鼠标移出时打开定时器，这样做出一个鼠标移到上面停止的效果。</p> <p>二、&nbsp;定高轮播</p> <p>由于不定高轮播中，我们是需要一直改变transform的值，性能会不好。比如在我们公司的，为了图便宜买了一个配置很差的电视机，就感觉像滚不动一样。所以在定高轮播中，我们需要其他方案。这里我研究了三套方案，但其他作者可能都写过了，所以就简单记录一下吧。</p> <p>&nbsp; &nbsp; &nbsp; 1. 使用&lt;marquee&gt;标签，性能很好，但会存在滚了之后存在大量留白的情况，所以不推荐。</p> <p>&nbsp; &nbsp; &nbsp; 2.使用css原生动画</p> <p>&nbsp; &nbsp; &nbsp; 3.使用vue动画</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-76509.htm">宠物粮的上市公司 宠物粮的上市公司有哪些</a></p>
+                                        <p>下一个：<a href="/news/article-77185.htm">宠物粮市场调研报告模板（宠物粮市场调研报告模板怎么写）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-44629.htm" title="猫三联狂犬疫苗能一起打吗（猫三联狂犬疫苗能一起打吗多少钱）">猫三联狂犬疫苗能一起打吗（猫三联狂犬疫苗能一起打吗多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-63544.htm" title="动物疫苗接种时间间隔多久（动物疫苗间隔多久打一次）">动物疫苗接种时间间隔多久（动物疫苗间隔多久打一次）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-20-clash-v2ray-ss-ssr.htm" title="「2月20日」最高速度20.4M/S，2025年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接">「2月20日」最高速度20.4M/S，2025年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-free-high-speed-nodes.htm" title="「1月7日」最高速度19.8M/S，2025年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「1月7日」最高速度19.8M/S，2025年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-50622.htm" title="南京猫猫领养中心电话（南京宠物猫领养中心）">南京猫猫领养中心电话（南京宠物猫领养中心）</a></li>
+                        <li class="py-2"><a href="/news/article-72477.htm" title="动物疫苗经营许可证冷库建设要求（经营动物疫苗药品需要什么手续）">动物疫苗经营许可证冷库建设要求（经营动物疫苗药品需要什么手续）</a></li>
+                        <li class="py-2"><a href="/news/article-64129.htm" title="流浪猫多久可以跟家猫一起养（流浪猫多久可以养熟）">流浪猫多久可以跟家猫一起养（流浪猫多久可以养熟）</a></li>
+                        <li class="py-2"><a href="/news/article-75136.htm" title="Ribbon、Hystrix超时问题">Ribbon、Hystrix超时问题</a></li>
+                        <li class="py-2"><a href="/news/article-40157.htm" title="动物医院属于什么行业类别的企业（动物医院属于什么行业类别的企业有哪些）">动物医院属于什么行业类别的企业（动物医院属于什么行业类别的企业有哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-51671.htm" title="被猫抓伤怎么确定有没有狂犬病（被猫抓了怎么才能知道有没有被感染）">被猫抓伤怎么确定有没有狂犬病（被猫抓了怎么才能知道有没有被感染）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
