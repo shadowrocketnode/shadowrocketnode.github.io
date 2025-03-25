@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-79916.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>6.0 vue3 watch监听函数（reactive篇）</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="上一篇： vue3 watch监听函数 （ref篇）https://blog.csdn.net/qq_42543244/article/details/122203802?spm=1001.2014." />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-79916.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="6.0 vue3 watch监听函数（reactive篇）" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/5e572ef9a542b706e3743cef2f41cc8f.webp" />
+        <meta property="og:release_date" content="2025-03-23T08:25:01" />
+    <meta property="og:updated_time" content="2025-03-23T08:25:01" />
+        <meta property="og:description" content="上一篇： vue3 watch监听函数 （ref篇）https://blog.csdn.net/qq_42543244/article/details/122203802?spm=1001.2014." />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="6.0 vue3 watch监听函数（reactive篇）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/">
+                        <span>Shadowrocket Node</span>
+                        </a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>6.0 vue3 watch监听函数（reactive篇）</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>上一篇：</p> <p><a class="link-info has-card" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/qq_42543244/article/details/122203802?spm=1001.2014.3001.5501"  title="vue3 watch监听函数 （ref篇）" rel="nofollow"><span class="link-card-box"><span class="link-title">vue3 watch监听函数 （ref篇）</span><span class="link-link"><img decoding="async" alt="" class="link-link-icon" src="http://img.555519.xyz/uploads/20230205/1a2591597237a8b1f752751526130f57.jpg">https://blog.csdn.net/qq_42543244/article/details/122203802?spm=1001.2014.3001.5501</span></span></a>上篇说到的是监听ref声明的数据，今天记录监听reactive声明的数据，其实差别并不是不大，但是其中有一些坑，特此记录，请看代码<strong><span style="color:#fe2c24;">（注释也要仔细看哦）</span></strong></p> <pre><code>&lt;template&gt;   &lt;h1&gt;reactive数据类型&lt;/h1&gt;   &lt;h2&gt;姓名：{<!-- -->{ data.name }}&lt;/h2&gt;   &lt;h2&gt;年龄：{<!-- -->{ data.age }}&lt;/h2&gt;   &lt;h2&gt;爱好：{<!-- -->{ data.hobby }}&lt;/h2&gt;   &lt;h2&gt;工作薪酬：{<!-- -->{ data.job.j1.money }} K&lt;/h2&gt;   &lt;button @click="data.name = '李四'"&gt;改变姓名&lt;/button&gt;   &lt;button @click="data.age += 1"&gt;改变年龄&lt;/button&gt;   &lt;button @click="data.hobby[0] = '踢足球'"&gt;改变爱好&lt;/button&gt;   &lt;button @click="data.job.j1.money += 1"&gt;改变薪酬&lt;/button&gt; &lt;/template&gt;  &lt;script&gt; import { reactive, watch } from "vue"; export default {   name: "Demo",   setup() {     let data = reactive({       name: "张三",       age: 18,       hobby: ["打篮球", "玩游戏", "听音乐"],       job: {         j1: {           money: 10,         },       },     });     // 监听reactive数据     /*          此时是有问题的：oldVal会和newVal数据保持一致，当data里面的任意值改变，都会触发该监听,强制开启深度监听，deep配置在此时是无效的     */     watch(data, (newVal, oldVal) =&gt; {       console.log(newVal, oldVal);     });      //  监听reactive中的某个值     // 基础类型值     watch(       () =&gt; data.name,       (newVal, oldVal) =&gt; {         console.log(newVal, oldVal);       }     );     // 数组 此时deep的配置生效(此处的oldVal也是有问题的)     watch(       () =&gt; data.hobby,       (newVal, oldVal) =&gt; {         console.log(newVal, oldVal);       },       { deep: true }     );     // 对象  此时deep的配置生效(此处的oldVal也是有问题的)  若要监听对象内的money： data.job.j1.money 即可     watch(       () =&gt; data.job,       (newVal, oldVal) =&gt; {         console.log(newVal, oldVal);       },       { deep: true }     );     // 监听reactive中的某些值     // 都为基本数据类型   一切正常     watch([() =&gt; data.name, () =&gt; data.age], (newVal, oldVal) =&gt; {       console.log(newVal, oldVal);     });     //基本数据类型+数组/对象  deep有效 基本数据类型oldVal正常  引用数据类型oldVal存在问题     watch(       [() =&gt; data.name, () =&gt; data.hobby],       (newVal, oldVal) =&gt; {         console.log(newVal, oldVal);       },       { deep: true }     );     //引用数据类型+引用数据类型  deep有效  引用数据类型oldVal存在问题     watch(       [() =&gt; data.hobby, () =&gt; data.job],       (newVal, oldVal) =&gt; {         console.log(newVal, oldVal);       },       { deep: true }     );     return {       data,     };   }, }; &lt;/script&gt;  </code></pre> <p>下一篇：</p> <p><a class="link-info has-card" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/qq_42543244/article/details/122291727"  title="vue3 watchEffect函数" rel="nofollow"><span class="link-card-box"><span class="link-title">vue3 watchEffect函数</span><span class="link-link"><img decoding="async" class="link-link-icon" src="http://img.555519.xyz/uploads/20230205/1a2591597237a8b1f752751526130f57.jpg" alt="6.0 vue3 watch监听函数（reactive篇）">https://blog.csdn.net/qq_42543244/article/details/122291727</span></span></a></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-79245.htm">动物医院工作流程手册pdf 动物医院工作流程手册ppt</a></p>
+                                        <p>下一个：<a href="/news/article-79917.htm">分布式应用运行时 Dapr 1.7 发布</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-5-free-ssr-subscribe.htm" title="「2月5日」最高速度20.4M/S，2025年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「2月5日」最高速度20.4M/S，2025年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-21-free-high-speed-nodes.htm" title="「1月21日」最高速度22.6M/S，2025年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「1月21日」最高速度22.6M/S，2025年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-47587.htm" title="MySQL数据库生成某一年的日历存储过程_在线工具">MySQL数据库生成某一年的日历存储过程_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-41146.htm" title="动物疫苗的作用有哪些呢英语（动物疫苗有没有毒）">动物疫苗的作用有哪些呢英语（动物疫苗有没有毒）</a></li>
+                        <li class="py-2"><a href="/news/article-65968.htm" title="宠物美容店需要办什么证才能开（宠物美容店需要办什么证才能开呢）">宠物美容店需要办什么证才能开（宠物美容店需要办什么证才能开呢）</a></li>
+                        <li class="py-2"><a href="/news/article-49587.htm" title="宠物领养百度百科知乎文章大全（宠物领养是什么意思,免费的嘛）">宠物领养百度百科知乎文章大全（宠物领养是什么意思,免费的嘛）</a></li>
+                        <li class="py-2"><a href="/news/article-54366.htm" title="动物医院要求什么学历才能进编制（动物医院要求什么学历才能进编制呢）">动物医院要求什么学历才能进编制（动物医院要求什么学历才能进编制呢）</a></li>
+                        <li class="py-2"><a href="/news/article-46121.htm" title="netty系列之:netty中的核心编码器bytes数组">netty系列之:netty中的核心编码器bytes数组</a></li>
+                        <li class="py-2"><a href="/news/article-64749.htm" title="动物医院的logo设计理念（动物医院牌子图片）">动物医院的logo设计理念（动物医院牌子图片）</a></li>
+                        <li class="py-2"><a href="/news/article-67266.htm" title="动物疫苗的使用方法及注意事项视频教程大全（动物疫苗知识）">动物疫苗的使用方法及注意事项视频教程大全（动物疫苗知识）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">83</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
