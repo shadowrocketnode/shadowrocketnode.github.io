@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-86308.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>Android 12 行为变更：适配以Android 12为目标的应用</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="Android 12目前还是开发者预览版，预计到8月份会出正式版，但是官网已经给出了关于以Android 12为目标的应用适配应该注意的事项。 包含 intent 过滤器的应用组件必须声明export" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-86308.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="Android 12 行为变更：适配以Android 12为目标的应用" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/0be7a7c11cad1a4fe456a92f9e728823.webp" />
+        <meta property="og:release_date" content="2025-04-01T09:50:05" />
+    <meta property="og:updated_time" content="2025-04-01T09:50:05" />
+        <meta property="og:description" content="Android 12目前还是开发者预览版，预计到8月份会出正式版，但是官网已经给出了关于以Android 12为目标的应用适配应该注意的事项。 包含 intent 过滤器的应用组件必须声明export" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Android 12 行为变更：适配以Android 12为目标的应用">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/">
+                        <span>Shadowrocket Node</span>
+                        </a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>Android 12 行为变更：适配以Android 12为目标的应用</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p>Android 12目前还是开发者预览版，预计到8月份会出正式版，但是官网已经给出了关于以Android 12为目标的应用适配应该注意的事项。</p> <h2><a id="_intent__exported__1" rel="nofollow"></a>包含 intent 过滤器的应用组件必须声明<code>exported</code> 属性</h2> <p>以<strong>Android 12</strong> 为目标平台的应用，且包含使用<strong>intent 过滤器</strong>的<strong>activity</strong>、<strong>服务</strong>或<strong>广播接收器</strong>，必须为这些应用组件显式声明<strong><code>android:exported</code></strong> 属性。</p> <p>如果 activity、服务或广播接收器使用 intent 过滤器，并且未显式声明<code>android:exported</code> 的值，则您的应用将无法在搭载 Android 12 的设备上进行安装。</p> <p>如果您在使用 Android Studio 时尝试安装此类应用，Logcat 将显示以下错误消息：</p> <pre><code class="prism language-java">Installation did not succeed<span class="token punctuation">.</span> The application could not be installed<span class="token operator">:</span> INSTALL_FAILED_VERIFICATION_FAILURE List of apks<span class="token operator">:</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token string">'.../build/outputs/apk/debug/app-debug.apk'</span> Installation failed due to<span class="token operator">:</span><span class="token string">'null'</span></code></pre> <p>如果您的应用在需要声明<code>android:exported</code> 的值时未进行此声明，则 Logcat 会提供以下错误消息：</p> <pre><code class="prism language-java">Targeting S<span class="token operator">+</span><span class="token punctuation">(</span>version<span class="token number">10000</span> and above<span class="token punctuation">)</span> requires that an explicit value<span class="token keyword">for</span> \ android<span class="token operator">:</span>exported be defined when intent filters are present</code></pre> <p>以下代码段显示了一个服务示例，该服务包含 intent 过滤器并针对 Android 12 进行了正确配置：</p> <pre><code class="prism language-java"><span class="token operator">&lt;</span>service android<span class="token operator">:</span>name<span class="token operator">=</span><span class="token string">"com.example.app.backgroundService"</span>          android<span class="token operator">:</span>exported<span class="token operator">=</span><span class="token string">"false"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>intent<span class="token operator">-</span>filter<span class="token operator">&gt;</span><span class="token operator">&lt;</span>action android<span class="token operator">:</span>name<span class="token operator">=</span><span class="token string">"com.example.app.START_BACKGROUND"</span><span class="token operator">/</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>intent<span class="token operator">-</span>filter<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>service<span class="token operator">&gt;</span></code></pre> <h2><a id="PendingIntent__33" rel="nofollow"></a>PendingIntent 必须声明可变性</h2> <p>如果以<strong>Android 12</strong> 为目标平台，必须为应用创建的每个<strong>PendingIntent</strong> 对象指定可变性。</p> <p>要声明特定<strong>PendingIntent</strong> 对象是否可变，请分别使用<strong><code>PendingIntent.FLAG_MUTABLE</code></strong> 或<strong><code>PendingIntent.FLAG_IMMUTABLE</code></strong> 标志。</p> <p>如果您的应用创建未包含设置任何可变标志的<strong>PendingIntent</strong> 对象，系统会抛出<strong><code>IllegalArgumentException</code></strong>，并在<strong>Logcat</strong> 中显示以下消息：</p> <pre><code class="prism language-java">PACKAGE_NAME<span class="token operator">:</span> Targeting S<span class="token operator">+</span><span class="token punctuation">(</span>version<span class="token number">10000</span> and above<span class="token punctuation">)</span> requires that one of \ FLAG_IMMUTABLE or FLAG_MUTABLE be specified when creating a PendingIntent<span class="token punctuation">.</span>  Strongly consider using FLAG_IMMUTABLE<span class="token punctuation">,</span> only use FLAG_MUTABLE<span class="token keyword">if</span> \ some functionality depends on the PendingIntent being mutable<span class="token punctuation">,</span> e<span class="token punctuation">.</span>g<span class="token punctuation">.</span><span class="token keyword">if</span> \ it needs to be used with inline replies or bubbles<span class="token punctuation">.</span></code></pre> <p>然而，某些应用需要创建可变的 PendingIntent 对象：</p> <ul> <li>通知中的直接回复操作需要变更与回复关联的 PendingIntent 对象中的剪辑数据。通常，您可以通过将 FILL_IN_CLIP_DATA 作为标志传递给 fillIn() 的方法请求此变更。</li> <li>如果您的应用使用 PendingIntent 将对话放在气泡中，则 intent 应该可变，以便系统可以应用正确的标志，例如 FLAG_ACTIVITY_MULTIPLE_TASK 和 FLAG_ACTIVITY_NEW_DOCUMENT。</li> </ul> <p>如果您的应用创建了可变的 PendingIntent 对象，强烈建议您使用显式 intent 并填写 ComponentName。如此一来，每当另一个应用调用 PendingIntent 并将控制权传回您的应用时，应用中的相同组件都会启动。</p> <h2><a id="_intent_56" rel="nofollow"></a>以不安全的方式启动嵌套 intent</h2> <p>为了提高平台安全性，Android 12 提供了一种调试功能，如果您的应用以不安全的方式启动嵌套<strong>intent</strong>，此功能便会发出警告。<strong>嵌套 intent 是在其他 intent 中作为 extra 传递的 intent</strong>。</p> <p>如果您的应用同时执行以下两项操作，就会发生<strong>StrictMode</strong> 违规行为:</p> <ul> <li>您的应用从已传递的<strong>intent</strong> 的<strong>extra</strong> 中解封嵌套<strong>intent</strong>。</li> <li>您的应用立即使用该嵌套<strong>intent</strong> 启动应用组件，例如将<strong>intent</strong> 传递给<code>startActivity()</code>、<code>startService()</code> 或<code>bindService()</code>。</li> </ul> <p><strong>如何检测嵌套 intent 的不安全启动</strong></p> <p>如需检查您的应用中是否会以不安全的方式启动嵌套<strong>intent</strong>，请在配置<strong><code>VmPolicy</code></strong> 时调用<strong><code>detectUnsafeIntentLaunch()</code></strong>，如以下代码段所示：</p> <pre><code class="prism language-java"><span class="token keyword">protected</span><span class="token keyword">void</span><span class="token function">onCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>     StrictMode<span class="token punctuation">.</span><span class="token function">setVmPolicy</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token class-name">VmPolicy<span class="token punctuation">.</span>Builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">// Other StrictMode checks that you've previously added.</span><span class="token comment">// ...</span><span class="token punctuation">.</span><span class="token function">detectUnsafeIntentLaunch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">penaltyLog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">// Consider also adding penaltyDeath()</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>如果您的应用检测到<code>StrictMode</code> 违规行为，您可能需要停止应用的执行以保护潜在的敏感信息。</p> <p>注意：如果您的应用以 Android 12 为目标平台，并在其<code>VmPolicy</code> 定义中使用<code>detectAll()</code> 方法，系统将自动调用<code>detectUnsafeIntentLaunch()</code> 方法。</p> <p><strong>如何最大限度地降低出现 StrictMode 违规行为的可能性</strong></p> <p>如果您的应用不可避免的会启动嵌套<code>intent</code>，以便在应用的各个组件之间导航，或代表其他应用执行操作等。请执行以下操作：</p> <ul> <li><strong>嵌套 intent 的内部启动</strong>：<strong>确保这些组件不会被导出</strong>。</li> <li><strong>嵌套 intent 的跨应用启动</strong>：使用<strong><code>PendingIntent</code></strong> 代替嵌套<code>intent</code>。如此一来，当<code>PendingIntent</code> 从包含它的<code>Intent</code> 中解封时，应用组件可以使用调用进程的身份启动<code>PendingIntent</code>。该配置允许提供程序应用向调用应用的任何组件（包括未导出的组件）发送回调。</li> </ul> <h2><a id="_91" rel="nofollow"></a>应用再也无法在后台运行时启动前台服务</h2> <p>以<strong>Android 12</strong> 为目标平台的应用再也无法在后台运行时启动前台服务，但一些特殊情况除外。如果应用尝试在后台运行时启动前台服务，则会引发异常（少数特殊情况除外）。当您的应用在后台运行时，请考虑使用<strong><code>WorkManager</code></strong> 来计划和启动工作。</p> <h2><a id="_trampoline_94" rel="nofollow"></a>无法通过服务或广播接收器创建通知 trampoline</h2> <p>当用户与通知互动时，某些应用会启动应用组件来响应通知点按操作，此应用组件最终会启动用户最终看到并与之互动的<strong>activity</strong>。此应用组件被称为通知<strong>trampoline</strong>。</p> <p>为了改进应用性能和用户体验，以<strong>Android 12</strong> 为目标平台的应用无法从用作通知<strong>trampoline</strong> 的服务或广播接收器中启动<strong>activity</strong>。换言之，当用户点按通知或通知中的操作按钮时，您的应用无法在服务或广播接收器内调用<code>startActivity()</code>。</p> <p>当您的应用尝试从充当通知<strong>trampoline</strong> 的服务或广播接收器启动<strong>activity</strong> 时，系统会阻止启动该<strong>activity</strong> 启动，并在<strong>Logcat</strong> 中显示以下消息：</p> <pre><code class="prism language-java">Indirect notification activity start<span class="token punctuation">(</span>trampoline<span class="token punctuation">)</span> from PACKAGE_NAME<span class="token punctuation">,</span> \<span class="token keyword">this</span> should be avoided<span class="token keyword">for</span> performance reasons<span class="token punctuation">.</span></code></pre> <p><strong>解决方法：</strong></p> <p>如果您的应用从充当通知<strong>trampoline</strong> 的服务或广播接收器启动<strong>activity</strong>，请完成以下迁移步骤：</p> <p>1.创建一个与以下<code>activity</code> 关联的<strong><code>PendingIntent</code></strong> 对象：</p> <ul> <li>用户点按通知后会看到的<code>activity</code>（首选）。</li> <li><code>Trampoline activity</code> 或用于启动用户在点按通知后可以看到的<code>activity</code> 的<code>activity</code>。</li> </ul> <p>2.在构建通知的过程中，请使用您在上一步中创建的<strong><code>PendingIntent</code></strong> 对象。</p> <h2><a id="_SDK__118" rel="nofollow"></a>更新限制非 SDK 接口</h2> <p>其实从 Android 9（API 级别 28）开始，Android 平台对应用能使用的非 SDK 接口就实施了限制。只要应用引用非 SDK 接口或尝试使用<strong>反射</strong>或<strong>JNI</strong> 来获取其句柄，这些限制就适用。Android 12 更新了这个限制列表（将Android 11的部分灰名单直接加到了黑名单列表中）</p> <p><strong>区分 SDK 接口和非 SDK 接口</strong></p> <ul> <li>SDK 接口：在 Android 框架软件包索引中记录的那些接口</li> <li>非 SDK 接口：Android中私有或隐藏的 hidden api接口，这些接口方法可能在未来版本中随时可变</li> </ul> <p>为最大程度地降低非 SDK 使用限制对开发工作流的影响，我们将非 SDK 接口分成了几个名单，这些名单界定了非 SDK 接口使用限制的严格程度（取决于应用的目标 API 级别）</p> <table> <thead> <tr> <th align="center">名单</th> <th align="left">说明</th> </tr> </thead> <tbody> <tr> <td align="center"><strong>黑名单 (blacklist)</strong></td> <td align="left">无论应用的目标 API 级别是什么，您都无法使用的非 SDK 接口。 如果您的应用尝试访问其中任何一个接口，系统就会抛出错误。</td> </tr> <tr> <td align="center"><strong>有条件灰名单 (greylist-max-x)</strong></td> <td align="left">从 Android 9（API 级别 28）开始，当有应用以该 API 级别为目标平台时，我们会在每个 API 级别分别限制某些非 SDK 接口。<br />这些名单会以应用无法再访问该名单中的非 SDK 接口之前可以作为目标平台的最高 API 级别 (max-target-x) 进行标记。例如，在 Android Pie 中未被屏蔽、但现在已被 Android 10 屏蔽的非 SDK 接口会列入 max-target-p (greylist-max-p) 名单，其中的“p”表示 Pie 或 Android 9（API 级别 28）。<br /> 如果您的应用尝试访问受目标 API 级别限制的接口，系统就会将此 API 视为已列入屏蔽名单。</td> </tr> <tr> <td align="center"><strong>灰名单 (greylist)</strong></td> <td align="left">当前不受限制且您的应用可以使用的非 SDK 接口。 但请注意，这些接口不受支持，可能会在未发出通知的情况下随时发生更改。预计这些接口在未来的 Android 版本中会被有条件地屏蔽，并列在 max-target-x 名单中。</td> </tr> <tr> <td align="center"><strong>白名单 (whitelist)</strong></td> <td align="left">已在 Android 框架软件包索引中正式记录、受支持并且可以自由使用的接口。</td> </tr> </tbody> </table> <p><strong>如何确定我当前使用的接口属于哪个名单？</strong></p> <ol> <li>官方给出了文件下载地址，可以到这里下载：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://developer.android.google.cn/guide/app-compatibility/restrictions-non-sdk-interfaces#determine-list"  rel="nofollow">确定接口属于哪个名单</a></li> <li>可以参考这里：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://developer.android.google.cn/about/versions/12/non-sdk-12"  rel="nofollow">Android 12 中有关限制非 SDK 接口的更新</a></li> <li>可以在FrameWork源码中搜索<code>hiddenapi</code>关键字，搜索结果中的<code>hiddenapi-force-blacklist.txt</code> 和<code>hiddenapi-light-greylist.txt</code> 就是黑名单和灰名单列表，推荐<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.androidos.net.cn/sourcecode"  rel="nofollow">Android Source</a> 这个网站可在线搜索</li> </ol> <p><strong>如果用反射或者JNI调用了这些非SDK接口会导致什么影响：</strong></p> <table> <thead> <tr> <th align="left">访问方式</th> <th align="left">结果</th> </tr> </thead> <tbody> <tr> <td align="left">Dalvik 指令引用某个字段</td> <td align="left">抛出 NoSuchFieldError</td> </tr> <tr> <td align="left">Dalvik 指令引用某个方法</td> <td align="left">抛出 NoSuchMethodError</td> </tr> <tr> <td align="left">通过 Class.getDeclaredField() 或 Class.getField() 进行反射</td> <td align="left">抛出 NoSuchFieldException</td> </tr> <tr> <td align="left">通过 Class.getDeclaredMethod()、Class.getMethod() 进行反射</td> <td align="left">抛出 NoSuchMethodException</td> </tr> <tr> <td align="left">通过 Class.getDeclaredFields()、Class.getFields() 进行反射</td> <td align="left">结果中未获取到非 SDK 成员</td> </tr> <tr> <td align="left">通过 Class.getDeclaredMethods()、Class.getMethods() 进行反射</td> <td align="left">结果中未获取到非 SDK 成员</td> </tr> <tr> <td align="left">通过 env-&gt;GetFieldID() 进行 JNI 调用</td> <td align="left">返回 NULL，抛出 NoSuchFieldError</td> </tr> <tr> <td align="left">通过 env-&gt;GetMethodID() 进行 JNI 调用</td> <td align="left">返回 NULL，抛出 NoSuchMethodError</td> </tr> </tbody> </table> <h2><a id="_153" rel="nofollow"></a>统一规范了自定义通知栏的显示区域</h2> <p>Android 12 改变了完全自定义通知的外观。 以前，自定义通知能够使用整个通知区域并提供自己的布局和样式。由此产生的反模式可能会令用户困惑，或在不同设备上引发布局兼容性问题。</p> <p>对于以 Android 12 为目标平台的应用，包含自定义内容视图的通知将不再使用完整通知区域；相反，系统会应用标准模板。此模板可确保自定义通知在所有状态下都与其他通知相同。</p> <p>换言之，应用不能在整个通知栏区域进行个性化了，大家都长一个样。这是为了保持通知外观一致且易于浏览。</p> <p>下图显示了标准模板中的自定义通知：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220707/cc11017fc625710e5f5e618dd07483e6.jpg" alt="Android 12 行为变更：适配以Android 12为目标的应用"><br /> 以下示例展示了在收起状态和展开状态下呈现的自定义通知：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220707/3015940e81912721b33bf9ac0e6c39d7.jpg" alt="Android 12 行为变更：适配以Android 12为目标的应用" width="90%"/><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220707/7e843cb0156de5c8ee701d9fef7d528c.jpg" alt="Android 12 行为变更：适配以Android 12为目标的应用" width="85%"/></p> <p>Android 12 中的变更会影响某些定义<code>Notification.Style</code> 的自定义子类的应用，或使用<code>Notification.Builder</code> 的方法<code>setCustomContentView(RemoteViews)</code>、<code>setCustomBigContentView(RemoteViews)</code> 和<code>setCustomHeadsUpContentView(RemoteViews)</code> 的应用。</p> <p>如果您的应用使用的是完全自定义的通知，建议尽快使用新模板进行测试，并进行必要的调整：</p> <ol> <li>启用自定义通知变更：<br /> a. 将应用的<code>targetSdkVersion</code> 变更为<code>S</code> 以启用新行为。<br /> b. 重新编译。<br /> c. 在搭载<code>Android 12</code> 的设备或模拟器上安装您的应用。</li> <li>测试所有使用自定义视图的通知，确保这些通知在通知栏中看起来符合预期。</li> <li>请注意自定义视图规格。一般来说，提供给自定义通知的高度比之前小。在收起状态下，自定义内容的最大高度已从<code>106dp</code> 减少到<code>48dp</code>。此外，水平空间也减小了。</li> <li>为了确保“浮动通知”状态看起来符合您的预期，请勿忘记将通知渠道的重要性提升至“高”（在屏幕中弹出）。</li> </ol> <h2><a id="SameSite_Cookie__WebView_178" rel="nofollow"></a>SameSite Cookie 行为将被应用于 WebView</h2> <p><strong>什么是 SameSite Cookie</strong>？</p> <p>可参考以下文章了解：</p> <ul> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://web.dev/samesite-cookies-explained/#samesitelax-by-default"  rel="nofollow">SameSite cookies explained</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html"  rel="nofollow">Cookie 的 SameSite 属性</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://web.dev/schemeful-samesite/"  rel="nofollow">Schemeful Same-Site</a></li> </ul> <p><strong>Cookie</strong> 的<strong>SameSite</strong> 属性决定了它是可以与任何请求一起发送，还是只能与同站点请求一起发送。<strong>Android 12</strong> 中的<strong>WebView</strong> 基础版本包含以下隐私保护方面的变更，旨在改善对第三方<strong>Cookie</strong> 的默认处理方式，并帮助防止意外跨站点共享：</p> <ul> <li>没有<strong>SameSite</strong> 属性的<strong>Cookie</strong> 被视为<code>SameSite=Lax</code>。</li> <li>带有<code>SameSite=None</code> 的<strong>Cookie</strong> 还必须指定<strong>Secure</strong> 属性，这意味着它们需要安全的上下文，并应通过<strong>HTTPS</strong> 发送。</li> <li>站点的<strong>HTTP</strong> 版本和<strong>HTTPS</strong> 版本之间的链接现在被视为跨站点请求，因此除非将<strong>Cookie</strong> 正确标记为<code>SameSite=None; Secure</code>，否则<strong>Cookie</strong> 不会被发送。</li> </ul> <p>对于开发者而言，一般指导意见是识别关键用户流中的跨站点<strong>Cookie</strong> 依赖项，并确保在需要时使用适当的值显式设置<code>SameSite</code> 属性。您必须显式指定允许在不同网站上运行的<strong>Cookie</strong>，或适用于从<strong>HTTP</strong> 切换到<strong>HTTPS</strong> 进行同站点导航的<strong>Cookie</strong>。</p> <h2><a id="adb__195" rel="nofollow"></a>adb 备份限制</h2> <p>为了保护私有应用数据，Android 12 变更了<code>adb backup</code> 命令的默认行为。对于<strong>以 Android 12 为目标平台的应用，用户运行<code>adb backup</code> 命令时，从设备导出的任何其他系统数据都不包含应用数据</strong>。</p> <p>如果您的测试或开发工作流程依赖于使用<code>adb backup</code> 的应用数据，现在您可以选择通过在应用的清单文件中将<code>android:debuggable</code> 设置为<code>true</code> 来导出应用数据。</p> <p>以上，可参考官网：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://developer.android.google.cn/about/versions/12/behavior-changes-all"  rel="nofollow">行为变更：以 Android 12 为目标平台的应用</a></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-85575.htm">国内兽药厂家前50名有（国内兽药厂家前50名有哪些）</a></p>
+                                        <p>下一个：<a href="/news/article-86309.htm">动物疫苗检测找哪个部门（动物疫苗检测站）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-14-free-ssr-node.htm" title="「3月14日」最高速度18.3M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「3月14日」最高速度18.3M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-74484.htm" title="FreeRTOS进阶之任务通知示例完全解析_操作系统">FreeRTOS进阶之任务通知示例完全解析_操作系统</a></li>
+                        <li class="py-2"><a href="/news/article-66621.htm" title="纯手工宠物零食怎么做（diy宠物零食）">纯手工宠物零食怎么做（diy宠物零食）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-5-clash-v2ray-ss-ssr.htm" title="「3月5日」最高速度20.6M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「3月5日」最高速度20.6M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-84876.htm" title="微信小程序自定义导航栏组件(完美适配手机),可自定义实现任何你想要的功能">微信小程序自定义导航栏组件(完美适配手机),可自定义实现任何你想要的功能</a></li>
+                        <li class="py-2"><a href="/news/article-84877.htm" title="猫名字最旺家（猫名字最旺家旺主人）">猫名字最旺家（猫名字最旺家旺主人）</a></li>
+                        <li class="py-2"><a href="/news/article-69178.htm" title="关于Hadoop在java客户端进行下载时的异常java.io.FileNotFoundException: Hadoop home directory is no existed的解决办法">关于Hadoop在java客户端进行下载时的异常java.io.FileNotFoundException: Hadoop home directory is no existed的解决办法</a></li>
+                        <li class="py-2"><a href="/news/article-76508.htm" title="从线上环境摘取了四个代码优化记录分享给大家">从线上环境摘取了四个代码优化记录分享给大家</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-free-subscribe-node.htm" title="「3月6日」最高速度21.2M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「3月6日」最高速度21.2M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-81331.htm" title="宠物粮食批发进货渠道有哪些地方可以进（宠物粮从哪里进货便宜）">宠物粮食批发进货渠道有哪些地方可以进（宠物粮从哪里进货便宜）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
