@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-90650.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>详细分析虚拟DOM与diff算法</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="????虚拟DOM与diff算法 在vue、react等技术出现之前，每次修改DOM都需要通过遍历查询DOM树的方式，找到需要更新的DOM，然后修改样式或结构，资源损耗十分严重。而对于虚拟DOM来说，" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-90650.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="详细分析虚拟DOM与diff算法" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/2f70509a2ef5985540980501a5e48521.webp" />
+        <meta property="og:release_date" content="2025-04-07T09:03:14" />
+    <meta property="og:updated_time" content="2025-04-07T09:03:14" />
+        <meta property="og:description" content="????虚拟DOM与diff算法 在vue、react等技术出现之前，每次修改DOM都需要通过遍历查询DOM树的方式，找到需要更新的DOM，然后修改样式或结构，资源损耗十分严重。而对于虚拟DOM来说，" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="详细分析虚拟DOM与diff算法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/">
+                        <span>Shadowrocket Node</span>
+                        </a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>详细分析虚拟DOM与diff算法</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2 id="虚拟dom与diff算法">????虚拟DOM与diff算法</h2> <p>在vue、react等技术出现之前，每次修改DOM都需要通过遍历查询DOM树的方式，找到需要更新的DOM，然后修改样式或结构，资源损耗十分严重。而对于虚拟DOM来说，每次DOM的更改就变成了JS对象的属性的更改，能方便的查找JS对象的属性变化，要比查询DOM树的性能开销小，所以能够改善浏览器的性能问题。</p> <p>对于vue，从vue2就开始支持虚拟DOM。</p> <p><strong>diff算法</strong>：简单来说就是找出两个对象的差异，只对有差异的一小块DOM进行更新，而不是整个DOM，从而达到最小量更新的效果</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/71caa7675ec634c13769e9b12812c93e.jpg" alt="详细分析虚拟DOM与diff算法"></p> <p><strong>虚拟DOM</strong>：内部会把代码段解析成一个对象（真实DOM是通过模板编译变成虚拟DOM的）</p> <p>用JS对象描述DOM的层次结构，DOM中的一切属性都在虚拟DOM中有对应的属性</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/94e4013420bcd05ffdf9ae27dcaf884c.jpg" alt="详细分析虚拟DOM与diff算法"></p> <h2 id="snabbdom环境搭建">snabbdom环境搭建</h2> <p>是虚拟DOM库，diff算法的鼻祖，vue源码借鉴了<code>snabbdom</code></p> <p>官方git:<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/snabbdom/snabbdom"  target="_blank" rel="nofollow">https://github.com/snabbdom/snabbdom</a></p> <p>git上的<code>snabbdom</code>源码是用<code>TypeScript</code>写的，如果要直接使用编译出来的<code>Javascript</code>版的<code>snabbdom</code>库，可以从npm上下载<code>npm i -D snabbdom</code></p> <p><code>snabbdom</code>库是DOM库，不能在node js环境运行，需要搭建<code>webpack</code>和<code>webpack-dev-server</code>开发环境。需要注意的是必须安装<code>webpack@5</code>。</p> <pre><code>npm i -D webpack@5 webpack-cli@3 webpack-dev-server@3</code></pre> <p>配置<code>webpack.config.js</code>文件，参考官网进行配置：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://webpack.docschina.org/"  target="_blank" rel="nofollow">https://webpack.docschina.org/</a></p> <pre><code>const path = require('path');  module.exports = {     // 入口     entry: './src/index.js',      // 出口     output: {         // 虚拟打包路径，文件夹不会真正生成，而是在8080端口虚拟生成         publicPath: 'xuni',         // 打包出来的文件名         filename: "bundle.js",     },     // 配置webpack-dev-server     devServer: {         // 端口号         port: 8082,         // 静态根目录         contentBase: 'www',     }, }</code></pre> <p>将项目根目录下的<code>package.json</code>文件中修改<code>script</code>的配置，就可以通过<code>npm run dev</code>启动项目</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/e546fb2791532ebd6dca1be00608acc0.jpg" alt="详细分析虚拟DOM与diff算法"></p> <p>配置完之后将官网的Example进行测试，由于示例要获取id=container的节点，所以我们需要提前准备一个id为container的div。</p> <pre><code>&lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; &lt;head&gt;     &lt;meta charset="UTF-8"&gt;     &lt;title&gt;Title&lt;/title&gt; &lt;/head&gt; &lt;body&gt;     &lt;div id="container"&gt;&lt;/div&gt;     &lt;script src="/xuni/bundle.js"&gt;&lt;/script&gt; &lt;/body&gt; &lt;/html&gt;</code></pre> <p>需要注意的点</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/8bacae341fdaca181733065a89731a89.jpg" alt="详细分析虚拟DOM与diff算法"></p> <p>页面出现如下状态即表示配置完成</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/8696902bb836118c627c35c63d6c5043.jpg" alt="详细分析虚拟DOM与diff算法"></p> <h2 id="虚拟dom和h函数">虚拟DOM和h函数</h2> <p>diff是发生在虚拟DOM上的</p> <p>新虚拟DOM和老虚拟DOM进行diff(精细化比较)，算出应该如何最小量更新，最后反映到真正的DOM上。</p> <p>h函数用来产生虚拟节点(vnode)</p> <pre><code>h('a',{ props: { href: 'https://www.baidu.com' } }, '百度');</code></pre> <p>会得到这样的虚拟节点</p> <pre><code>{ "sel": "a", "data": { props: { href: 'https://www.baidu.com' } }, "text": "百度" }</code></pre> <p>它表示的真正的DOM节点</p> <pre><code>&lt;a href="https://www.baidu.com"&gt;百度&lt;/a&gt;</code></pre> <p>如果需要让虚拟节点上树，需要借助<code>patch</code>函数</p> <pre><code>import {     init,     classModule,     propsModule,     styleModule,     eventListenersModule,     h, } from "snabbdom";  // 创建patch函数 var patch = init([classModule, propsModule, styleModule, eventListenersModule]);  //创建虚拟节点 var vNode1 = h('a',{ props: { href: 'https://www.baidu.com' } }, '百度');  // 让虚拟节点上树 const container = document.getElementById('container'); patch(container,vNode1);</code></pre> <p><strong>h函数可以嵌套使用，从而得到虚拟DOM树</strong></p> <pre><code>h('ul',{},[ 	h('li',{},'可乐'); 	h('li',{},'雪碧'); 	h('li',{},'椰汁'); ])</code></pre> <h2 id="diff算法">diff算法</h2> <p>实现最小量更新。需要<code>key</code>。<code>key</code>是这个节点的唯一标识，告诉diff算法，在更改前后它们是同一个DOM节点。</p> <p><strong>只有同一个虚拟节点，才进行精细化比较。</strong>否则就是暴力删除旧的、插入新的。</p> <p>同一个虚拟节点：选择器相同且key相同</p> <p><strong>只进行同层比较，不会进行跨层比较。</strong></p> <p>比如下面这两个DOM节点，虽然是同一片虚拟节点，但是跨层了，依旧会暴力删除旧的、插入新的。</p> <pre><code>const vnode1 = h('div',{},[ 	h('p',{ key: 'A' }, 'A'), 	h('p',{ key: 'B' }, 'B'), 	h('p',{ key: 'C' }, 'C'), 	h('p',{ key: 'D' }, 'D'), ]);  const vnode2 = h('div',{},h('section',{},[ 	h('p',{ key: 'A' }, 'A'), 	h('p',{ key: 'B' }, 'B'), 	h('p',{ key: 'C' }, 'C'), 	h('p',{ key: 'D' }, 'D'), ]))</code></pre> <p>分析源码也可以验证以上所述</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/44d0356766fcfa2395a24eed73dedcbe.jpg" alt="详细分析虚拟DOM与diff算法"></p> <p>首先会去判断是不是虚拟节点，不是的话会先去把它包装成虚拟节点</p> <p>然后判断是不是同一个节点，不是的话插入新的、删除旧的，是的话精细化比较</p> <p>执行的流程图</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/1dab75bcc07fe515f3454bbf2a405a76.jpg" alt="详细分析虚拟DOM与diff算法"></p> <h3 id="patch函数">patch函数</h3> <p>首先判断oldVnode是否是虚拟节点，如果是DOM节点的话先把oldVnode包装成虚拟节点</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/62c0f62099f70ae0b3145b484278625b.jpg" alt="详细分析虚拟DOM与diff算法"></p> <p>然后判断新节点和旧节点是否是同一个节点，判断<code>key</code>的值是否相同，标签名是否相同，是否都定义了data(data包含一些具体的信息，onclick、style等)</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/886ad3ad795ee129174a9230af2c789f.jpg" alt="详细分析虚拟DOM与diff算法"></p> <p>如果不是同一节点，新节点直接替换老节点，删除旧的、插入新的。在源码中，创建所有的子节点时，需要递归。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/33ab4d34bb65e04d50a2fd28ca8d13db.jpg" alt="详细分析虚拟DOM与diff算法"></p> <p>如果新旧节点是同一个节点时，会执行<code>patchVnode</code>进行子节点比较</p> <h3 id="patchvnode函数">patchVnode函数</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/5254e9112b53c414fbbac740de9f7528.jpg" alt="详细分析虚拟DOM与diff算法"></p> <p>首先会找到对应的真实DOM</p> <pre><code>const elm = (vnode.elm = oldVnode.elm)!;</code></pre> <p>如果新老节点相同，直接返回<code>if(oldVnode === vnode) return</code></p> <ul> <li> <p>如果vnode没有文本节点(<code>isUndef(vnode.text)</code>)</p> <ul> <li> <p>都有children且不相同</p> <p>使用<code>updateChildren</code>对比children（<strong>diff算法的核心</strong>）</p> </li> <li> <p>只有vnode有children</p> <p>则oldVnode是一个空标签或者是文本节点，如果是文本节点就清空文本节点，然后将vnode的children创建为真实DOM后插入到空标签内。</p> </li> <li> <p>只有oldVnode有children</p> <p>vnode没有的东西，在oldVnode内需要删除掉<code>removeVnodes</code>（oldVnode有且vnode没有的，都清空或移除）</p> </li> <li> <p>只有oldVnode有文本</p> <p>清空文本</p> </li> </ul> </li> <li> <p>如果vnode有text属性且不同</p> <p>以<code>vnode</code>为标准，无论<code>oldVnode</code>是什么类型节点，直接设置为<code>vnode</code>内的文本</p> </li> </ul> <h3 id="updatechildren函数">updateChildren函数</h3> <p>updateChildren方法的核心：</p> <ul> <li> <p>提取出新老节点的子节点：新节点子节点ch和老节点子节点oldCh</p> </li> <li> <p>ch和oldCh分别设置StartIdx(头指针)和EndIdx(尾指针)变量，相互比较。此时就有四个变量：<code>oldStartIdx、oldEndIdx、newStartIdx、newEndIdx</code>(这里采用双指针的思想)</p> <p>有四种方式来比较：</p> <ol> <li> <p>oldStartIdx和newStartIdx比较</p> <p>如果匹配，DOM不用修改，将oldStartIdx和newStartIdx的下标往后移一位</p> </li> <li> <p>oldEndIdx和newEndIdx比较</p> <p>如果匹配，DOM不用修改，将oldEndIdx和newEndIdx的下标往前移一位</p> </li> <li> <p>oldStartIdx和newEndIdx比较</p> <p>如果匹配，DOM不用修改，将oldStartIdx对应的真实DOM插入到最后一位，oldStartIdx的下标后移一位，newEndIdx的下标前移一位。</p> </li> <li> <p>oldEndIdx和newStartIdx比较</p> <p>如果匹配，DOM不用修改，将oldEndIdx对应的真实DOM插入到oldEndIdx对应真实Dom的前面，oldEndIdx的下标前移一位，newStartIdx的下标后移一位。</p> </li> </ol> </li> </ul> <p>如果4种方式都没有匹配成功，如果设置了key就通过key进行比较，在比较过程中startIdx++，endIdx--，一旦<code>StartIdx &gt; EndIdx</code>表明ch或者oldCh至少有一个已经遍历完成，此时就会结束比较</p> <p>处理结束后，如果新节点有剩余，就添加；如果旧节点有剩余，就删除</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/5967b0cd211529836be9f3672a70c2cf.jpg" alt="详细分析虚拟DOM与diff算法"></p> <h2 id="v-for中key作用与原理">v-for中key作用与原理</h2> <p>key是虚拟DOM对象的标识，当数据发生变化时，Vue会根据【新数据】产生【新的虚拟DOM】，随后Vue进行【新虚拟DOM】与【旧虚拟DOM】的差异比较，比较规则如下：</p> <p>（1）旧虚拟DOM中找到了与新虚拟DOM相同的key</p> <p>		①若虚拟DOM中内容没变，直接使用之前的真实DOM</p> <p>		②若虚拟DOM中内容变了，则生成新的真实DOM，随后替换掉页面中之前的真实DOM</p> <p>（2）旧虚拟DOM中未找到与新虚拟DOM相同的key</p> <p>		创建新的真实DOM，随后渲染到页面</p> <p>所以，如果用index作为key可能会引发的问题：</p> <p>（1）若对数据进行：逆序添加、逆序删除等破环顺序操作，会产生没有必要的真实DOM更新==&gt;界面效果没问题，但效率低</p> <p>（2）如果结构中还包含输入类的DOM，会产生错误DOM错误==&gt;界面有问题</p> <p><strong>实际开发中如何选择key</strong></p> <ol> <li>最好使用每条数据的<strong>唯一标识</strong>作为key，比如id、手机号、身份证号、学号等唯一值</li> <li>如果不存在对数据的逆序添加、逆序删除等破坏顺序操作，仅用于渲染列表用于展示，使用index作为key是没有问题的</li> </ol> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-89912.htm">宠物医院投诉电话多少号（宠物医院投诉怎么投诉）</a></p>
+                                        <p>下一个：<a href="/news/article-90652.htm">上海市青浦区二中分数线是多少分（上海市青浦区二中分数线是多少分啊）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-21-node-share.htm" title="「3月21日」最高速度19.6M/S，2025年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接">「3月21日」最高速度19.6M/S，2025年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-30-free-shadowrocket-node.htm" title="「3月30日」最高速度22.8M/S，2025年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接">「3月30日」最高速度22.8M/S，2025年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-free-ssr-node.htm" title="「3月11日」最高速度20.4M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接">「3月11日」最高速度20.4M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-free-ssr-subscribe.htm" title="「3月4日」最高速度20.2M/S，2025年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接">「3月4日」最高速度20.2M/S，2025年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-5-clash-v2ray-ss-ssr.htm" title="「3月5日」最高速度20.6M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「3月5日」最高速度20.6M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-1-free-node-subscribe-links.htm" title="「4月1日」最高速度19.6M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接">「4月1日」最高速度19.6M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-2-free-node-subscribe.htm" title="「3月2日」最高速度19.4M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接">「3月2日」最高速度19.4M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-79917.htm" title="分布式应用运行时 Dapr 1.7 发布">分布式应用运行时 Dapr 1.7 发布</a></li>
+                        <li class="py-2"><a href="/news/article-71138.htm" title="中国农业大学动物医学校区（中国农业大学动物医学系）">中国农业大学动物医学校区（中国农业大学动物医学系）</a></li>
+                        <li class="py-2"><a href="/news/article-65967.htm" title="vue项目刷新当前页面的方法">vue项目刷新当前页面的方法</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-91281.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>python开发HDFS</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="我们的目标是大数据算法平台，我们在处理数据，训练模型后，部分数据需要存在hdfs，那么我们就可以直接通过python 接口把数据放在hdfs上。 教程 Python hdfs包_程序模块 - PyPI" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-91281.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="python开发HDFS" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/5e572ef9a542b706e3743cef2f41cc8f.webp" />
+        <meta property="og:release_date" content="2025-04-08T09:55:34" />
+    <meta property="og:updated_time" content="2025-04-08T09:55:34" />
+        <meta property="og:description" content="我们的目标是大数据算法平台，我们在处理数据，训练模型后，部分数据需要存在hdfs，那么我们就可以直接通过python 接口把数据放在hdfs上。 教程 Python hdfs包_程序模块 - PyPI" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="python开发HDFS">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/">
+                        <span>Shadowrocket Node</span>
+                        </a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>python开发HDFS</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <p>我们的目标是大数据算法平台，我们在处理数据，训练模型后，部分数据需要存在hdfs，那么我们就可以直接通过python 接口把数据放在hdfs上。</p> <h2>教程</h2> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnpython.com/pypi/hdfs"  title="Python hdfs包_程序模块 - PyPI - Python中文网" rel="nofollow">Python hdfs包_程序模块 - PyPI - Python中文网</a></p> <p>安装</p> <pre><code class="language-bash">pip install  requests-kerberos pip install kerberos pip install avro pip install hdfs </code></pre> <h2>安装过程存在问题</h2> <h3>cannot import name 'SCHEME_KEYS'</h3> <p> 重新安装pip即可</p> <pre><code>conda remove pip  conda install pip</code></pre> </h1> <h2>&nbsp;hdfscli模式</h2> <p>click模式有什么好处，其实可以看做python的cmd模式，具体可以参考<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://click.palletsprojects.com/en/6.x/options/"  title="Options — Click Documentation (6.x)" rel="nofollow">Options — Click Documentation (6.x)</a></p> <p>这里可以自行查一下click与args的区别。</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://hdfscli.readthedocs.io/en/latest/quickstart.html"  title="Quickstart — HdfsCLI 2.5.8 documentation" rel="nofollow">Quickstart — HdfsCLI 2.5.8 documentation</a></p> <p>新增配置， vim&nbsp;~/.hdfscli.cfg</p> <pre><code class="language-bash">[global] default.alias = dev  [dev.alias] url = http://localhost:50070 user = root</code></pre> <p>hdfscli功能</p> <pre><code> hdfscli --help</code></pre> <pre><code>Usage:   hdfscli [interactive] [-a ALIAS] [-v...]   hdfscli download [-fsa ALIAS] [-v...] [-t THREADS] HDFS_PATH LOCAL_PATH   hdfscli upload [-sa ALIAS] [-v...] [-A | -f] [-t THREADS] LOCAL_PATH HDFS_PATH   hdfscli -L | -V | -h   Commands:   download                      Download a file or folder from HDFS. If a                                 single file is downloaded, - can be                                 specified as LOCAL_PATH to stream it to                                 standard out.   interactive                   Start the client and expose it via the python                                 interpreter (using iPython if available).   upload                        Upload a file or folder to HDFS. - can be                                 specified as LOCAL_PATH to read from standard                                 in.  </code></pre> <p>&nbsp;进入hdfscli</p> <pre><code>hdfscli --alias=dev</code></pre> <p><img fetchpriority="high" decoding="async" alt="" height="318" src="http://img.555519.xyz/uploads/20221229/860cff85fc8549614481f8b16bfe2fd6.jpg"></p> <h2>WebHDFS API</h2> <p>&nbsp;我们知道在hdfs中，经常用的命令有</p> <pre><code>hadoop fs -ls hadoop fs -cat hadoop fs -put hadoop fs -get hadoop fs -mkdir hadoop fs -cp hadoop fs -mv hadoop fs -stat </code></pre> <p>在python中也要实现上述功能</p> <pre><code class="language-python">from hdfs import Client client=Client("http://localhost:50070/") dir(client) ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__registry__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_allow_snapshot', '_append', '_create', '_create_snapshot', '_delete', '_delete_snapshot', '_disallow_snapshot', '_get_acl_status', '_get_content_summary', '_get_file_checksum', '_get_file_status', '_get_home_directory', '_get_trash_root', '_list_status', '_lock', '_mkdirs', '_modify_acl_entries', '_open', '_proxy', '_remove_acl', '_remove_acl_entries', '_remove_default_acl', '_rename', '_rename_snapshot', '_request', '_session', '_set_acl', '_set_owner', '_set_permission', '_set_replication', '_set_times', '_timeout', '_urls', 'acl_status', 'allow_snapshot', 'checksum', 'content', 'create_snapshot', 'delete', 'delete_snapshot', 'disallow_snapshot', 'download', 'from_options', 'list', 'makedirs', 'parts', 'read', 'remove_acl', 'remove_acl_entries', 'remove_default_acl', 'rename', 'rename_snapshot', 'resolve', 'root', 'set_acl', 'set_owner', 'set_permission', 'set_replication', 'set_times', 'status', 'upload', 'url', 'urls', 'walk', 'write']</code></pre> <p>具体如何使用，直接看python文档说明即可。</p> <p>注意，这里的URL最后要加上反斜杠，要不然会报错。</p> <p>&nbsp;<img decoding="async" alt="" height="930" src="http://img.555519.xyz/uploads/20221229/c532e43075d68b9030a21623e1c79534.jpg"></p> <p>其他参考文档</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jianshu.com/p/97a8291cb12c"  title="python读写hdfs四种不同格式文件 - 简书" rel="nofollow">python读写hdfs四种不同格式文件 - 简书</a></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-90652.htm">上海市青浦区二中分数线是多少分（上海市青浦区二中分数线是多少分啊）</a></p>
+                                        <p>下一个：<a href="/news/article-91282.htm">动物防疫工作计划书题目（动物防疫规划）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-87740.htm" title="Postman测试 &#8211; Post请求参数为 Llist＜String＞ 如何传参？">Postman测试 &#8211; Post请求参数为 Llist＜String＞ 如何传参？</a></li>
+                        <li class="py-2"><a href="/news/article-67268.htm" title="动物疫苗的种类和研发过程包括哪些内容和方法（动物疫苗的生产原料有哪些,如何取得）">动物疫苗的种类和研发过程包括哪些内容和方法（动物疫苗的生产原料有哪些,如何取得）</a></li>
+                        <li class="py-2"><a href="/news/article-79917.htm" title="分布式应用运行时 Dapr 1.7 发布">分布式应用运行时 Dapr 1.7 发布</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-free-ssr-node.htm" title="「3月11日」最高速度20.4M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接">「3月11日」最高速度20.4M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-31-node-share.htm" title="「3月31日」最高速度21.7M/S，2025年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「3月31日」最高速度21.7M/S，2025年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-78556.htm" title="宠爱宠物快运中心地址（宠爱宠物诊疗中心）">宠爱宠物快运中心地址（宠爱宠物诊疗中心）</a></li>
+                        <li class="py-2"><a href="/news/article-84876.htm" title="微信小程序自定义导航栏组件(完美适配手机),可自定义实现任何你想要的功能">微信小程序自定义导航栏组件(完美适配手机),可自定义实现任何你想要的功能</a></li>
+                        <li class="py-2"><a href="/news/article-77184.htm" title="在vue中手写一个文字的轮播功能">在vue中手写一个文字的轮播功能</a></li>
+                        <li class="py-2"><a href="/news/article-73801.htm" title="如何切猪腰花(切猪腰花的步骤视频)">如何切猪腰花(切猪腰花的步骤视频)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-8-free-node-subscribe.htm" title="「4月8日」最高速度18.9M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接">「4月8日」最高速度18.9M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
