@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-96634.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>使用JavaScript做一个网页秒表（含开始、暂停、继续、重置功能）</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="&lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; &lt;head&gt;     &lt;meta charset="UTF-8"&gt;     &lt;m" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-96634.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="使用JavaScript做一个网页秒表（含开始、暂停、继续、重置功能）" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/e12882659cf6a707ffb6e692c9a1d317.webp" />
+        <meta property="og:release_date" content="2025-04-15T06:01:55" />
+    <meta property="og:updated_time" content="2025-04-15T06:01:55" />
+        <meta property="og:description" content="&lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; &lt;head&gt;     &lt;meta charset="UTF-8"&gt;     &lt;m" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="使用JavaScript做一个网页秒表（含开始、暂停、继续、重置功能）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/">
+                        <span>Shadowrocket Node</span>
+                        </a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>使用JavaScript做一个网页秒表（含开始、暂停、继续、重置功能）</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <pre><code class="prism language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">&gt;</span> <span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"viewport"</span> content<span class="token operator">=</span><span class="token string">"width=device-width, initial-scale=1.0"</span><span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>Document<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>button<span class="token operator">&gt;</span>开始<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>button disabled<span class="token operator">&gt;</span>暂停<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>button disabled<span class="token operator">&gt;</span>继续<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>button disabled<span class="token operator">&gt;</span>重置<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>      <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span> <span class="token comment">//定义一个变量，根据定时器每秒执行一次，每次执行++自增操作，变量存储的数值，就会每秒+1。现在需要的记录效果是每0.01秒，也就是10毫秒执行一次。根据累计的数值执行进位。如果毫秒达到100就是1秒，如果秒达到60就是1分钟，如果分钟达到60就是1小时</span>          <span class="token keyword">var</span> ms <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">// 毫秒</span>         <span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>   <span class="token comment">// 秒</span>         <span class="token keyword">var</span> m <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>   <span class="token comment">// 分钟</span>         <span class="token keyword">var</span> h <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>   <span class="token comment">// 小时</span>          <span class="token comment">// 单独定义存储时、分、秒、毫秒的字符串的变量来存储累加时间的执行结果，因为如果直接在ms、s、m、h变量上进行拼接操作，会影响++操作的执行       </span>         <span class="token keyword">var</span> msStr <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>         <span class="token keyword">var</span> sStr <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>         <span class="token keyword">var</span> mStr <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>         <span class="token keyword">var</span> hStr <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>          <span class="token comment">// 因为定时器是定义在函数内部，必须定义一个全局变量来存储定时器，在函数外部可以调用终止定时器</span>         <span class="token keyword">var</span> time <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>          <span class="token comment">// 获取div标签对象</span>         <span class="token keyword">var</span> oDiv <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">// 获取按钮的标签对象</span>         <span class="token keyword">var</span> oStart <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 开始</span>         <span class="token keyword">var</span> oPause  <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 暂停</span>         <span class="token keyword">var</span> oCont <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//继续</span>         <span class="token keyword">var</span> oReset <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 重置</span>          <span class="token comment">// 给四个按钮添加点击事件效果</span>                  <span class="token comment">// 开始按钮</span>         oStart<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             <span class="token comment">// 点击开始按钮执行函数，执行秒表计时</span>             <span class="token function">setTimeStr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// 可以点暂停</span>             oPause<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>             <span class="token comment">// 其他标签都不能点</span>             oStart<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>             oCont<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>             oReset<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>          <span class="token comment">// 暂停按钮</span>         oPause<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             <span class="token comment">// 点击暂停按钮,清除定时器,终止秒表执行</span>             <span class="token function">clearInterval</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// 暂停本身和开始不能点</span>             oPause<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>             oStart<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>             <span class="token comment">// 继续和重置能点了</span>             oCont<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>             oReset<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>          <span class="token comment">// 继续按钮</span>         oCont<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             <span class="token comment">// 点击继续按钮，继续执行定时器</span>             <span class="token function">setTimeStr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// 暂停可以点</span>             oPause<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>             <span class="token comment">// 其他都不能点</span>             oCont<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>             oReset<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>             oStart<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>           <span class="token comment">// 重置按钮</span>         oReset<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             <span class="token comment">// 点击重置按钮,将所有的数据都恢复到0的状态</span>             <span class="token comment">// 所有变量存储的数据都是0, div中的内容也恢复到0          </span>             <span class="token comment">// 定义所有存储时间的变量存储的数值为0 </span>             ms <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">// 毫秒</span>             s <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>   <span class="token comment">// 秒</span>             m <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>   <span class="token comment">// 分钟</span>             h <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>   <span class="token comment">// 小时</span>             <span class="token comment">// 将div中的内容,设定为初始状态的00:00:00:00内容</span>             oDiv<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'00:00:00:00'</span><span class="token punctuation">;</span>             <span class="token comment">// 开始可以点</span>             oStart<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>             <span class="token comment">// 其他都不能点</span>             oPause<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>             oCont<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>             oReset<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>          <span class="token comment">// 每次点击开始按钮或者继续按钮都会调用执行函数，都会生成一个新的定时器。time中存储的是当前这个新的定时器，是整个程序中定时器的序号</span>         <span class="token comment">// 例如点击开始按钮10次会生成10个定时，time中存储最后一个定时器的序号10</span>         <span class="token comment">// 当点击暂停按钮时，清除的是time中存储的序号是10的这一个定时器，之前 1-9定时器仍然会执行      </span>         <span class="token comment">// 解决方法：点击开始按钮之后，在点击暂停按钮之前，禁止再次点击开始按钮。也就是在清除原有定时器之前，不允许生成新的定时器</span>          <span class="token comment">// 定义函数，这个函数的作用就是记录执行的时间，有小时、分钟、秒、毫秒 4个部分。将记录的时间写入到div中，div中起始时默认都是0</span>         <span class="token keyword">function</span> <span class="token function">setTimeStr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                     <span class="token comment">// 赋值操作,将定时器,存储在全局作用域变量中</span>             <span class="token comment">// 此处只是赋值操作</span>             time <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                 ms<span class="token operator">++</span><span class="token punctuation">;</span>                 <span class="token comment">// 毫秒是10毫秒一增加</span>                 <span class="token comment">// ms存储的数值如果达到100，就是1秒种了</span>                 <span class="token comment">// 给秒单位进位  s++ </span>                 <span class="token comment">// ms本身需要重新开始记录数值</span>                 <span class="token comment">// 0:0:0:99  ---&gt; 0:0:1:00</span>                 <span class="token keyword">if</span><span class="token punctuation">(</span>ms <span class="token operator">==</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                     s<span class="token operator">++</span><span class="token punctuation">;</span>       <span class="token comment">// 秒进位</span>                     ms <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token comment">// ms本身清零,重新记录</span>                 <span class="token punctuation">}</span>                  <span class="token keyword">if</span><span class="token punctuation">(</span>s <span class="token operator">==</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                     m<span class="token operator">++</span><span class="token punctuation">;</span>       <span class="token comment">// 分钟进位 </span>                     s <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>     <span class="token comment">// s秒 清零</span>                 <span class="token punctuation">}</span>                  <span class="token keyword">if</span><span class="token punctuation">(</span>m <span class="token operator">==</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                     h<span class="token operator">++</span><span class="token punctuation">;</span>       <span class="token comment">// 小时进位 </span>                     m <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>     <span class="token comment">// m分钟 清零</span>                 <span class="token punctuation">}</span>                  <span class="token comment">// 小时记录可以每24小时清零一次，或者100小时清零一次，都可以</span>                 <span class="token keyword">if</span><span class="token punctuation">(</span>h <span class="token operator">==</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                     h <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>                 <span class="token punctuation">}</span>                  <span class="token comment">// 如果记录的时间小于0，要做补零操作</span>                 <span class="token keyword">if</span><span class="token punctuation">(</span>ms <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                     msStr <span class="token operator">=</span> <span class="token string">'0'</span> <span class="token operator">+</span> ms<span class="token punctuation">;</span>                 <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{<!-- --></span>                     msStr <span class="token operator">=</span> ms<span class="token punctuation">;</span>                 <span class="token punctuation">}</span>                  <span class="token keyword">if</span><span class="token punctuation">(</span>s <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                     sStr <span class="token operator">=</span> <span class="token string">'0'</span> <span class="token operator">+</span> s<span class="token punctuation">;</span>                 <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{<!-- --></span>                     sStr <span class="token operator">=</span> s<span class="token punctuation">;</span>                 <span class="token punctuation">}</span>                  <span class="token keyword">if</span><span class="token punctuation">(</span>m <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                     mStr <span class="token operator">=</span> <span class="token string">'0'</span> <span class="token operator">+</span> m<span class="token punctuation">;</span>                 <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{<!-- --></span>                     mStr <span class="token operator">=</span> m<span class="token punctuation">;</span>                 <span class="token punctuation">}</span>                  <span class="token keyword">if</span><span class="token punctuation">(</span>h <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                     hStr <span class="token operator">=</span> <span class="token string">'0'</span> <span class="token operator">+</span> h<span class="token punctuation">;</span>                 <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{<!-- --></span>                     hStr <span class="token operator">=</span> h<span class="token punctuation">;</span>                 <span class="token punctuation">}</span>                 <span class="token comment">// 每次执行返回一个记录时间的字符串，将这个字符串写入到div中</span>                 oDiv<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${<!-- --></span>hStr<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${<!-- --></span>mStr<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${<!-- --></span>sStr<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${<!-- --></span>msStr<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span>             <span class="token punctuation">}</span> <span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>        <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span> </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221230/bff6755f132f2b8601b1cd5ed252b34c.jpg" alt="使用JavaScript做一个网页秒表（含开始、暂停、继续、重置功能）"></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-95885.htm">鸵鸟蛋贵不贵(鸵鸟蛋有什么价值)</a></p>
+                                        <p>下一个：<a href="/news/article-96639.htm">给宠物医院的好评一百字 给宠物医院的好评一百字怎么写</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-69829.htm" title="vue路由自动加载、按组件异步载入vuex以及dll优化">vue路由自动加载、按组件异步载入vuex以及dll优化</a></li>
+                        <li class="py-2"><a href="/news/article-79243.htm" title="vs code编写web项目">vs code编写web项目</a></li>
+                        <li class="py-2"><a href="/news/article-95058.htm" title="@RequestBody 接收复杂实体类集合">@RequestBody 接收复杂实体类集合</a></li>
+                        <li class="py-2"><a href="/news/article-85574.htm" title="领养宠物是什么意思（领养宠物啥意思）">领养宠物是什么意思（领养宠物啥意思）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-free-ssr-subscribe.htm" title="「3月25日」最高速度22M/S，2025年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接">「3月25日」最高速度22M/S，2025年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-10-shadowrocket-node.htm" title="「3月10日」最高速度18.1M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「3月10日」最高速度18.1M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-82728.htm" title="【kafka】一次磁盘故障后消费者无法消费">【kafka】一次磁盘故障后消费者无法消费</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-16-free-node-subscribe-links.htm" title="「3月16日」最高速度21.8M/S，2025年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接">「3月16日」最高速度21.8M/S，2025年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-17-shadowrocket-node.htm" title="「3月17日」最高速度18M/S，2025年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接">「3月17日」最高速度18M/S，2025年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-87007.htm" title="宠物粮食龙头股票排名（宠物粮食的上市公司）">宠物粮食龙头股票排名（宠物粮食的上市公司）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
