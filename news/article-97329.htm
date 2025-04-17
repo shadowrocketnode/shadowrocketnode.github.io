@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-97329.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>vue原生方法自定义右键菜单_vue.js_</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="本文实例为大家分享了vue原生方法自定义右键菜单的具体代码，供大家参考，具体内容如下  1.在需要添加右键的页面，绑定contextmenu事件（阻止浏览器默认事件，添加自定义事件）  &lt;div" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-97329.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="vue原生方法自定义右键菜单_vue.js_" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/121ab84baed6c99673d6ecf4f053c5f9.webp" />
+        <meta property="og:release_date" content="2025-04-16T08:41:26" />
+    <meta property="og:updated_time" content="2025-04-16T08:41:26" />
+        <meta property="og:description" content="本文实例为大家分享了vue原生方法自定义右键菜单的具体代码，供大家参考，具体内容如下  1.在需要添加右键的页面，绑定contextmenu事件（阻止浏览器默认事件，添加自定义事件）  &lt;div" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue原生方法自定义右键菜单_vue.js_">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/">
+                        <span>Shadowrocket Node</span>
+                        </a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>vue原生方法自定义右键菜单_vue.js_</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p>本文实例为大家分享了vue原生方法自定义右键菜单的具体代码，供大家参考，具体内容如下</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220416/7952d0a398c6ab0e8a71e19836ea77f6.jpg"></p> <p>1.在需要添加右键的页面，绑定contextmenu事件（阻止浏览器默认事件，添加自定义事件）</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;div @contextmenu.prevent.native="openMenu($event)"&gt;    ....  &lt;/div&gt;</pre> </div> <p>2.在页面编写右键菜单的内容</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;ul v-show="visible" :style="{left:left+'px',top:top+'px'}" class="contextmenu"&gt;          &lt;li @click="test"&gt;添加节点&lt;/li&gt;           &lt;li @click="test"&gt;添加节点&lt;/li&gt;  &lt;/ul&gt;</pre> </div> <p>3.在data()中定义需要的变量属性</p> <div class="ay1code"> <pre class="brush:js;">data() {      return {        visible: false,        top: 0,        left: 0      }    }</pre> </div> <p>4.创建监听事件，来触发关闭右键菜单的方法</p> <div class="ay1code"> <pre class="brush:js;">watch: {      visible(value) {        if (value) {          document.body.addEventListener('click', this.closeMenu)        } else {          document.body.removeEventListener('click', this.closeMenu)        }      }    },</pre> </div> <p>5.打开和关闭右键菜单的两个方法</p> <div class="ay1code"> <pre class="brush:js;">//start  openMenu(e) {    var x = e.pageX;    var y = e.pageY;    this.top = y;    this.left = x;    this.visible = true;//在这里控制右键菜单的打开  },  //close  closeMenu() {    this.visible = false;  },</pre> </div> <p>6.样式</p> <div class="ay1code"> <pre class="brush:css;">.contextmenu {    margin: 0;    background: #fff;    z-index: 3000;    position: absolute;    list-style-type: none;    padding: 5px 0;    border-radius: 4px;    font-size: 12px;    font-weight: 400;    color: #333;    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.3);  }    .contextmenu li {    margin: 0;    padding: 7px 16px;    cursor: pointer;  }  .contextmenu li:hover {    background: #eee;  }</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-97328.htm">关于VUE中组件之间传值以及调用方法汇总</a></p>
+                                        <p>下一个：<a href="/news/article-98074.htm">java变量中不属于复合类型的数据类型是_Java作业3及答案</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-90650.htm" title="详细分析虚拟DOM与diff算法">详细分析虚拟DOM与diff算法</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-4-node-share.htm" title="「4月4日」最高速度20.4M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接">「4月4日」最高速度20.4M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-96634.htm" title="使用JavaScript做一个网页秒表（含开始、暂停、继续、重置功能）">使用JavaScript做一个网页秒表（含开始、暂停、继续、重置功能）</a></li>
+                        <li class="py-2"><a href="/news/article-82730.htm" title="微信小程序自定义封装顶部导航栏">微信小程序自定义封装顶部导航栏</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-26-free-clash.htm" title="「3月26日」最高速度20.8M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接">「3月26日」最高速度20.8M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-8-free-node-subscribe.htm" title="「4月8日」最高速度18.9M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接">「4月8日」最高速度18.9M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-84876.htm" title="微信小程序自定义导航栏组件(完美适配手机),可自定义实现任何你想要的功能">微信小程序自定义导航栏组件(完美适配手机),可自定义实现任何你想要的功能</a></li>
+                        <li class="py-2"><a href="/news/article-74485.htm" title="人用针剂跟畜用针剂一样吗（人用针剂跟畜用针剂一样吗有毒吗）">人用针剂跟畜用针剂一样吗（人用针剂跟畜用针剂一样吗有毒吗）</a></li>
+                        <li class="py-2"><a href="/news/article-81993.htm" title="动物医院常见的诊疗设备 动物医院常见的诊疗设备有哪些">动物医院常见的诊疗设备 动物医院常见的诊疗设备有哪些</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-31-node-share.htm" title="「3月31日」最高速度21.7M/S，2025年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「3月31日」最高速度21.7M/S，2025年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

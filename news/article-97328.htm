@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-97328.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>关于VUE中组件之间传值以及调用方法汇总</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="VUE中组件之间传值，总结来讲有三种情况，分别是：父组件对子组件、子组件对父组件以及兄弟组件之间传值以及调用。    一、父组件==&gt;子组件  1.父组件传值给子组件，通过类似于属性绑定的方式，" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-97328.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="关于VUE中组件之间传值以及调用方法汇总" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/d6f7aa2a1512aac04aa943f10be9258c.webp" />
+        <meta property="og:release_date" content="2025-04-16T08:41:26" />
+    <meta property="og:updated_time" content="2025-04-16T08:41:26" />
+        <meta property="og:description" content="VUE中组件之间传值，总结来讲有三种情况，分别是：父组件对子组件、子组件对父组件以及兄弟组件之间传值以及调用。    一、父组件==&gt;子组件  1.父组件传值给子组件，通过类似于属性绑定的方式，" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="关于VUE中组件之间传值以及调用方法汇总">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/">
+                        <span>Shadowrocket Node</span>
+                        </a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>关于VUE中组件之间传值以及调用方法汇总</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h3 id="vue中组件之间传值总结来讲有三种情况分别是父组件对子组件子组件对父组件以及兄弟组件之间传值以及调用">VUE中组件之间传值，总结来讲有三种情况，分别是：父组件对子组件、子组件对父组件以及兄弟组件之间传值以及调用。</h3> <dl> <p>  一、父组件==&gt;子组件</p> <dd> <p><strong>1.父组件传值给子组件</strong>，通过类似于属性绑定的方式，将需要传入子组件中的数据，绑定在子组件上，子组件通过props接收传入进来的数据。</p> <pre><code>父组件中内容 </code></pre> <pre class="prettyprint"><code class="hljs lasso"><span class="hljs-comment">//在teamplate中调用此组件</span> <span class="hljs-subst">&lt;</span>spList :keyword<span class="hljs-subst">=</span><span class="hljs-string">"keyword"</span> :activename<span class="hljs-subst">=</span><span class="hljs-string">"active"</span><span class="hljs-subst">&gt;&lt;</span>/spList<span class="hljs-subst">&gt;</span> <span class="hljs-comment">//引入子组件</span> <span class="hljs-keyword">import</span> spList from <span class="hljs-string">"../../components/sp_list.vue"</span>; components: {     spList }, <span class="hljs-built_in">data</span>() {     <span class="hljs-keyword">return</span> {         active: <span class="hljs-string">"2"</span>,         keyword: <span class="hljs-string">''</span>,     }; },</code></pre> <pre><code>子组件中内容 </code></pre> <pre class="prettyprint"><code class="hljs javascript">props: {      keyword:<span class="hljs-built_in">String</span>,      activename:<span class="hljs-built_in">String</span>, }, <span class="hljs-comment">//或者</span> props: {      <span class="hljs-string">"keyword"</span>,      <span class="hljs-string">"activename"</span> },</code></pre> </dd> <dd> <p><strong>2.父组件调用子组件中的方法或数据</strong>，VUE官网中的描述：ref 被用来给元素或子组件注册引用信息。引用信息将会注册在父组件的 $refs 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例。</p> <pre><code>父组件中内容 </code></pre> <pre class="prettyprint"><code class="hljs cs"><span class="hljs-comment">//在teamplate中调用此组件，并将该组件注册在$refs对象上</span> &lt;spList <span class="hljs-keyword">ref</span>=<span class="hljs-string">"splist"</span>&gt;&lt;/spList&gt; <span class="hljs-comment">//引入子组件</span> import spList <span class="hljs-keyword">from</span> <span class="hljs-string">"../../components/sp_list.vue"</span>; components: {     spList }, methods: {     getsomeList(){         <span class="hljs-keyword">this</span>.$refs.splist.getlist();<span class="hljs-comment">//调用子组件中的方法</span>         <span class="hljs-keyword">this</span>.$refs.splist.tableData;<span class="hljs-comment">//获取子组件中的数据</span>     } },</code></pre> <pre><code>子组件中内容 </code></pre> <pre class="prettyprint"><code class="hljs haskell"><span class="hljs-typedef"><span class="hljs-keyword">data</span><span class="hljs-container">()</span> <span class="hljs-container">{     <span class="hljs-title">return</span> {         <span class="hljs-title">tableData</span>:[],     }</span></span> },  methods: {     //获取列表的方法     getlist(){      }, },</code></pre> </dd> <p>  二、子组件==&gt;父组件</p> <dd> <p>1.通过<strong>事件派发</strong>的方式传值给父组件，或者告知父组件需要调用方法。</p> <pre><code>父组件中内容 </code></pre> <pre class="prettyprint"><code class="hljs scala"><span class="hljs-comment">//在teamplate中调用此组件，并绑定与子组件约定好的事件名称和在父组件中由该事件出发的方法</span> &lt;spList <span class="hljs-annotation">@changeBxd</span>=<span class="hljs-string">"setBxd"</span>&gt;&lt;/spList&gt; <span class="hljs-comment">//引入子组件</span> <span class="hljs-keyword">import</span> spList from <span class="hljs-string">"../../components/sp_list.vue"</span>; components: {     spList }, methods: {     setBxd(<span class="hljs-keyword">val</span>){         console.log(<span class="hljs-keyword">val</span>);<span class="hljs-comment">//'你好世界'</span>         <span class="hljs-keyword">this</span>.getFlow();<span class="hljs-comment">//触发事件后调用其他父组件中的方法</span>     },     getFlow(){      }, },</code></pre> <pre><code>子组件中内容 </code></pre> <pre class="prettyprint"><code class="hljs cs">methods: {     <span class="hljs-comment">//获取列表的方法</span>     getlist(){         <span class="hljs-keyword">let</span> name = <span class="hljs-string">'你好世界'</span>;         <span class="hljs-keyword">this</span>.$emit(<span class="hljs-string">'changeBxd'</span>,name );<span class="hljs-comment">//触发约定好的事件</span>     }, },</code></pre> </dd> <p>  三、兄弟组件之间</p> <dd> <p>1.通过<strong>eventbus</strong>的方式监听事件。 <br /> 首先需要先创建一个eventbus的事件容器，哪里需要哪里引用。 <br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/b513e415939e3068697875d737f47435.jpg" alt="关于VUE中组件之间传值以及调用方法汇总"></p> <pre><code>兄弟组件1中的内容 </code></pre> <pre class="prettyprint"><code class="hljs lasso"><span class="hljs-comment">//引入eventbus</span> <span class="hljs-keyword">import</span> Bus from <span class="hljs-string">'@/util/bus.js'</span> <span class="hljs-comment">//在方法中触发事件，（提前约定好事件名称）</span> methods: {     getFlow(){         Bus<span class="hljs-built_in">.</span><span class="hljs-variable">$emit</span>(<span class="hljs-string">'getCwbxList'</span>)     }, },</code></pre> <pre><code>兄弟组件2中的内容 </code></pre> <pre class="prettyprint"><code class="hljs coffeescript"><span class="hljs-regexp">//</span> 引入eventbus <span class="hljs-reserved">import</span> Bus from <span class="hljs-string">'@/util/bus.js'</span> mounted(){     <span class="hljs-regexp">//</span> 监听此事件     Bus.$<span class="hljs-literal">on</span><span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'getCwbxList'</span>,()=&gt;{         <span class="hljs-keyword">this</span>.getlist();     })</span> }</span></code></pre> <blockquote> <p><strong>注意：</strong>：eventbus 这种传值方式，适用于任何组件之间传值，父子间或者兄弟间。</p> </blockquote> </dd> </dl> <p>另外，除了这些方法之外，还可以是用<strong>vuex</strong>官方推荐的状态管理。关于vuex在之后记录介绍，最近还在整理中。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-96639.htm">给宠物医院的好评一百字 给宠物医院的好评一百字怎么写</a></p>
+                                        <p>下一个：<a href="/news/article-97329.htm">vue原生方法自定义右键菜单_vue.js_</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-23-free-ssr-subscribe.htm" title="「3月23日」最高速度21.8M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「3月23日」最高速度21.8M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-89163.htm" title="动物疫苗厂家有哪些牌子的好（动物疫苗厂家有哪些牌子的好呢）">动物疫苗厂家有哪些牌子的好（动物疫苗厂家有哪些牌子的好呢）</a></li>
+                        <li class="py-2"><a href="/news/article-75137.htm" title="郑州动物疫苗批发地址（郑州动物疫苗批发地址电话）">郑州动物疫苗批发地址（郑州动物疫苗批发地址电话）</a></li>
+                        <li class="py-2"><a href="/news/article-82728.htm" title="【kafka】一次磁盘故障后消费者无法消费">【kafka】一次磁盘故障后消费者无法消费</a></li>
+                        <li class="py-2"><a href="/news/article-73129.htm" title="天津正规宠物救助站 天津正规宠物救助站有哪些">天津正规宠物救助站 天津正规宠物救助站有哪些</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-14-clash-v2ray-ss-ssr.htm" title="「4月14日」最高速度22.7M/S，2025年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接">「4月14日」最高速度22.7M/S，2025年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-80589.htm" title="宠物粮品牌起名字怎么起好听（宠物粮品牌起名字怎么起好听的）">宠物粮品牌起名字怎么起好听（宠物粮品牌起名字怎么起好听的）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-free-subscribe-node.htm" title="「3月6日」最高速度21.2M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「3月6日」最高速度21.2M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-77185.htm" title="宠物粮市场调研报告模板（宠物粮市场调研报告模板怎么写）">宠物粮市场调研报告模板（宠物粮市场调研报告模板怎么写）</a></li>
+                        <li class="py-2"><a href="/news/article-92083.htm" title="狗粮加工生产线（狗粮加工设备多少钱一台）">狗粮加工生产线（狗粮加工设备多少钱一台）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
