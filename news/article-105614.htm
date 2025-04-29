@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-105614.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>关于Mina中IoBuffer与Java NIO中ByteBufferde的使用</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="项目中大量的使用&nbsp;NIO&nbsp;和&nbsp;Mina，虽然之前一直对这部分比较关注，但是还没有好好的总结一下这方面的内容，本节内容介绍一下NIO&nbsp;里最基本的一个类&nbsp;" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-105614.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="关于Mina中IoBuffer与Java NIO中ByteBufferde的使用" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/9a87f13873bbd6814f77672965fe2d43.webp" />
+        <meta property="og:release_date" content="2025-04-27T08:29:45" />
+    <meta property="og:updated_time" content="2025-04-27T08:29:45" />
+        <meta property="og:description" content="项目中大量的使用&nbsp;NIO&nbsp;和&nbsp;Mina，虽然之前一直对这部分比较关注，但是还没有好好的总结一下这方面的内容，本节内容介绍一下NIO&nbsp;里最基本的一个类&nbsp;" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="关于Mina中IoBuffer与Java NIO中ByteBufferde的使用">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/">
+                        <span>Shadowrocket Node</span>
+                        </a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>关于Mina中IoBuffer与Java NIO中ByteBufferde的使用</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>项目中大量的使用&nbsp;NIO&nbsp;和&nbsp;Mina，虽然之前一直对这部分比较关注，但是还没有好好的总结一下这方面的内容，本节内容介绍一下NIO&nbsp;里最基本的一个类&nbsp;ByteBuffer。</p> <p>关于Mina中的&nbsp;IoBuffer，我们可以先看&nbsp;Mina API&nbsp;中的描述：</p> <blockquote> <p><strong>A byte buffer used by MINA applications. This is a replacement for&nbsp;ByteBuffer. Please refer to&nbsp;ByteBuffer&nbsp;documentation for preliminary usage。</strong></p> </blockquote> <p>当然，接下去也有写到：MINA does not use NIO&nbsp;ByteBuffer directly for two reasons，至于这&nbsp;Two Reasons，我们将在后面的比较中展开。</p> <hr/> </h1> <p>ByteBuffer&nbsp;继承了&nbsp;Buffer，对&nbsp;Buffer&nbsp;的理解可以说是&nbsp;NIO&nbsp;的入门。</p> <p>在&nbsp;Buffer&nbsp;中有&nbsp;4&nbsp;个重要的属性：</p> <ul> <li><span style="color:#fe2c24;"><strong>Capacity</strong></span>: the capacity is set when the buffer is created and can&nbsp;never be changed。</li> <li><span style="color:#fe2c24;"><strong>Limit</strong></span>: the first element of the buffer that should not be read or written</li> <li><span style="color:#fe2c24;"><strong>Position</strong></span>: the index of the next element to be read or written</li> <li><span style="color:#fe2c24;"><strong>Mark</strong></span>: a remembered position. Calling mark() set mark=position</li> </ul> <p>它们的关系如下：</p> <p><span style="color:#fe2c24;"><strong>0&lt;=mark&lt;=position&lt;=limit&lt;=capacity</strong></span></p> <p class="img-center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220828/32dfdae151424ad33ba423bddcab7dd0.jpg"></p> <p>通俗的讲：</p> <ul> <li>Capacity：开的内存的大小，一旦设定了，就不能更改了。注意，这里指的是原生的&nbsp;NIO。</li> <li>Limit：可以分读写来统计。在写入&nbsp;buffer&nbsp;时，limit&nbsp;表示有多少空间可以写入。在从&nbsp;buffer&nbsp;写出时，limit&nbsp;表示有多少可以写出。</li> <li>Position：下一个要被读或写的位置。</li> <li>Mark：标记位，可以记住某个&nbsp;position，方便后续操作。</li> </ul> <hr/> </h1> <table border="1" cellpadding="1" cellspacing="1"> <tbody> <tr> <td>flip()</td> <td>读写模式的转换。</td> </tr> <tr> <td>rewind()</td> <td>将&nbsp;position&nbsp;重置为&nbsp;0&nbsp;，一般用于重复读。</td> </tr> <tr> <td>clear()</td> <td>清空&nbsp;buffer&nbsp;，准备再次被写入&nbsp;(position&nbsp;变成&nbsp;0&nbsp;，&nbsp;limit&nbsp;变成&nbsp;capacity)&nbsp;。</td> </tr> <tr> <td>compact()</td> <td>将未读取的数据拷贝到&nbsp;buffer&nbsp;的头部位。</td> </tr> <tr> <td>mark()</td> <td>可以标记一个位置</td> </tr> <tr> <td>reset()</td> <td>可以重置到该位置。</td> </tr> <tr> <td>get()、getShort()</td> <td>获取&nbsp;ByteBuffer&nbsp;中的内容，当然这里&nbsp;get&nbsp;的内容都是从&nbsp;position&nbsp;开始的，所以要时刻注意&nbsp;position。每次&nbsp;get&nbsp;之后&nbsp;position&nbsp;都会改变。Position&nbsp;的变化是根据你&nbsp;get&nbsp;的类型，如果是&nbsp;short，那就是&nbsp;2&nbsp;个&nbsp;byte，如果是&nbsp;int，那就是增加&nbsp;4&nbsp;个&nbsp;byte，即&nbsp;32。</td> </tr> <tr> <td>put()、putShort（）</td> <td>向&nbsp;ByteBuffer&nbsp;添加内容，这里&nbsp;put&nbsp;的内容都是从&nbsp;position&nbsp;开始的。每次&nbsp;put&nbsp;之后&nbsp;position&nbsp;都会改变。</td> </tr> </tbody> </table> <p>当然还有&nbsp;allocate、hasRemaining&nbsp;等常用的方法，不过这些用法一般都不会出错，使用起来和&nbsp;4&nbsp;个&nbsp;attributes&nbsp;也没有多大相关。</p> <p>特别注意：Buffers are not thread-safe.&nbsp;If you want to access a given buffer concurrently from multiple threads, you will need to do your own synchronization prior to accessing the buffer. 至于 Buffer 或者 ByteBuffer 有什么用？那太多了，只要涉及到传输、涉及到通信，都可以用到。当然你也可以用它最原始的含义，缓冲。</p> <hr/> </h1> <pre><code class="language-java">package com.hl.magic.mina3;  import ch.qos.logback.core.encoder.ByteArrayUtil; import org.junit.jupiter.api.Test;  import java.nio.ByteBuffer;  /**  * @Author HL  * @Date 2022/7/6 20:49  */ public class ByteBufferDemo {  	private final byte[] byteValue = new byte[]{0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x10};  	@Test 	public void byteBufferWrapTest() { 		System.out.println("origin Data is : [" + ByteArrayUtil.toHexString(byteValue) + "]"); 		// 将byte数组放在buffer缓冲区 		ByteBuffer buffer = ByteBuffer.wrap(byteValue);  		// 取出头部两个字节的buffer数组 		byte[] result = new byte[2]; 		buffer.get(result); 		System.out.println("result is : [" + ByteArrayUtil.toHexString(result) + "]");  		//取出body部分 		byte[] body = new byte[buffer.limit() - 2]; 		buffer.get(body); 		buffer.clear(); 		System.out.println("body is : [" + ByteArrayUtil.toHexString(body) + "]");  		//另一种取法 		buffer = ByteBuffer.wrap(byteValue); 		body = new byte[buffer.limit() - 4]; 		buffer.position(4); 		buffer.get(body); 		buffer.clear(); 		System.out.println("body is : [" +ByteArrayUtil.toHexString(body) + "]");  	}  	@Test 	public void bufferAllocateTest() {  		// 设置一个buffer缓冲区间，区间容量为16字节 		ByteBuffer buffer = ByteBuffer.allocate(16);  		// 向缓冲区间添加数据 		buffer.put(new byte[]{0x07, 0x08, 0x09, 0x10}); 		buffer.put(new byte[]{0x00, 0x00, 0x00, 0x00}); 		buffer.put(new byte[]{0x01, 0x01, 0x01, 0x01}); 		buffer.put(new byte[]{0x02, 0x02, 0x02, 0x02}); 		buffer.flip();  		//创建一个字节数组，数组长度为buffer区间容量 		byte[] bytes = new byte[buffer.limit()]; 		// 取出所有数据 		buffer.get(bytes); 		buffer.clear(); 		System.out.println("body is : [" +ByteArrayUtil.toHexString(bytes) + "]");  		//创建一个新数组，长度为buffer容量- 12字节 		byte[] body = new byte[buffer.limit() - 12]; 		//从新的偏移位置处计算，也就是偏移12字节的区间后开始取数据 		buffer.position(12); 		buffer.get(body); 		buffer.clear(); 		System.out.println("body is : [" + ByteArrayUtil.toHexString(body) + "]"); 	} }</code></pre> <p>输出：</p> <pre><code>origin Data is : [01020304050607080910]  #用例1： result is : [0102] body is : [0304050607080910] body is : [050607080910]  #用例2： body is : [07080910000000000101010102020202] body is : [02020202]</code></pre> <p>好了&nbsp;NIO&nbsp;的&nbsp;ByteBuffer&nbsp;告一段落，接下来先说&nbsp;IoBuffer&nbsp;中说不用&nbsp;ByteBuffer&nbsp;的&nbsp;Two Reasons：</p> <hr/> </h1> <blockquote> <p><strong>1.&nbsp; It doesn't provide useful getters and putters such as&nbsp;fill,&nbsp;get/putString, and&nbsp;get/putAsciiInt()&nbsp;enough.</strong></p> <p><strong>2.&nbsp;It is difficult to write variable-length data due to its fixed capacity</strong></p> </blockquote> <ul> <li>对于第一点，增加了更实用的&nbsp;getString。</li> <li>对于第二点，IoBuffer&nbsp;实现了&nbsp;Auto Expand&nbsp;和&nbsp;Auto Shrink。这就意味了，capacity&nbsp;可以根据传输内容的大小自动变更了。在使用上，我们可以这样写：</li> </ul> <pre><code class="language-java">IoBuffer buf = IoBuffer.allocate(1024).setAutoExpand(true);</code></pre> <p>在&nbsp;IoBuffer&nbsp;的源码中，大部分都使用了原生的&nbsp;ByteBuffer&nbsp;来实现，这部分采用<em>allocator</em>&nbsp;来实现。</p> <pre><code class="language-java">/** The allocator used to create new buffers */ private static IoBufferAllocator allocator = new SimpleBufferAllocator();</code></pre> <p>在 SimpleBufferAllocator 的其中一段 allocate：</p> <pre><code class="language-java">public ByteBuffer allocateNioBuffer(int capacity, boolean direct) {         ByteBuffer nioBuffer;         if (direct) {             nioBuffer = ByteBuffer.allocateDirect(capacity);         } else {             nioBuffer = ByteBuffer.allocate(capacity);         }         return nioBuffer;     }</code></pre> <p>至于其他操作和&nbsp;ByteBuffer&nbsp;类似。</p> <p>贴一段 Reilly - Java NIO 中的一段代码作为结束，后续更多的 Mina 相关会根据开发进度给出介绍：</p> <pre><code class="language-java">import java.nio.CharBuffer;   public class BufferFillDrain { private static int index = 0; private static String[] strings = { "A random string value", "The product of an infinite number of monkeys", "Hey hey we're the Monkees" };   private static boolean fillBuffer(CharBuffer buffer) {   if (index &gt;= strings.length) { return false; } String string = strings[index++];   for (int i = 0; i &lt; string.length(); i++) { buffer.put(string.charAt(i)); } return true; }   private static void drainBuffer(CharBuffer buffer){ while(buffer.hasRemaining()){ System.out.println(buffer.get()); } System.err.println(""); }   public static void main(String[] args) { CharBuffer buffer=CharBuffer.allocate(100); while(fillBuffer(buffer)){ buffer.flip(); drainBuffer(buffer); buffer.clear(); }   } }</code></pre> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-104985.htm">动物疫苗的种类和制备原理是什么呢英语（动物疫苗的概念）</a></p>
+                                        <p>下一个：<a href="/news/article-105615.htm">node.js &#8211; 包、express</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-25-free-high-speed-nodes.htm" title="「4月25日」最高速度19.1M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「4月25日」最高速度19.1M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-101727.htm" title="宠物粮食代理需要多少钱呢知乎（宠物粮食代理需要多少钱呢知乎）">宠物粮食代理需要多少钱呢知乎（宠物粮食代理需要多少钱呢知乎）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-5-clash-v2ray-ss-ssr.htm" title="「3月5日」最高速度20.6M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「3月5日」最高速度20.6M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-69176.htm" title="一文看懂哈希表并学会使用C++ STL 中的哈希表">一文看懂哈希表并学会使用C++ STL 中的哈希表</a></li>
+                        <li class="py-2"><a href="/news/article-95885.htm" title="鸵鸟蛋贵不贵(鸵鸟蛋有什么价值)">鸵鸟蛋贵不贵(鸵鸟蛋有什么价值)</a></li>
+                        <li class="py-2"><a href="/news/article-98788.htm" title="宠物粮怎么做? 创造与魔法高级宠物粮怎么做">宠物粮怎么做? 创造与魔法高级宠物粮怎么做</a></li>
+                        <li class="py-2"><a href="/news/article-101726.htm" title="领养宠物协议书在法律上属于什么合同 领养宠物协议书在法律上属于什么合同">领养宠物协议书在法律上属于什么合同 领养宠物协议书在法律上属于什么合同</a></li>
+                        <li class="py-2"><a href="/news/article-93638.htm" title="建议穷人养的10种猫母猫图片（穷人养猫还是富人养猫）">建议穷人养的10种猫母猫图片（穷人养猫还是富人养猫）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-free-ssr-subscribe.htm" title="「3月4日」最高速度20.2M/S，2025年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接">「3月4日」最高速度20.2M/S，2025年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-16-free-node-subscribe-links.htm" title="「3月16日」最高速度21.8M/S，2025年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接">「3月16日」最高速度21.8M/S，2025年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

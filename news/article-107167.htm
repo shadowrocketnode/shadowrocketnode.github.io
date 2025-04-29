@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-107167.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>实现可以拖动的悬浮框</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="直接上代码，有注释 &lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; &lt;head&gt;     &lt;meta charset="UTF-8"&gt;" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-107167.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="实现可以拖动的悬浮框" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/8bba3a8978c285ebd46e45d7a7fae325.webp" />
+        <meta property="og:release_date" content="2025-04-29T08:02:47" />
+    <meta property="og:updated_time" content="2025-04-29T08:02:47" />
+        <meta property="og:description" content="直接上代码，有注释 &lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; &lt;head&gt;     &lt;meta charset="UTF-8"&gt;" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="实现可以拖动的悬浮框">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/">
+                        <span>Shadowrocket Node</span>
+                        </a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>实现可以拖动的悬浮框</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <h2> <a id="_1" rel="nofollow"></a>直接上代码，有注释</h2> <pre><code class="prism language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">&gt;</span> <span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"viewport"</span> content<span class="token operator">=</span><span class="token string">"width=device-width, initial-scale=1.0"</span><span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>实现可以拖动的悬浮框<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>         body<span class="token punctuation">{<!-- --></span>             height<span class="token punctuation">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>             width<span class="token punctuation">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>             position<span class="token punctuation">:</span> relative<span class="token punctuation">;</span>         <span class="token punctuation">}</span>         <span class="token punctuation">.</span>btn<span class="token punctuation">{<!-- --></span>             width<span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>             margin<span class="token punctuation">:</span> <span class="token number">0</span> auto<span class="token punctuation">;</span>             text<span class="token operator">-</span>align<span class="token punctuation">:</span> center<span class="token punctuation">;</span>         <span class="token punctuation">}</span>         <span class="token punctuation">.</span>main<span class="token punctuation">{<!-- --></span>             <span class="token comment">/* 因为下面要用到所以绝对定位 */</span>             position<span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>             left<span class="token punctuation">:</span> <span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>             transform<span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             width<span class="token punctuation">:</span> <span class="token number">300</span>px<span class="token punctuation">;</span>             height<span class="token punctuation">:</span> <span class="token number">300</span>px<span class="token punctuation">;</span>             background<span class="token operator">-</span>color<span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>             text<span class="token operator">-</span>align<span class="token punctuation">:</span> center<span class="token punctuation">;</span>             line<span class="token operator">-</span>height<span class="token punctuation">:</span> <span class="token number">300</span>px<span class="token punctuation">;</span>             display<span class="token punctuation">:</span> none<span class="token punctuation">;</span>             z<span class="token operator">-</span>index<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>         <span class="token punctuation">.</span>close<span class="token operator">-</span>btn<span class="token punctuation">{<!-- --></span>             position<span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>             right<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">20</span>px<span class="token punctuation">;</span>             top<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">20</span>px<span class="token punctuation">;</span>             width<span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span>             height<span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span>             line<span class="token operator">-</span>height<span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span>             border<span class="token operator">-</span>radius<span class="token punctuation">:</span> <span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>             background<span class="token operator">-</span>color<span class="token punctuation">:</span> #ccc<span class="token punctuation">;</span>             color<span class="token punctuation">:</span> #ffffff<span class="token punctuation">;</span>         <span class="token punctuation">}</span>         <span class="token punctuation">.</span>mask<span class="token punctuation">{<!-- --></span>             height<span class="token punctuation">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>             width<span class="token punctuation">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>             position<span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>             top<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>             left<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>             background<span class="token operator">-</span>color<span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">.3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>             display<span class="token punctuation">:</span> none<span class="token punctuation">;</span>             z<span class="token operator">-</span>index<span class="token punctuation">:</span> <span class="token number">99</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>     <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"btn"</span><span class="token operator">&gt;</span>点击出现悬浮框<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"main"</span><span class="token operator">&gt;</span>         <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>这就是出现的悬浮框<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>         <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"close-btn"</span><span class="token operator">&gt;</span>关闭<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"mask"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>         <span class="token comment">// 获取元素</span>         <span class="token keyword">let</span> btn<span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.btn'</span><span class="token punctuation">)</span>         <span class="token keyword">let</span> main<span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.main'</span><span class="token punctuation">)</span>         <span class="token keyword">let</span> closeBtn<span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.close-btn'</span><span class="token punctuation">)</span>         <span class="token keyword">let</span> mask<span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.mask'</span><span class="token punctuation">)</span>         <span class="token comment">// 点击显示悬浮框和mask蒙层</span>         btn<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             main<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display<span class="token operator">=</span><span class="token string">'block'</span>             mask<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display<span class="token operator">=</span><span class="token string">'block'</span>         <span class="token punctuation">}</span><span class="token punctuation">)</span>         <span class="token comment">// 点击隐藏悬浮框和mask蒙层</span>         closeBtn<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             main<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display<span class="token operator">=</span><span class="token string">'none'</span>             mask<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display<span class="token operator">=</span><span class="token string">'none'</span>         <span class="token punctuation">}</span><span class="token punctuation">)</span>         <span class="token comment">// 鼠标按下</span>         main<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'mousedown'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             <span class="token comment">// 获得鼠标在盒子里的坐标</span>             <span class="token comment">// console.log(event.pageX)</span>             <span class="token comment">// console.log(main.offsetLeft)</span>             <span class="token keyword">let</span> x<span class="token operator">=</span>event<span class="token punctuation">.</span>pageX<span class="token operator">-</span>main<span class="token punctuation">.</span>offsetLeft             <span class="token keyword">let</span> y<span class="token operator">=</span>event<span class="token punctuation">.</span>pageY<span class="token operator">-</span>main<span class="token punctuation">.</span>offsetTop             document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'mousemove'</span><span class="token punctuation">,</span>move<span class="token punctuation">)</span>             <span class="token comment">// 也可以吧document换成main都行</span>             <span class="token keyword">function</span> <span class="token function">move</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                 <span class="token comment">// 盒子距离body的距离=鼠标距离body的距离-鼠标距离盒子的距离</span>                 main<span class="token punctuation">.</span>style<span class="token punctuation">.</span>left<span class="token operator">=</span>event<span class="token punctuation">.</span>pageX<span class="token operator">-</span>x<span class="token operator">+</span><span class="token string">'px'</span>                 main<span class="token punctuation">.</span>style<span class="token punctuation">.</span>top<span class="token operator">=</span>event<span class="token punctuation">.</span>pageY<span class="token operator">-</span>y<span class="token operator">+</span><span class="token string">'px'</span>             <span class="token punctuation">}</span>             <span class="token comment">// 鼠标抬起</span>             document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'mouseup'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                 document<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">'mousemove'</span><span class="token punctuation">,</span>move<span class="token punctuation">)</span>             <span class="token punctuation">}</span><span class="token punctuation">)</span>         <span class="token punctuation">}</span><span class="token punctuation">)</span>     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span> </code></pre> <h6> <a id="_103" rel="nofollow"></a>做为一个锻炼自己的过程，有什么错误欢迎指正</h6> </p></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-106402.htm">宠物领养证如何办理的流程视频讲解（宠物领养证怎么办）</a></p>
+                                        <p>下一个：<a href="/news/article-107171.htm">麦富迪猫粮到底能不能吃 十大垃圾猫粮黑名单</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-20-free-ssr-subscribe.htm" title="「4月20日」最高速度20.4M/S，2025年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接">「4月20日」最高速度20.4M/S，2025年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-92866.htm" title="JavaScript秒表开始、暂停、继续、重置功能的实现及连击的优化">JavaScript秒表开始、暂停、继续、重置功能的实现及连击的优化</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-2-node-share.htm" title="「4月2日」最高速度21.5M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「4月2日」最高速度21.5M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-74484.htm" title="FreeRTOS进阶之任务通知示例完全解析_操作系统">FreeRTOS进阶之任务通知示例完全解析_操作系统</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-25-free-high-speed-nodes.htm" title="「4月25日」最高速度19.1M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「4月25日」最高速度19.1M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-4-node-share.htm" title="「4月4日」最高速度20.4M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接">「4月4日」最高速度20.4M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-105614.htm" title="关于Mina中IoBuffer与Java NIO中ByteBufferde的使用">关于Mina中IoBuffer与Java NIO中ByteBufferde的使用</a></li>
+                        <li class="py-2"><a href="/news/article-96634.htm" title="使用JavaScript做一个网页秒表（含开始、暂停、继续、重置功能）">使用JavaScript做一个网页秒表（含开始、暂停、继续、重置功能）</a></li>
+                        <li class="py-2"><a href="/news/article-91282.htm" title="动物防疫工作计划书题目（动物防疫规划）">动物防疫工作计划书题目（动物防疫规划）</a></li>
+                        <li class="py-2"><a href="/news/article-86309.htm" title="动物疫苗检测找哪个部门（动物疫苗检测站）">动物疫苗检测找哪个部门（动物疫苗检测站）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

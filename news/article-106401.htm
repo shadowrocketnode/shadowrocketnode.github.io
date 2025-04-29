@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-106401.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>MyBatis-Plus之多租户架构(Multi-tenancy)——SAAS</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="文章目录    一、什么是多租户 二、数据隔离有三种方案 Schema的结构：     参考博文，点击这里 一、什么是多租户 多租户技术或称多重租赁技术，简称多租户。是一种软件架构技术，是实现如何在多" />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-106401.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="MyBatis-Plus之多租户架构(Multi-tenancy)——SAAS" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/e12882659cf6a707ffb6e692c9a1d317.webp" />
+        <meta property="og:release_date" content="2025-04-28T09:47:17" />
+    <meta property="og:updated_time" content="2025-04-28T09:47:17" />
+        <meta property="og:description" content="文章目录    一、什么是多租户 二、数据隔离有三种方案 Schema的结构：     参考博文，点击这里 一、什么是多租户 多租户技术或称多重租赁技术，简称多租户。是一种软件架构技术，是实现如何在多" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="MyBatis-Plus之多租户架构(Multi-tenancy)——SAAS">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/">
+                        <span>Shadowrocket Node</span>
+                        </a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>MyBatis-Plus之多租户架构(Multi-tenancy)——SAAS</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>文章目录</h3> <ul> <li> <ul> <li>一、什么是多租户</li> <li>二、数据隔离有三种方案</li> <li>Schema的结构：</li> </ul> </li> </ul> </div> <p>参考博文，点击这里</p> <h2>一、什么是多租户</h2> <p>多租户技术或称多重租赁技术，简称多租户。是一种软件架构技术，是实现如何在多用户环境下（此处的多用户一般是面向企业用户）共用相同的系统或程序组件，并且可确保各用户间数据的隔离性。</p> <p>简单讲：在一台服务器上运行单个应用实例，它为多个租户（客户）提供服务。从定义中我们可以理解：多租户是一种架构，目的是为了让多用户环境下使用同一套程序，且保证用户间数据隔离。那么重点就很浅显易懂了，多租户的重点就是同一套程序下实现多用户数据的隔离。SaaS应用基于此实现。</p> <h2>二、数据隔离有三种方案</h2> <ol> <li>独立数据库：简单来说就是一个租户使用一个数据库，这种数据隔离级别最高，安全性最好，但是提高成本。</li> <li>共享数据库、隔离数据架构：多租户使用同一个数据库，但是每个租户对应一个Schema(数据库user)。</li> <li>共享数据库、共享数据架构：使用同一个数据库，同一个Schema，但是在表中增加了租户ID的字段，这种共享数据程度最高，隔离级别最低。<br /> 这里采用方案三，即共享数据库，共享数据架构，因为这种方案服务器成本最低，但是提高了开发成本。</li> </ol> <h2>Schema的结构：</h2> <p>oracle数据库：在oracle中一个数据库可以具有多个用户，那么一个用户一般对应一个Schema，表都是建立在Schema中的,（可以简单的理解：在oracle中一个用户一套数据库表）<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220606/e6c7459ec16f904c8ccb4400663aed42.jpg" alt="MyBatis-Plus之多租户架构(Multi-tenancy)——SAAS"><br /> mysql数据库：mysql数据中的schema比较特殊，并不是数据库的下一级，而是等同于数据库。比如执行create schema test 和执行create database test效果是一模一样的<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220606/40dc576d7097ce35e292a65f98ddebee.jpg" alt="MyBatis-Plus之多租户架构(Multi-tenancy)——SAAS"><br /> 共享数据库、独立 Schema：即多个或所有的租户使用同一个数据库服务（如常见的ORACLE或MYSQL数据库），但是每个租户一个Schema。</p> <p>优点： 为安全性要求较高的租户提供了一定程度的逻辑数据隔离，并不是完全隔离；每个数据库可支持更多的租户数量。</p> <p>缺点： 如果出现故障，数据恢复比较困难，因为恢复数据库将牵涉到其他租户的数据； 如果需要跨租户统计数据，存在一定困难。</p> <p>这种方案是方案一的变种。只需要安装一份数据库服务，通过不同的Schema对不同租户的数据进行隔离。由于数据库服务是共享的，所以成本相对低廉。</p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-105615.htm">node.js &#8211; 包、express</a></p>
+                                        <p>下一个：<a href="/news/article-106402.htm">宠物领养证如何办理的流程视频讲解（宠物领养证怎么办）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-11-free-node-subscribe-links.htm" title="「4月11日」最高速度19.1M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「4月11日」最高速度19.1M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-72476.htm" title="Java.UtilsJAVA 8 时间工具类">Java.UtilsJAVA 8 时间工具类</a></li>
+                        <li class="py-2"><a href="/news/article-89162.htm" title="郑州市动物防疫站位置（郑州市动物疫病预防控制中心电话）">郑州市动物防疫站位置（郑州市动物疫病预防控制中心电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-13-shadowrocket-node.htm" title="「3月13日」最高速度21.3M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接">「3月13日」最高速度21.3M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-95885.htm" title="鸵鸟蛋贵不贵(鸵鸟蛋有什么价值)">鸵鸟蛋贵不贵(鸵鸟蛋有什么价值)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-27-free-high-speed-nodes.htm" title="「4月27日」最高速度19.2M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「4月27日」最高速度19.2M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-103267.htm" title="成都宠物领养中心官网地址（成都宠物领养平台交流微信群）">成都宠物领养中心官网地址（成都宠物领养平台交流微信群）</a></li>
+                        <li class="py-2"><a href="/news/article-78556.htm" title="宠爱宠物快运中心地址（宠爱宠物诊疗中心）">宠爱宠物快运中心地址（宠爱宠物诊疗中心）</a></li>
+                        <li class="py-2"><a href="/news/article-96639.htm" title="给宠物医院的好评一百字 给宠物医院的好评一百字怎么写">给宠物医院的好评一百字 给宠物医院的好评一百字怎么写</a></li>
+                        <li class="py-2"><a href="/news/article-83440.htm" title="动物疫苗的正确使用方法有哪些呢 动物疫苗的正确使用方法有哪些呢图片">动物疫苗的正确使用方法有哪些呢 动物疫苗的正确使用方法有哪些呢图片</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
