@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://shadowrocketnode.github.io/news/article-110705.htm" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <title>Docker 安装 Jenkins_在线工具</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="description" content="本文将介绍 Jenkins 初学者如何在学习环境使用 Docker 能够快速安装 Jenkins，本文内容不适用于生产环境。 1 Jenkins 的 Docker 镜像 Docker 官方曾经提供了 " />
+    
+    <!-- Favicon -->
+    <link href="/assets/website/img/shadowrocketnode/favicon.ico" rel="icon">
+
+    <meta name="author" content="ShadowrocketNode官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shadowrocketnode.github.io/news/article-110705.htm" />
+    <meta property="og:site_name" content="ShadowrocketNode官网订阅站" />
+    <meta property="og:title" content="Docker 安装 Jenkins_在线工具" />
+    <meta property="og:image" content="https://shadowrocketnode.github.io/uploads/20240623/9a87f13873bbd6814f77672965fe2d43.webp" />
+        <meta property="og:release_date" content="2025-05-03T10:29:25" />
+    <meta property="og:updated_time" content="2025-05-03T10:29:25" />
+        <meta property="og:description" content="本文将介绍 Jenkins 初学者如何在学习环境使用 Docker 能够快速安装 Jenkins，本文内容不适用于生产环境。 1 Jenkins 的 Docker 镜像 Docker 官方曾经提供了 " />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Docker 安装 Jenkins_在线工具">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/swiper.css" rel="stylesheet">
+    <link href="/assets/website/css/shadowrocketnode/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W0VHCQ1M28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W0VHCQ1M28');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="/">
+                        <span>Shadowrocket Node</span>
+                        </a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Nubis</a> -->
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/free-nodes/">免费节点</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/client.htm">客户端</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="/news/">新闻资讯</a>
+                    </li>
+                                    </ul>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>Docker 安装 Jenkins_在线工具</h1>
+                    <p>
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+    <!-- Details 1 -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<p>本文将介绍 Jenkins 初学者如何在学习环境使用 Docker 能够快速安装 Jenkins，本文内容不适用于生产环境。</p> <h2 id="1-jenkins-的-docker-镜像">1 Jenkins 的 Docker 镜像</h2> <p>Docker 官方曾经提供了 Docker 镜像的安装镜像，镜像名直接就是 <code>jenkins</code>，但 Docker 官方提供的镜像几年前就不维护了。如果使用 Docker 官方提供的镜像，只能使用老版本的 Jenkins，会导致有些插件不能正常安装。所以，我们应该使用 Jenkins 官方提供了镜像，镜像名 <code>jenkins/jenkins</code>。</p> <p>Jenkins 官方提供的 Docker 镜像仓库地址：https://hub.docker.com/r/jenkins/jenkins，镜像的源码和用法在 Github 上：https://github.com/jenkinsci/docker。</p> <h2 id="2-运行装有-jenkins-的-docker-容器">2 运行装有 Jenkins 的 Docker 容器</h2> <p>最基本的运行命令如下，它会启动一个安装有最新版本 Jenkins 的 Docker 容器，将宿主机的 8080 端口映射到容器的 8080 端口，宿主机的 5000 端口映射到容器的 5000 端口。</p> <pre><code class="language-docker">docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts </code></pre> <p>但上面这条命令没有将 Jenkins 的数据持久化，关闭容器之后数据就丢失了。因此需要容器中 Jinkins 的数据保存到卷中。如下命令在后台（<code>-d</code>）启动了一个容器，并将容器中 Jenkins 的数据放到卷<code>jenkins_home</code>中；这样，重启容器之后还能够保留数据。</p> <pre><code class="language-docker">docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts </code></pre> <h2 id="3-登录-jenkins">3 登录 Jenkins</h2> <p>Docker 容器启动之后就可以通过浏览器访问 Jenkins 了，访问的地址是：<code>http://localhost:8080</code>，刚才映射的宿主机端口是 <code>8080</code>。Jenkins 在启动时会在控制台打印初始密码，这个密码在首次进入页面时需要用到。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/866cdef153c67c62c039d392a7082345.jpg" alt="Docker 安装 Jenkins_在线工具"></p> <p>可以通过 Docker Desktop 查看控制台输出。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/d5530418d04a32b6e40fe06d53fb0fd0.jpg" alt="Docker 安装 Jenkins_在线工具"></p> <p>使用密码进入之后，提示安装初始插件。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/b11dfffd20b6c0d57b0ab7ac5608386d.jpg" alt="Docker 安装 Jenkins_在线工具"></p> <p>根据需要选择安装推荐插件（左边）或者自己选择要安装的插件（右边）即可。下图为选择安装推荐插件之后的结果。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/ba29e029a2262f2fd326da2a2a9a2e0f.jpg" alt="Docker 安装 Jenkins_在线工具"></p> <p>插件安装成功之后自动进入设置 Admin 密码页面，按照提示设置密码等信息。最终进入到如下页面，此时可以添加程序了。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/5a00494d8d0056d47c1e93832d962fa7.jpg" alt="Docker 安装 Jenkins_在线工具"></p> <h2 id="4-运行-hello-world">4 运行 Hello World</h2> <p>点击 [Create a Job]，进入如下页面，填入管道名称 "hello-world"，选择 "Pipeline"，点击 [ok]，进入管道配置页面。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/dcf331f2abe05b9bcbe307b2e7fce556.jpg" alt="Docker 安装 Jenkins_在线工具"></p> <p>在管道配置页面的 "Pipeline" 框中填入如下内容，然后点击 [Save]，保存配置并进入 <code>hello-world</code> 管道页面。</p> <pre><code class="language-groovy">pipeline{     agent any     stages{         stage('Print Hello World'){             steps{                 echo 'Hello, beautiful Wolrd.'             }         }     } } </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/bca750f951936f2246deef35df3a2ad5.jpg" alt="Docker 安装 Jenkins_在线工具"></p> <p>配置完成之后就可以运行管道了。在 <code>hello-world</code> 管道页面点击 [Build Now] 运行管道。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/54537d45c825264cb46d37c193ee20e4.jpg" alt="Docker 安装 Jenkins_在线工具"></p> <p>因为管道任务很短，管道很快就能运行完成，可以通过点击 [Console Output] 看到输出的内容。</p> <pre><code>Started by user Roots Running in Durability level: MAX_SURVIVABILITY [Pipeline] Start of Pipeline [Pipeline] node Running on Jenkins in /var/jenkins_home/workspace/hello-world [Pipeline] { [Pipeline] stage [Pipeline] { (Print Hello World) [Pipeline] echo Hello, beautiful Wolrd. [Pipeline] } [Pipeline] // stage [Pipeline] } [Pipeline] // node [Pipeline] End of Pipeline Finished: SUCCESS </code></pre> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-109973.htm">重庆有领养宠物狗或猫的吗在哪里（重庆哪里可以领养猫猫）</a></p>
+                                        <p>下一个：<a href="/news/article-110708.htm">狗粮颗粒机视频（狗粮颗粒机视频讲解）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-5-2-free-subscribe-node.htm" title="「5月2日」最高速度18.4M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「5月2日」最高速度18.4M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-24-free-ssr-subscribe.htm" title="「4月24日」最高速度22.3M/S，2025年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接">「4月24日」最高速度22.3M/S，2025年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-3-free-subscribe-node.htm" title="「4月3日」最高速度18.2M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接">「4月3日」最高速度18.2M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-11-free-node-subscribe-links.htm" title="「4月11日」最高速度19.1M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「4月11日」最高速度19.1M/S，2025年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-6-free-ssr-subscribe.htm" title="「4月6日」最高速度21.1M/S，2025年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「4月6日」最高速度21.1M/S，2025年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-9-node-share-links.htm" title="「4月9日」最高速度20.5M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接">「4月9日」最高速度20.5M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-102436.htm" title="netty系列之:netty中的frame解码器_在线工具">netty系列之:netty中的frame解码器_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-92085.htm" title="五八同城狗狗领养（58同城宠物狗领养）">五八同城狗狗领养（58同城宠物狗领养）</a></li>
+                        <li class="py-2"><a href="/news/article-103265.htm" title="Kafka如何保证消息的可靠性？">Kafka如何保证消息的可靠性？</a></li>
+                        <li class="py-2"><a href="/news/article-105614.htm" title="关于Mina中IoBuffer与Java NIO中ByteBufferde的使用">关于Mina中IoBuffer与Java NIO中ByteBufferde的使用</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details 1 -->
+        <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <p class="p-small">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
+                </p>
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="/assets/website/img/shadowrocketnode/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+    <!-- Scripts -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/jquery-3.3.1.min.js"></script>
+    <script src="/assets/website/js/frontend/shadowrocketnode/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/assets/website/js/frontend/shadowrocketnode/scripts.js"></script> <!-- Custom scripts -->
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
