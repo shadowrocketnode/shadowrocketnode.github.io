@@ -1,4 +1,4 @@
-# 「8月17日」最高速度18.7M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接  更新时间 2025-08-17 08:20:56
+# Shadowrocket 节点 - 8月28日18.3M/S|免费Shadowrocket/Clash/V2ray/SSR节点推荐，Shadowrocket梯子购买推荐  更新时间 2025-08-28 11:08:47
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://shadowrocketnode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://shadowrocketnode.github.io/uploads/2025/08/0-20250817.yaml
-- https://shadowrocketnode.github.io/uploads/2025/08/1-20250817.yaml
-- https://shadowrocketnode.github.io/uploads/2025/08/2-20250817.yaml
-- https://shadowrocketnode.github.io/uploads/2025/08/3-20250817.yaml
-- https://shadowrocketnode.github.io/uploads/2025/08/4-20250817.yaml
+- https://shadowrocketnode.github.io/uploads/2025/08/0-20250828.yaml
+- https://shadowrocketnode.github.io/uploads/2025/08/1-20250828.yaml
+- https://shadowrocketnode.github.io/uploads/2025/08/2-20250828.yaml
+- https://shadowrocketnode.github.io/uploads/2025/08/3-20250828.yaml
+- https://shadowrocketnode.github.io/uploads/2025/08/4-20250828.yaml
 
 ### V2ray订阅链接
 
-- https://shadowrocketnode.github.io/uploads/2025/08/0-20250817.txt
-- https://shadowrocketnode.github.io/uploads/2025/08/1-20250817.txt
-- https://shadowrocketnode.github.io/uploads/2025/08/2-20250817.txt
-- https://shadowrocketnode.github.io/uploads/2025/08/3-20250817.txt
-- https://shadowrocketnode.github.io/uploads/2025/08/4-20250817.txt
+- https://shadowrocketnode.github.io/uploads/2025/08/0-20250828.txt
+- https://shadowrocketnode.github.io/uploads/2025/08/1-20250828.txt
+- https://shadowrocketnode.github.io/uploads/2025/08/2-20250828.txt
+- https://shadowrocketnode.github.io/uploads/2025/08/3-20250828.txt
+- https://shadowrocketnode.github.io/uploads/2025/08/4-20250828.txt
 
 ### Sing-box订阅链接
 
-- https://shadowrocketnode.github.io/uploads/2025/08/20250817.json
+- https://shadowrocketnode.github.io/uploads/2025/08/20250828.json
 
 ## 更多clash节点订阅 ：
 
