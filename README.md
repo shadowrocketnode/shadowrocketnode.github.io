@@ -1,4 +1,4 @@
-# Shadowrocket 节点 - 11月26日22M/S|免费V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点节点推荐，Shadowrocket梯子购买推荐  更新时间 2025-11-26 08:23:32
+# Shadowrocket 节点 - 12月3日20.5M/S|免费SSR节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐  更新时间 2025-12-03 10:30:01
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://shadowrocketnode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://shadowrocketnode.github.io/uploads/2025/11/0-20251126.yaml
-- https://shadowrocketnode.github.io/uploads/2025/11/1-20251126.yaml
-- https://shadowrocketnode.github.io/uploads/2025/11/2-20251126.yaml
-- https://shadowrocketnode.github.io/uploads/2025/11/3-20251126.yaml
-- https://shadowrocketnode.github.io/uploads/2025/11/4-20251126.yaml
+- https://shadowrocketnode.github.io/uploads/2025/12/0-20251203.yaml
+- https://shadowrocketnode.github.io/uploads/2025/12/1-20251203.yaml
+- https://shadowrocketnode.github.io/uploads/2025/12/2-20251203.yaml
+- https://shadowrocketnode.github.io/uploads/2025/12/3-20251203.yaml
+- https://shadowrocketnode.github.io/uploads/2025/12/4-20251203.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://shadowrocketnode.github.io/uploads/2025/11/0-20251126.txt
-- https://shadowrocketnode.github.io/uploads/2025/11/1-20251126.txt
-- https://shadowrocketnode.github.io/uploads/2025/11/2-20251126.txt
-- https://shadowrocketnode.github.io/uploads/2025/11/3-20251126.txt
-- https://shadowrocketnode.github.io/uploads/2025/11/4-20251126.txt
+- https://shadowrocketnode.github.io/uploads/2025/12/0-20251203.txt
+- https://shadowrocketnode.github.io/uploads/2025/12/1-20251203.txt
+- https://shadowrocketnode.github.io/uploads/2025/12/2-20251203.txt
+- https://shadowrocketnode.github.io/uploads/2025/12/3-20251203.txt
+- https://shadowrocketnode.github.io/uploads/2025/12/4-20251203.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://shadowrocketnode.github.io/uploads/2025/11/20251126.json
+- https://shadowrocketnode.github.io/uploads/2025/12/20251203.json
 
 ## 更多Clash节点订阅 ：
 
