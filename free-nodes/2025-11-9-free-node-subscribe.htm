@@ -319,44 +319,14 @@ A：安卓平台开放性高、支持更多自定义设置；iOS系统则对第�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 TCP + TLS 模式适合什么场景？</h5></div>
-    <div class="panel-body">
-        TCP + TLS 模式可模拟 HTTPS 流量，增强抗封锁能力。适合网络封锁严格的环境，通过策略组选择最佳节点，可保证访问速度和连接稳定性，尤其适用于网页浏览和视频播放。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Quantumult X 可以用脚本自动切换节点吗？</h5></div>
-    <div class="panel-body">
-        可以。Quantumult X 支持通过脚本逻辑判断网络延迟或连接失败情况，并自动切换节点。用户可以编写自定义 JS 规则，从而实现智能代理与按需分流，适合高级用户使用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 的延迟测速功能如何提高网络体验？</h5></div>
-    <div class="panel-body">
-        PassWall2 可以定期测速节点延迟，并结合策略组自动选择最优节点。这样在访问网站或视频时，可以始终使用延迟最低的线路，提高网络稳定性和速度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 配置如何提高节点隐蔽性？</h5></div>
-    <div class="panel-body">
-        通过选择合适协议和混淆方式，将流量伪装成正常 HTTPS 或 HTTP 数据。可降低被 DPI 检测和封锁的风险，提高节点长期稳定性和科学上网体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 的加密方式如何选择？</h5></div>
-    <div class="panel-body">
-        VMess 支持自动加密和 AEAD 加密等多种方式。AEAD 加密更安全且抗重放攻击，适合高安全性需求的网络环境，而普通加密在性能上稍快，但安全性略低。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的 Rule Provider 有什么作用？</h5></div>
-    <div class="panel-body">
-        Rule Provider 是 Clash 的规则分发机制。用户可以订阅不同的规则集，比如广告拦截、社交媒体、流媒体等，实现按需加载。它让配置文件更加简洁、动态更新，并支持多源规则管理。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 如何实现智能分流？</h5></div>
-    <div class="panel-body">
-        Clash 通过结合规则文件和策略组，可以对不同网站或应用进行智能分流。例如将国内流量直连，海外流量通过代理节点，提高访问速度和稳定性，同时减少不必要的节点占用。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 的多路复用功能有哪些好处？</h5></div>
     <div class="panel-body">
         多路复用允许多个短连接共享同一 QUIC 通道，减少握手延迟和资源消耗。在高并发或频繁短连接场景下，能显著提升吞吐量和稳定性，尤其适合游戏或即时通讯应用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的 TCP + TLS 模式适合什么场景？</h5></div>
+    <div class="panel-body">
+        TCP + TLS 模式可模拟 HTTPS 流量，增强抗封锁能力。适合网络封锁严格的环境，通过策略组选择最佳节点，可保证访问速度和连接稳定性，尤其适用于网页浏览和视频播放。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Shadowrocket 能否自动更新订阅？</h5></div>
@@ -364,9 +334,39 @@ A：安卓平台开放性高、支持更多自定义设置；iOS系统则对第�
         支持。Shadowrocket 可以设置定时更新周期，例如每隔 12 小时或每天自动刷新订阅链接，确保节点列表保持最新状态。这样无需手动更新即可长期稳定使用。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess 的加密方式如何选择？</h5></div>
+    <div class="panel-body">
+        VMess 支持自动加密和 AEAD 加密等多种方式。AEAD 加密更安全且抗重放攻击，适合高安全性需求的网络环境，而普通加密在性能上稍快，但安全性略低。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Shadowrocket 节点延迟排序功能如何提升访问体验？</h5></div>
     <div class="panel-body">
-        Shadowrocket 会测速节点延迟和丢包率，并优先使用低延迟节点。结合策略组和分流规则，可保证网页、视频和游戏流量通过最优节点，提高访问速度和稳定性。    </div>
+        Shadowrocket 会测速节点延迟和丢包率，并优先使用低延迟节点。结合策略组和分流规则，可保证网页、视频和游戏流量通过最优节点，提高访问速度和稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Quantumult X 可以用脚本自动切换节点吗？</h5></div>
+    <div class="panel-body">
+        可以。Quantumult X 支持通过脚本逻辑判断网络延迟或连接失败情况，并自动切换节点。用户可以编写自定义 JS 规则，从而实现智能代理与按需分流，适合高级用户使用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 的 Rule Provider 有什么作用？</h5></div>
+    <div class="panel-body">
+        Rule Provider 是 Clash 的规则分发机制。用户可以订阅不同的规则集，比如广告拦截、社交媒体、流媒体等，实现按需加载。它让配置文件更加简洁、动态更新，并支持多源规则管理。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 配置如何提高节点隐蔽性？</h5></div>
+    <div class="panel-body">
+        通过选择合适协议和混淆方式，将流量伪装成正常 HTTPS 或 HTTP 数据。可降低被 DPI 检测和封锁的风险，提高节点长期稳定性和科学上网体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 如何实现智能分流？</h5></div>
+    <div class="panel-body">
+        Clash 通过结合规则文件和策略组，可以对不同网站或应用进行智能分流。例如将国内流量直连，海外流量通过代理节点，提高访问速度和稳定性，同时减少不必要的节点占用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 的延迟测速功能如何提高网络体验？</h5></div>
+    <div class="panel-body">
+        PassWall2 可以定期测速节点延迟，并结合策略组自动选择最优节点。这样在访问网站或视频时，可以始终使用延迟最低的线路，提高网络稳定性和速度。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -395,16 +395,16 @@ A：安卓平台开放性高、支持更多自定义设置；iOS系统则对第�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-11-3-clash-verge-rev-windows.htm" title="Shadowrocket 节点 - 11月3日22.4M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 11月3日22.4M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-18-node-share.htm" title="Shadowrocket 节点 - 10月18日18.5M/S|免费SSR节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 10月18日18.5M/S|免费SSR节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-19-clash-verge-rev-windows.htm" title="Shadowrocket 节点 - 10月19日22M/S|免费Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 10月19日22M/S|免费Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-15-clash-stash.htm" title="Shadowrocket 节点 - 11月15日19.5M/S|免费V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 11月15日19.5M/S|免费V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-26-clash-v2ray-ss-ssr.htm" title="Shadowrocket 节点 - 10月26日18.6M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 10月26日18.6M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-4-clash-verge-rev-node-share.htm" title="Shadowrocket 节点 - 12月4日19.2M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 12月4日19.2M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-10-clash-verge-rev-windows.htm" title="Shadowrocket 节点 - 11月10日21.9M/S|免费SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 11月10日21.9M/S|免费SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-18-clash-node-daily-updates.htm" title="Shadowrocket 节点 - 11月18日20.5M/S|免费Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 11月18日20.5M/S|免费Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-9-free-node-subscribe.htm" title="Shadowrocket 节点 - 11月9日22.9M/S|免费V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 11月9日22.9M/S|免费V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-13-clash-verge-rev-windows.htm" title="Shadowrocket 节点 - 10月13日18.7M/S|免费Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 10月13日18.7M/S|免费Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-2-clash-v2ray-ss-ssr.htm" title="Shadowrocket 节点 - 11月2日22.2M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 11月2日22.2M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-14-clash-verge-rev-node-share.htm" title="Shadowrocket 节点 - 10月14日22.2M/S|免费SSR节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 10月14日22.2M/S|免费SSR节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-12-free-node-subscribe.htm" title="Shadowrocket 节点 - 11月12日20.6M/S|免费V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 11月12日20.6M/S|免费V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-3-free-node-subscribe.htm" title="Shadowrocket 节点 - 12月3日18.8M/S|免费Shadowrocket节点/V2ray节点/Clash节点/Singbox节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 12月3日18.8M/S|免费Shadowrocket节点/V2ray节点/Clash节点/Singbox节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-22-clash-verge-rev-windows.htm" title="Shadowrocket 节点 - 11月22日21.8M/S|免费Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 11月22日21.8M/S|免费Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-8-clash-verge-rev-github.htm" title="Shadowrocket 节点 - 11月8日21.3M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 11月8日21.3M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-23-clash-verge-rev-node-github.htm" title="Shadowrocket 节点 - 11月23日18M/S|免费V2ray节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 11月23日18M/S|免费V2ray节点/SSR节点/Singbox节点/Clash节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-5-clash-meta-github.htm" title="Shadowrocket 节点 - 11月5日19.9M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 11月5日19.9M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-28-clash-verge-rev-node-github.htm" title="Shadowrocket 节点 - 11月28日22M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 11月28日22M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -416,10 +416,10 @@ A：安卓平台开放性高、支持更多自定义设置；iOS系统则对第�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">16</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                     </ul>
     </div>
