@@ -297,19 +297,9 @@ A5：SSR为代理协议，轻量高效、抗干扰强，适合个性化分流；
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow 有哪些优势？</h5></div>
+    <div class="panel-heading"><h5>Potatso Lite 在新版 iOS 上无法连接怎么办？</h5></div>
     <div class="panel-body">
-        Mellow 是一个轻量化的跨平台代理客户端，采用透明代理和规则路由技术。它支持 V2Ray、Trojan 等协议，适用于 macOS、Windows 等操作系统。Mellow 运行稳定、资源占用低，非常适合后台长期使用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 手动节点切换有哪些优点？</h5></div>
-    <div class="panel-body">
-        手动切换节点可以根据延迟和用途选择最佳节点，适合在节点不稳定或特殊需求下使用。虽然不支持自动订阅更新，但足够满足轻量用户对节点管理和分流的需求。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 可以设置自定义 DNS 吗？</h5></div>
-    <div class="panel-body">
-        支持自定义 DNS，可配置本地或远程 DNS 服务器，包括 DoH/DoT。正确配置可提升解析速度、防止 DNS 污染，提高访问稳定性和安全性。<hr />    </div>
+        苹果系统更新后，Potatso Lite 可能需要重新授权 VPN 权限。请删除旧的 VPN 配置，重新安装并导入节点。若仍无法使用，可尝试更换网络模式或等待开发者更新兼容版本。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何配置 Sing-box 使用 DoH 加密 DNS？</h5></div>
@@ -317,24 +307,9 @@ A5：SSR为代理协议，轻量高效、抗干扰强，适合个性化分流；
         在 dns 模块中添加类型为 doh 的上游，如 `https://1.1.1.1/dns-query`，并指定 bootstrap 地址。启用加密 DNS 可防止 DNS 泄露并加快国际解析速度，提高整体隐私保护。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 的主要用途是什么？</h5></div>
+    <div class="panel-heading"><h5>Potatso Lite 手动节点切换有哪些优点？</h5></div>
     <div class="panel-body">
-        Hiddify Next 是 Hiddify 系列的新版本，集成了 VLESS、Trojan、Reality 等新型协议支持。它为用户提供一站式代理配置与分享功能，适合初学者快速上手使用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow 的 TUN 模式与系统代理有何区别？</h5></div>
-    <div class="panel-body">
-        TUN 模式直接拦截 IP 层流量，实现全局代理，而系统代理通常仅影响支持代理的应用。TUN 更适合游戏、视频或全局科学上网场景，确保所有流量经过代理节点。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2RayN 订阅更新后节点重复如何清理？</h5></div>
-    <div class="panel-body">
-        V2RayN 在导入订阅时有时会产生重复节点，可以点击右键菜单选择“删除重复项”。若仍存在旧节点缓存，可清空配置文件夹内的 history.json 并重新导入订阅，保证节点列表整洁。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 在新版 iOS 上无法连接怎么办？</h5></div>
-    <div class="panel-body">
-        苹果系统更新后，Potatso Lite 可能需要重新授权 VPN 权限。请删除旧的 VPN 配置，重新安装并导入节点。若仍无法使用，可尝试更换网络模式或等待开发者更新兼容版本。<hr />    </div>
+        手动切换节点可以根据延迟和用途选择最佳节点，适合在节点不稳定或特殊需求下使用。虽然不支持自动订阅更新，但足够满足轻量用户对节点管理和分流的需求。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mihomo 可以同时管理多少节点？</h5></div>
@@ -342,9 +317,34 @@ A5：SSR为代理协议，轻量高效、抗干扰强，适合个性化分流；
         Mihomo 可以管理大量节点，理论上没有固定上限。通过策略组和节点分类，用户可以轻松管理数百个节点，同时进行测速和自动切换。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Mellow 的 TUN 模式与系统代理有何区别？</h5></div>
+    <div class="panel-body">
+        TUN 模式直接拦截 IP 层流量，实现全局代理，而系统代理通常仅影响支持代理的应用。TUN 更适合游戏、视频或全局科学上网场景，确保所有流量经过代理节点。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 如何通过域名规则实现精准分流？</h5></div>
     <div class="panel-body">
-        Sing-box 支持根据域名匹配流量，将不同网站或应用流量分配到指定节点。结合策略组，可实现自动切换最优节点，优化访问速度和网络稳定性，提高整体使用体验。    </div>
+        Sing-box 支持根据域名匹配流量，将不同网站或应用流量分配到指定节点。结合策略组，可实现自动切换最优节点，优化访问速度和网络稳定性，提高整体使用体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Potatso Lite 可以设置自定义 DNS 吗？</h5></div>
+    <div class="panel-body">
+        支持自定义 DNS，可配置本地或远程 DNS 服务器，包括 DoH/DoT。正确配置可提升解析速度、防止 DNS 污染，提高访问稳定性和安全性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 的主要用途是什么？</h5></div>
+    <div class="panel-body">
+        Hiddify Next 是 Hiddify 系列的新版本，集成了 VLESS、Trojan、Reality 等新型协议支持。它为用户提供一站式代理配置与分享功能，适合初学者快速上手使用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2RayN 订阅更新后节点重复如何清理？</h5></div>
+    <div class="panel-body">
+        V2RayN 在导入订阅时有时会产生重复节点，可以点击右键菜单选择“删除重复项”。若仍存在旧节点缓存，可清空配置文件夹内的 history.json 并重新导入订阅，保证节点列表整洁。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mellow 有哪些优势？</h5></div>
+    <div class="panel-body">
+        Mellow 是一个轻量化的跨平台代理客户端，采用透明代理和规则路由技术。它支持 V2Ray、Trojan 等协议，适用于 macOS、Windows 等操作系统。Mellow 运行稳定、资源占用低，非常适合后台长期使用。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -367,22 +367,43 @@ A5：SSR为代理协议，轻量高效、抗干扰强，适合个性化分流；
 </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="panel panel-default">
+                    <div class="panel panel-default box right-ad-box">
+    <div class="panel-heading">
+        <h3 class="panel-title">特别推荐</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="text-center">
+                <a href="javascript:;" class="js_to" data-url="https://www.futizi.net/?code=" data-type="Luniuyun" data-code="svvkQf3y" target="_blank">
+                    <img src="/assets/website/img/G/luniuyun.webp" class="avatar" alt="绿牛云">
+                </a>
+                <dl>
+                    <dt><a href="javascript:;" class="js_to" data-url="https://www.futizi.net/?code=" data-type="Luniuyun" data-code="svvkQf3y" target="_blank">绿牛云</a></dt>
+                    <dd>
+                        <p>高速稳定的网络加速</p>
+                        <p>畅享全球内容，访问 ChatGPT、TikTok、Google 等热门网站。
+全平台支持 · 7×24 专业客服 · 采用军工级安全加密传输技术。</p>                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">热门文章</h3>
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-5-14-clash-stash-node.htm" title="Shadowrocket 节点 - 5月14日22.6M/S|免费Singbox节点/Trojan节点/SSR节点/Clash节点/V2ray节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 5月14日22.6M/S|免费Singbox节点/Trojan节点/SSR节点/Clash节点/V2ray节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-3-node-share.htm" title="Shadowrocket 节点 - 5月3日21.8M/S|免费Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 5月3日21.8M/S|免费Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-22-clash-verge-rev-node-share.htm" title="Shadowrocket 节点 - 4月22日22M/S|免费V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/Trojan节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 4月22日22M/S|免费V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/Trojan节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-19-clash-verge-rev-windows.htm" title="Shadowrocket 节点 - 5月19日22.9M/S|免费V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 5月19日22.9M/S|免费V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-6-clash-node-github.htm" title="Shadowrocket 节点 - 5月6日20.2M/S|免费SSR节点/Trojan节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 5月6日20.2M/S|免费SSR节点/Trojan节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-9-clash-verge-rev-node-share.htm" title="Shadowrocket 节点 - 5月9日20.1M/S|免费Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 5月9日20.1M/S|免费Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-28-clash-verge-rev-node-github.htm" title="Shadowrocket 节点 - 4月28日18.2M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 4月28日18.2M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-12-clash-meta-github.htm" title="Shadowrocket 节点 - 4月12日23M/S|免费V2ray节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 4月12日23M/S|免费V2ray节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-17-free-node-subscribe.htm" title="Shadowrocket 节点 - 5月17日19.3M/S|免费Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 5月17日19.3M/S|免费Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-29-clash-meta-github.htm" title="Shadowrocket 节点 - 4月29日22.4M/S|免费Shadowrocket节点/V2ray节点/Clash节点/Trojan节点/Singbox节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 4月29日22.4M/S|免费Shadowrocket节点/V2ray节点/Clash节点/Trojan节点/Singbox节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-6-clash-node-github.htm" title="Shadowrocket 节点 - 5月6日20.2M/S|免费SSR节点/Trojan节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 5月6日20.2M/S|免费SSR节点/Trojan节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-15-clash-node-github.htm" title="Shadowrocket 节点 - 5月15日19.6M/S|免费Shadowrocket节点/SSR节点/V2ray节点/Clash节点/Singbox节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 5月15日19.6M/S|免费Shadowrocket节点/SSR节点/V2ray节点/Clash节点/Singbox节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-12-clash-meta-github.htm" title="Shadowrocket 节点 - 4月12日23M/S|免费V2ray节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 4月12日23M/S|免费V2ray节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-8-clash-verge-rev-nodes.htm" title="Shadowrocket 节点 - 5月8日21.7M/S|免费Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Singbox节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 5月8日21.7M/S|免费Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Singbox节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-30-free-node-subscribe.htm" title="Shadowrocket 节点 - 4月30日20.1M/S|免费SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 4月30日20.1M/S|免费SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-2-clash-verge-rev-nodes.htm" title="Shadowrocket 节点 - 5月2日19M/S|免费SSR节点/Shadowrocket节点/Trojan节点/Clash节点/V2ray节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 5月2日19M/S|免费SSR节点/Shadowrocket节点/Trojan节点/Clash节点/V2ray节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-11-clash-v2ray-ss-ssr.htm" title="Shadowrocket 节点 - 5月11日21M/S|免费Singbox节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 5月11日21M/S|免费Singbox节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-3-node-share.htm" title="Shadowrocket 节点 - 5月3日21.8M/S|免费Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 5月3日21.8M/S|免费Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-10-clash-v2ray-ss-ssr.htm" title="Shadowrocket 节点 - 5月10日21.4M/S|免费Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 5月10日21.4M/S|免费Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-16-clash-verge-rev-node.htm" title="Shadowrocket 节点 - 5月16日19.3M/S|免费Shadowrocket节点/SSR节点/Clash节点/Singbox节点/V2ray节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 5月16日19.3M/S|免费Shadowrocket节点/SSR节点/Clash节点/Singbox节点/V2ray节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -394,7 +415,10 @@ A5：SSR为代理协议，轻量高效、抗干扰强，适合个性化分流；
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
+                <h4><span class="badge" style="float: right;">1</span> <a href="/date/2026-06/" title="2026-06 归档">2026-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
@@ -425,6 +449,9 @@ A5：SSR为代理协议，轻量高效、抗干扰强，适合个性化分流；
                         <a href="/privacy.htm">隐私申明</a> |
                         <a href="/sitemap.xml">网站地图</a>
                     </p>
+                                        <div>特别推荐：<b><a href="javascript:;" class="js_to" data-url="https://www.futizi.net/?code=" data-type="Luniuyun" data-code="svvkQf3y" target="_blank">绿牛云</a></b> <p>高速稳定的网络加速</p>
+                        <p>畅享全球内容，访问 ChatGPT、TikTok、Google 等热门网站。
+全平台支持 · 7×24 专业客服 · 采用军工级安全加密传输技术。</p></div>
                                         <a href="/">ShadowrocketNode官网订阅站</a> 版权所有 Powered by WordPress
                 </p>
             </div> <!-- enf of row -->
