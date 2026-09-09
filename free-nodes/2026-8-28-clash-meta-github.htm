@@ -289,14 +289,44 @@ A5：不同国家和地区政策不同，用户应了解当地法律法规，合
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 如何导入订阅？</h5></div>
+    <div class="panel-body">
+        在 WinXray 界面中点击“导入订阅”选项，将机场提供的订阅链接粘贴进去。点击更新后，WinXray 会自动下载节点配置并生成列表，用户可手动选择或自动切换延迟最低的节点使用。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>如何备份 Clash 配置文件？</h5></div>
     <div class="panel-body">
         Clash 的配置文件通常位于程序目录或配置文件夹中（如 Windows 下的 .config/clash）。用户可直接复制该 YAML 文件以备份，也可将订阅链接保存，便于后续恢复或在其他设备上同步使用。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 的节点延迟测量如何帮助选择节点？</h5></div>
+    <div class="panel-body">
+        Shadowrocket 会测试节点延迟和丢包率，并根据结果排序。用户可快速选择延迟最低的节点访问网站或视频，提高连接速度和稳定性，优化整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 的主要特点是什么？</h5></div>
     <div class="panel-body">
         WinXray 是一款基于 V2Ray 核心的 Windows 客户端，界面直观，支持 VMess、VLess、Trojan、Shadowsocks 等多协议。它提供一键导入订阅、节点测速、自动分流等功能，是适合初学者和进阶用户的图形化代理工具。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 如何针对不同用户设置流量配额？</h5></div>
+    <div class="panel-body">
+        管理员可以为每个用户单独设置流量上限或带宽限制。超过配额时可自动阻止或降速，保证服务器资源合理分配，避免单用户占用过多带宽影响其他用户。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 的 route 功能如何工作？</h5></div>
+    <div class="panel-body">
+        Sing-box 提供强大的路由系统，允许用户基于 IP、域名、GEO 数据库、进程名等条件精细分流。配置完成后，程序自动匹配规则，将不同流量转发到对应的出口。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 的多策略组如何优化流量分配？</h5></div>
+    <div class="panel-body">
+        多策略组允许将节点按用途、延迟或地理位置分类，并结合规则文件自动分流流量。这样不同应用如游戏、视频和网页流量都能走最优节点，提高整体访问速度和稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 的 Proxy Group 能实现哪些策略？</h5></div>
+    <div class="panel-body">
+        Proxy Group 可以定义多种策略，如按延迟选择、随机、轮询或手动选择节点。结合分流规则，可实现针对不同网站或应用的智能代理，提高网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何在 Sing-box 中设置多个 outbound 实现策略路由？</h5></div>
@@ -306,37 +336,7 @@ A5：不同国家和地区政策不同，用户应了解当地法律法规，合
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Matsuri 的延迟测试准确吗？</h5></div>
     <div class="panel-body">
-        Matsuri 的延迟测试使用 ICMP 与 TCP 双重检测方式，可较准确反映节点实际响应时间。不过受网络波动影响，建议多次测试并结合速度测试结果综合判断。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的多策略组如何优化流量分配？</h5></div>
-    <div class="panel-body">
-        多策略组允许将节点按用途、延迟或地理位置分类，并结合规则文件自动分流流量。这样不同应用如游戏、视频和网页流量都能走最优节点，提高整体访问速度和稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 如何导入订阅？</h5></div>
-    <div class="panel-body">
-        在 WinXray 界面中点击“导入订阅”选项，将机场提供的订阅链接粘贴进去。点击更新后，WinXray 会自动下载节点配置并生成列表，用户可手动选择或自动切换延迟最低的节点使用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 的 route 功能如何工作？</h5></div>
-    <div class="panel-body">
-        Sing-box 提供强大的路由系统，允许用户基于 IP、域名、GEO 数据库、进程名等条件精细分流。配置完成后，程序自动匹配规则，将不同流量转发到对应的出口。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 如何针对不同用户设置流量配额？</h5></div>
-    <div class="panel-body">
-        管理员可以为每个用户单独设置流量上限或带宽限制。超过配额时可自动阻止或降速，保证服务器资源合理分配，避免单用户占用过多带宽影响其他用户。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的 Proxy Group 能实现哪些策略？</h5></div>
-    <div class="panel-body">
-        Proxy Group 可以定义多种策略，如按延迟选择、随机、轮询或手动选择节点。结合分流规则，可实现针对不同网站或应用的智能代理，提高网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 的节点延迟测量如何帮助选择节点？</h5></div>
-    <div class="panel-body">
-        Shadowrocket 会测试节点延迟和丢包率，并根据结果排序。用户可快速选择延迟最低的节点访问网站或视频，提高连接速度和稳定性，优化整体网络体验。    </div>
+        Matsuri 的延迟测试使用 ICMP 与 TCP 双重检测方式，可较准确反映节点实际响应时间。不过受网络波动影响，建议多次测试并结合速度测试结果综合判断。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -384,16 +384,16 @@ A5：不同国家和地区政策不同，用户应了解当地法律法规，合
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-8-12-clash-verge-rev-node-github.htm" title="Shadowrocket 节点 - 8月12日22.5M/S|免费V2ray节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月12日22.5M/S|免费V2ray节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-v2ray-ss-ssr-2026-9-3.htm" title="Shadowrocket 节点 - 9月3日20.7M/S|免费Trojan节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月3日20.7M/S|免费Trojan节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-stash-2026-8-13.htm" title="Shadowrocket 节点 - 8月13日21.4M/S|免费SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月13日21.4M/S|免费SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-20-clash-node.htm" title="Shadowrocket 节点 - 8月20日21.8M/S|免费Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月20日21.8M/S|免费Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-8-clash-node-daily-updates.htm" title="Shadowrocket 节点 - 8月8日20.8M/S|免费SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月8日20.8M/S|免费SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-10-clash-verge-rev-node-github.htm" title="Shadowrocket 节点 - 8月10日18.6M/S|免费Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月10日18.6M/S|免费Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-v2ray-ss-ssr-2026-8-29.htm" title="Shadowrocket 节点 - 8月29日21.5M/S|免费SSR节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月29日21.5M/S|免费SSR节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/clash-verge-rev-node-2026-8-27.htm" title="Shadowrocket 节点 - 8月27日21.2M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月27日21.2M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-node-2026-8-31.htm" title="Shadowrocket 节点 - 8月31日22.4M/S|免费Clash节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月31日22.4M/S|免费Clash节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-v2ray-ss-ssr-2026-8-15.htm" title="Shadowrocket 节点 - 8月15日22.7M/S|免费Shadowrocket节点/Clash节点/SSR节点/Singbox节点/Trojan节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月15日22.7M/S|免费Shadowrocket节点/Clash节点/SSR节点/Singbox节点/Trojan节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-16-clash-node-daily-updates.htm" title="Shadowrocket 节点 - 8月16日21.3M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月16日21.3M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-24-clash-verge-rev-node-github.htm" title="Shadowrocket 节点 - 8月24日18M/S|免费Trojan节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月24日18M/S|免费Trojan节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-22-clash-stash-node.htm" title="Shadowrocket 节点 - 8月22日20.5M/S|免费Trojan节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月22日20.5M/S|免费Trojan节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-26-free-node-subscribe.htm" title="Shadowrocket 节点 - 8月26日20.2M/S|免费Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月26日20.2M/S|免费Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-v2ray-ss-ssr-2026-8-23.htm" title="Shadowrocket 节点 - 8月23日20.4M/S|免费Trojan节点/V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月23日20.4M/S|免费Trojan节点/V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-windows-2026-8-11.htm" title="Shadowrocket 节点 - 8月11日22M/S|免费V2ray节点/SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月11日22M/S|免费V2ray节点/SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-node-2026-8-19.htm" title="Shadowrocket 节点 - 8月19日21.1M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/Trojan节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月19日21.1M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/Trojan节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-28-clash-meta-github.htm" title="Shadowrocket 节点 - 8月28日22.6M/S|免费Trojan节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月28日22.6M/S|免费Trojan节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -405,10 +405,10 @@ A5：不同国家和地区政策不同，用户应了解当地法律法规，合
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">2</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>

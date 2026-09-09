@@ -398,39 +398,19 @@ A: 使用TLS加密+自定义路径的WebSocket协议，服务器端搭配Nginx�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan-Go 是否支持 WebSocket？</h5></div>
-    <div class="panel-body">
-        Trojan-Go 增强了原版 Trojan，支持 WebSocket、gRPC 等多种传输方式。通过这些传输层协议，可在伪装网站下运行代理服务，提高隐蔽性和灵活性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何合理设置 Clash 的 proxy-group 实现自动切换？</h5></div>
-    <div class="panel-body">
-        创建包含多个节点的策略组（如 `url-test` 或 `fallback`），设置合适的检测 URL 与检测频率，启用延迟优先或可用性优先策略。这样客户端会自动选择延迟最低或可用节点，提升稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何在手机上减少代理应用对电量的消耗？</h5></div>
-    <div class="panel-body">
-        关闭不必要的后台代理连接，减少实时测速或心跳频率，启用省电模式并限制流量统计与日志记录；对于常用站点设置直连策略，避免所有流量都走代理带来的持续网络负荷。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 在路由器中如何更新节点订阅？</h5></div>
     <div class="panel-body">
         在 PassWall2 面板中点击“订阅管理”，输入或更新订阅链接后，点击“手动更新”即可自动下载最新节点数据。也可设置定时任务每日自动更新，保持配置最新。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 配置如何提高节点隐蔽性？</h5></div>
-    <div class="panel-body">
-        通过选择合适协议和混淆方式，将流量伪装成正常 HTTPS 或 HTTP 数据。可降低被 DPI 检测和封锁的风险，提高节点长期稳定性和科学上网体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 的分流规则支持哪些条件？</h5></div>
-    <div class="panel-body">
-        支持按域名、IP 地址、端口、请求路径、协议类型或关键词进行分流。结合策略组，可实现广告屏蔽、视频加速、游戏优化等多种自定义网络策略。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 混淆方式如何提高抗封锁能力？</h5></div>
     <div class="panel-body">
         SSR 混淆可将流量伪装成正常 HTTPS 或 HTTP 数据，降低被 DPI 检测风险。合理选择协议和混淆参数组合，可以提高节点稳定性和长期可用性，保证科学上网体验顺畅。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 如何自动切换最佳节点？</h5></div>
+    <div class="panel-body">
+        通过延迟测速和策略组设置，PassWall2 可自动选择延迟最低的节点处理流量。用户无需手动切换节点，保证网页、视频和游戏流量的速度和稳定性，提高整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mellow 如何通过配置实现多出口分流？</h5></div>
@@ -443,9 +423,29 @@ A: 使用TLS加密+自定义路径的WebSocket协议，服务器端搭配Nginx�
         VLess 去掉了内置加密层，改为依赖外部 TLS 进行安全通信，这使其更轻量化且更灵活。它能与 Hysteria、Reality 等现代传输方式结合使用，适应性更强，是取代 Vmess 的新标准。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 如何自动切换最佳节点？</h5></div>
+    <div class="panel-heading"><h5>SSR 配置如何提高节点隐蔽性？</h5></div>
     <div class="panel-body">
-        通过延迟测速和策略组设置，PassWall2 可自动选择延迟最低的节点处理流量。用户无需手动切换节点，保证网页、视频和游戏流量的速度和稳定性，提高整体网络体验。    </div>
+        通过选择合适协议和混淆方式，将流量伪装成正常 HTTPS 或 HTTP 数据。可降低被 DPI 检测和封锁的风险，提高节点长期稳定性和科学上网体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何在手机上减少代理应用对电量的消耗？</h5></div>
+    <div class="panel-body">
+        关闭不必要的后台代理连接，减少实时测速或心跳频率，启用省电模式并限制流量统计与日志记录；对于常用站点设置直连策略，避免所有流量都走代理带来的持续网络负荷。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan-Go 是否支持 WebSocket？</h5></div>
+    <div class="panel-body">
+        Trojan-Go 增强了原版 Trojan，支持 WebSocket、gRPC 等多种传输方式。通过这些传输层协议，可在伪装网站下运行代理服务，提高隐蔽性和灵活性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何合理设置 Clash 的 proxy-group 实现自动切换？</h5></div>
+    <div class="panel-body">
+        创建包含多个节点的策略组（如 `url-test` 或 `fallback`），设置合适的检测 URL 与检测频率，启用延迟优先或可用性优先策略。这样客户端会自动选择延迟最低或可用节点，提升稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>QuantumultX 的分流规则支持哪些条件？</h5></div>
+    <div class="panel-body">
+        支持按域名、IP 地址、端口、请求路径、协议类型或关键词进行分流。结合策略组，可实现广告屏蔽、视频加速、游戏优化等多种自定义网络策略。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -493,16 +493,16 @@ A: 使用TLS加密+自定义路径的WebSocket协议，服务器端搭配Nginx�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-7-25-node-share.htm" title="Shadowrocket 节点 - 7月25日18.9M/S|免费Shadowrocket节点/V2ray节点/Clash节点/Trojan节点/Singbox节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 7月25日18.9M/S|免费Shadowrocket节点/V2ray节点/Clash节点/Trojan节点/Singbox节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-stash-2026-8-1.htm" title="Shadowrocket 节点 - 8月1日20.7M/S|免费Singbox节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月1日20.7M/S|免费Singbox节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-4-clash-meta-github.htm" title="Shadowrocket 节点 - 8月4日22.6M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Trojan节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月4日22.6M/S|免费Shadowrocket节点/V2ray节点/SSR节点/Singbox节点/Trojan节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-27-clash-stash.htm" title="Shadowrocket 节点 - 7月27日20M/S|免费V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 7月27日20M/S|免费V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-21-clash-verge-rev-node.htm" title="Shadowrocket 节点 - 7月21日21.2M/S|免费Trojan节点/Clash节点/SSR节点/V2ray节点/Singbox节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 7月21日21.2M/S|免费Trojan节点/Clash节点/SSR节点/V2ray节点/Singbox节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-28-clash-verge-rev-node-github.htm" title="Shadowrocket 节点 - 7月28日18.6M/S|免费V2ray节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 7月28日18.6M/S|免费V2ray节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-v2ray-ss-ssr-2026-8-3.htm" title="Shadowrocket 节点 - 8月3日19.1M/S|免费Shadowrocket节点/Trojan节点/V2ray节点/SSR节点/Singbox节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月3日19.1M/S|免费Shadowrocket节点/Trojan节点/V2ray节点/SSR节点/Singbox节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-node-2026-7-31.htm" title="Shadowrocket 节点 - 7月31日21M/S|免费Shadowrocket节点/Singbox节点/Clash节点/V2ray节点/SSR节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 7月31日21M/S|免费Shadowrocket节点/Singbox节点/Clash节点/V2ray节点/SSR节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-26-free-node-subscribe.htm" title="Shadowrocket 节点 - 8月26日20.2M/S|免费Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月26日20.2M/S|免费Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-22-clash-stash-node.htm" title="Shadowrocket 节点 - 8月22日20.5M/S|免费Trojan节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月22日20.5M/S|免费Trojan节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-v2ray-ss-ssr-2026-9-3.htm" title="Shadowrocket 节点 - 9月3日20.7M/S|免费Trojan节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月3日20.7M/S|免费Trojan节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-stash-2026-8-9.htm" title="Shadowrocket 节点 - 8月9日18.4M/S|免费Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Trojan节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月9日18.4M/S|免费Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Trojan节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-12-clash-verge-rev-node-github.htm" title="Shadowrocket 节点 - 8月12日22.5M/S|免费V2ray节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月12日22.5M/S|免费V2ray节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-20-clash-stash-node.htm" title="Shadowrocket 节点 - 7月20日22.6M/S|免费Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 7月20日22.6M/S|免费Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-node-2026-8-19.htm" title="Shadowrocket 节点 - 8月19日21.1M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/Trojan节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月19日21.1M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/Trojan节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-30-clash-verge-rev-node-share.htm" title="Shadowrocket 节点 - 8月30日20.7M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/Trojan节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月30日20.7M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/Trojan节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-18-free-node-subscribe.htm" title="Shadowrocket 节点 - 8月18日22.8M/S|免费Singbox节点/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月18日22.8M/S|免费Singbox节点/Trojan节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-v2ray-ss-ssr-2026-8-15.htm" title="Shadowrocket 节点 - 8月15日22.7M/S|免费Shadowrocket节点/Clash节点/SSR节点/Singbox节点/Trojan节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月15日22.7M/S|免费Shadowrocket节点/Clash节点/SSR节点/Singbox节点/Trojan节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-20-clash-node.htm" title="Shadowrocket 节点 - 8月20日21.8M/S|免费Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月20日21.8M/S|免费Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -514,10 +514,10 @@ A: 使用TLS加密+自定义路径的WebSocket协议，服务器端搭配Nginx�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>
