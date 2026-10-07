@@ -262,14 +262,9 @@ A: V2Ray不仅仅是VPN，更通过多协议支持和灵活路由管理，能更
         mKCP 是基于 UDP 的传输协议，适合高丢包或不稳定网络环境。结合策略组使用，可优化网页浏览、视频播放和游戏体验，减少延迟和掉线，提高连接稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 如何通过策略组优化访问速度？</h5></div>
+    <div class="panel-heading"><h5>Netch 的全局代理与规则代理有何不同？</h5></div>
     <div class="panel-body">
-        策略组允许用户将节点按延迟、地域或用途分组。结合路由规则，V2Ray 会自动选择最优节点处理流量，提升访问速度并降低延迟，尤其在访问海外网站时效果明显。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 如何实现端口与流量的精确分流？</h5></div>
-    <div class="panel-body">
-        Sing-box 支持按端口匹配流量，将不同类型应用的流量分配到指定节点。结合策略组使用，可提高访问速度和网络稳定性，实现精准分流和优化用户体验。<hr />    </div>
+        全局代理将所有流量都通过节点转发，而规则代理只针对指定 IP、端口或应用。全局代理适合游戏和全局科学上网，规则代理适合优化带宽和分流特定流量。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 的 PAC 模式如何应用？</h5></div>
@@ -277,24 +272,24 @@ A: V2Ray不仅仅是VPN，更通过多协议支持和灵活路由管理，能更
         PAC 模式根据规则自动判断流量是否走代理，无需手动切换节点。适合访问国内外混合网站环境，提高网络访问速度和稳定性，减少误操作导致的访问失败。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 的 Socks 模式有什么作用？</h5></div>
-    <div class="panel-body">
-        Netch 的 Socks 模式允许用户将代理仅应用于指定进程，而非全局网络。此模式非常适合单个游戏或程序代理，避免影响其他应用的连接方式与速度。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Matsuri 节点延迟排序如何优化网络流量？</h5></div>
     <div class="panel-body">
         Matsuri 会定期测速节点延迟，并结合策略组自动选择延迟最低节点。无需手动切换，确保网页、视频和游戏流量通过最优节点，提高访问速度和网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 的全局代理与规则代理有何不同？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 如何实现端口与流量的精确分流？</h5></div>
     <div class="panel-body">
-        全局代理将所有流量都通过节点转发，而规则代理只针对指定 IP、端口或应用。全局代理适合游戏和全局科学上网，规则代理适合优化带宽和分流特定流量。<hr />    </div>
+        Sing-box 支持按端口匹配流量，将不同类型应用的流量分配到指定节点。结合策略组使用，可提高访问速度和网络稳定性，实现精准分流和优化用户体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2RayN 订阅更新后节点重复如何清理？</h5></div>
+    <div class="panel-heading"><h5>V2Ray 的 ws+tls 传输模式有什么优点？</h5></div>
     <div class="panel-body">
-        V2RayN 在导入订阅时有时会产生重复节点，可以点击右键菜单选择“删除重复项”。若仍存在旧节点缓存，可清空配置文件夹内的 history.json 并重新导入订阅，保证节点列表整洁。<hr />    </div>
+        ws+tls 模式利用 WebSocket 伪装成普通 HTTPS 流量，使得防火墙难以区分代理与正常访问。该模式兼容性强，适合部署在支持 Nginx 或 Caddy 的 Web 服务器上。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 如何通过策略组优化访问速度？</h5></div>
+    <div class="panel-body">
+        策略组允许用户将节点按延迟、地域或用途分组。结合路由规则，V2Ray 会自动选择最优节点处理流量，提升访问速度并降低延迟，尤其在访问海外网站时效果明显。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>QuantumultX 分流规则如何优化游戏体验？</h5></div>
@@ -302,9 +297,14 @@ A: V2Ray不仅仅是VPN，更通过多协议支持和灵活路由管理，能更
         QuantumultX 可按端口、协议或应用设置分流规则，将游戏流量走低延迟节点。结合策略组自动切换，可保证游戏连接稳定，减少掉线和延迟，提高流畅度。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 ws+tls 传输模式有什么优点？</h5></div>
+    <div class="panel-heading"><h5>Netch 的 Socks 模式有什么作用？</h5></div>
     <div class="panel-body">
-        ws+tls 模式利用 WebSocket 伪装成普通 HTTPS 流量，使得防火墙难以区分代理与正常访问。该模式兼容性强，适合部署在支持 Nginx 或 Caddy 的 Web 服务器上。    </div>
+        Netch 的 Socks 模式允许用户将代理仅应用于指定进程，而非全局网络。此模式非常适合单个游戏或程序代理，避免影响其他应用的连接方式与速度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2RayN 订阅更新后节点重复如何清理？</h5></div>
+    <div class="panel-body">
+        V2RayN 在导入订阅时有时会产生重复节点，可以点击右键菜单选择“删除重复项”。若仍存在旧节点缓存，可清空配置文件夹内的 history.json 并重新导入订阅，保证节点列表整洁。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -352,16 +352,16 @@ A: V2Ray不仅仅是VPN，更通过多协议支持和灵活路由管理，能更
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-node-2026-8-27.htm" title="Shadowrocket 节点 - 8月27日21.2M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月27日21.2M/S|免费Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/Clash节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-node-2026-9-29.htm" title="Shadowrocket 节点 - 9月29日18M/S|免费Trojan节点/Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月29日18M/S|免费Trojan节点/Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-v2ray-ss-ssr-2026-8-23.htm" title="Shadowrocket 节点 - 8月23日20.4M/S|免费Trojan节点/V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月23日20.4M/S|免费Trojan节点/V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-windows-2026-9-1.htm" title="Shadowrocket 节点 - 9月1日19M/S|免费Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月1日19M/S|免费Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-4-clash-verge-rev-nodes.htm" title="Shadowrocket 节点 - 9月4日22.3M/S|免费Clash节点/Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月4日22.3M/S|免费Clash节点/Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-windows-2026-8-11.htm" title="Shadowrocket 节点 - 8月11日22M/S|免费V2ray节点/SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月11日22M/S|免费V2ray节点/SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-v2ray-ss-ssr-2026-9-15.htm" title="Shadowrocket 节点 - 9月15日23M/S|免费Clash节点/Trojan节点/Shadowrocket节点/Singbox节点/SSR节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月15日23M/S|免费Clash节点/Trojan节点/Shadowrocket节点/Singbox节点/SSR节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-github-2026-9-27.htm" title="Shadowrocket 节点 - 9月27日18.6M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月27日18.6M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-10-clash-verge-rev-nodes.htm" title="Shadowrocket 节点 - 9月10日21M/S|免费V2ray节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月10日21M/S|免费V2ray节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-windows-2026-9-25.htm" title="Shadowrocket 节点 - 9月25日20.3M/S|免费SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月25日20.3M/S|免费SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-12-clash-meta-github.htm" title="Shadowrocket 节点 - 9月12日20M/S|免费Clash节点/Trojan节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月12日20M/S|免费Clash节点/Trojan节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-node-github-2026-9-5.htm" title="Shadowrocket 节点 - 9月5日19.3M/S|免费Shadowrocket节点/Clash节点/Trojan节点/SSR节点/Singbox节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月5日19.3M/S|免费Shadowrocket节点/Clash节点/Trojan节点/SSR节点/Singbox节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-6-clash-node.htm" title="Shadowrocket 节点 - 9月6日19.4M/S|免费V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月6日19.4M/S|免费V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-2-clash-meta-github.htm" title="Shadowrocket 节点 - 9月2日21M/S|免费Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月2日21M/S|免费Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-github-2026-9-19.htm" title="Shadowrocket 节点 - 9月19日18.9M/S|免费SSR节点/Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月19日18.9M/S|免费SSR节点/Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-9-16-clash-verge-rev-node-github.htm" title="Shadowrocket 节点 - 9月16日21.2M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月16日21.2M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-16-clash-node-daily-updates.htm" title="Shadowrocket 节点 - 8月16日21.3M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 8月16日21.3M/S|免费Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-26-clash-stash-node.htm" title="Shadowrocket 节点 - 9月26日22.7M/S|免费Singbox节点/Clash节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月26日22.7M/S|免费Singbox节点/Clash节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-24-clash-verge-rev-node-share.htm" title="Shadowrocket 节点 - 9月24日21.8M/S|免费Shadowrocket节点/Clash节点/Singbox节点/SSR节点/Trojan节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月24日21.8M/S|免费Shadowrocket节点/Clash节点/Singbox节点/SSR节点/Trojan节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -373,10 +373,10 @@ A: V2Ray不仅仅是VPN，更通过多协议支持和灵活路由管理，能更
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
+                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                     </ul>
     </div>
