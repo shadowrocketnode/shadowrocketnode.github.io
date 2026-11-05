@@ -354,6 +354,21 @@ gunzip clash-linux-amd64-vX.X.X.gz
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 多策略组如何管理大量节点？</h5></div>
+    <div class="panel-body">
+        多策略组可将节点按地区、延迟或用途分类，并结合规则文件自动分流流量。这样可快速选择最优节点，提高访问速度和稳定性，同时优化节点管理和维护效率。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 的混淆和协议组合如何选择？</h5></div>
+    <div class="panel-body">
+        根据网络封锁情况选择适合的混淆和协议组合，例如 tls1.2_ticket_auth 模拟 HTTPS 流量。不同组合对抗 DPI 和封锁能力不同，需要测试后选择最稳定和高效的方案。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Potatso Lite 的节点导入方式有哪些？</h5></div>
+    <div class="panel-body">
+        Potatso Lite 支持通过手动添加节点信息或扫描二维码导入节点。虽然不支持自动订阅更新，但对轻量用户来说，手动方式足够使用，方便在 iOS 设备上管理节点。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Mihomo 的节点分类功能有哪些好处？</h5></div>
     <div class="panel-body">
         节点分类可以按地区、延迟或用途分组，结合策略组实现自动分流。这样可以快速选择最佳节点，管理大量节点更加高效，同时提升访问速度和稳定性。<hr />    </div>
@@ -364,9 +379,14 @@ gunzip clash-linux-amd64-vX.X.X.gz
         V2RayN 界面更简洁，功能更稳定，而 WinXray 提供了更现代的界面和自动测速功能。对于初学者来说，V2RayN 上手更快；而追求高级功能的用户可能更喜欢 WinXray。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 的节点导入方式有哪些？</h5></div>
+    <div class="panel-heading"><h5>Nekobox 是否支持多配置文件切换？</h5></div>
     <div class="panel-body">
-        Potatso Lite 支持通过手动添加节点信息或扫描二维码导入节点。虽然不支持自动订阅更新，但对轻量用户来说，手动方式足够使用，方便在 iOS 设备上管理节点。<hr />    </div>
+        支持。Nekobox 允许用户创建多个配置文件并快速切换，适合在不同网络环境下使用不同规则。例如家用网络与移动数据可使用独立的配置方案。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 的策略组可设置延迟阈值吗？</h5></div>
+    <div class="panel-body">
+        可以。用户可定义延迟阈值，当节点延迟超过设定值时，策略组会自动切换至其他低延迟节点，提高网络速度和稳定性，优化访问体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何防止租用服务器被用作滥发或代理滥用？</h5></div>
@@ -379,29 +399,9 @@ gunzip clash-linux-amd64-vX.X.X.gz
         PassWall2 结合策略组和节点延迟检测功能，可自动选择最佳节点处理网页、视频和游戏流量。无需手动干预，保证访问速度和网络稳定性，提高整体体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 多策略组如何管理大量节点？</h5></div>
-    <div class="panel-body">
-        多策略组可将节点按地区、延迟或用途分类，并结合规则文件自动分流流量。这样可快速选择最优节点，提高访问速度和稳定性，同时优化节点管理和维护效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的策略组可设置延迟阈值吗？</h5></div>
-    <div class="panel-body">
-        可以。用户可定义延迟阈值，当节点延迟超过设定值时，策略组会自动切换至其他低延迟节点，提高网络速度和稳定性，优化访问体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的混淆和协议组合如何选择？</h5></div>
-    <div class="panel-body">
-        根据网络封锁情况选择适合的混淆和协议组合，例如 tls1.2_ticket_auth 模拟 HTTPS 流量。不同组合对抗 DPI 和封锁能力不同，需要测试后选择最稳定和高效的方案。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的端口复用有什么风险？</h5></div>
     <div class="panel-body">
-        SSR 支持多端口配置以复用服务，但若端口过多或设置冲突，可能被扫描工具识别或误判为异常服务。建议保持配置简洁，并合理分配端口范围以减少暴露风险。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 是否支持多配置文件切换？</h5></div>
-    <div class="panel-body">
-        支持。Nekobox 允许用户创建多个配置文件并快速切换，适合在不同网络环境下使用不同规则。例如家用网络与移动数据可使用独立的配置方案。    </div>
+        SSR 支持多端口配置以复用服务，但若端口过多或设置冲突，可能被扫描工具识别或误判为异常服务。建议保持配置简洁，并合理分配端口范围以减少暴露风险。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -449,16 +449,16 @@ gunzip clash-linux-amd64-vX.X.X.gz
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-10-16-clash-node.htm" title="Shadowrocket 节点 - 10月16日21.2M/S|免费V2ray节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 10月16日21.2M/S|免费V2ray节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-22-clash-verge-rev-node-share.htm" title="Shadowrocket 节点 - 9月22日22.7M/S|免费Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月22日22.7M/S|免费Trojan节点/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-10-clash-verge-rev-nodes.htm" title="Shadowrocket 节点 - 9月10日21M/S|免费V2ray节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月10日21M/S|免费V2ray节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-node-github-2026-9-13.htm" title="Shadowrocket 节点 - 9月13日19.8M/S|免费V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/Trojan节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月13日19.8M/S|免费V2ray节点/Singbox节点/Clash节点/Shadowrocket节点/Trojan节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-github-2026-10-5.htm" title="Shadowrocket 节点 - 10月5日20.5M/S|免费SSR节点/Trojan节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 10月5日20.5M/S|免费SSR节点/Trojan节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-github-2026-9-23.htm" title="Shadowrocket 节点 - 9月23日19.2M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Clash节点/Trojan节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月23日19.2M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Clash节点/Trojan节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-2-clash-meta-github.htm" title="Shadowrocket 节点 - 9月2日21M/S|免费Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月2日21M/S|免费Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-node-2026-10-11.htm" title="Shadowrocket 节点 - 10月11日19.2M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 10月11日19.2M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-windows-2026-10-23.htm" title="Shadowrocket 节点 - 10月23日19.1M/S|免费Trojan节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 10月23日19.1M/S|免费Trojan节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-26-clash-stash-node.htm" title="Shadowrocket 节点 - 9月26日22.7M/S|免费Singbox节点/Clash节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月26日22.7M/S|免费Singbox节点/Clash节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-2026-9-11.htm" title="Shadowrocket 节点 - 9月11日21.6M/S|免费Trojan节点/V2ray节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月11日21.6M/S|免费Trojan节点/V2ray节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-30-clash-node-daily-updates.htm" title="Shadowrocket 节点 - 10月30日18.8M/S|免费SSR节点/Singbox节点/Shadowrocket节点/V2ray节点/Trojan节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 10月30日18.8M/S|免费SSR节点/Singbox节点/Shadowrocket节点/V2ray节点/Trojan节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-github-2026-9-27.htm" title="Shadowrocket 节点 - 9月27日18.6M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 9月27日18.6M/S|免费Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点/SSR节点/Clash节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-10-6-clash-meta-github.htm" title="Shadowrocket 节点 - 10月6日22.8M/S|免费Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/Trojan节点/SSR节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 10月6日22.8M/S|免费Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/Trojan节点/SSR节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-github-2026-10-19.htm" title="Shadowrocket 节点 - 10月19日19.6M/S|免费Singbox节点/V2ray节点/Clash节点/Trojan节点/SSR节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 10月19日19.6M/S|免费Singbox节点/V2ray节点/Clash节点/Trojan节点/SSR节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-2-free-node-subscribe.htm" title="Shadowrocket 节点 - 11月2日19M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 11月2日19M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-2-free-node-subscribe.htm" title="Shadowrocket 节点 - 10月2日21.1M/S|免费Trojan节点/Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 10月2日21.1M/S|免费Trojan节点/Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-node-2026-10-1.htm" title="Shadowrocket 节点 - 10月1日18.6M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 10月1日18.6M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-node-2026-10-3.htm" title="Shadowrocket 节点 - 10月3日21.3M/S|免费V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐">Shadowrocket 节点 - 10月3日21.3M/S|免费V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点节点推荐，Shadowrocket梯子购买推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -470,7 +470,10 @@ gunzip clash-linux-amd64-vX.X.X.gz
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">28</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
+                <h4><span class="badge" style="float: right;">5</span> <a href="/date/2026-11/" title="2026-11 归档">2026-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
